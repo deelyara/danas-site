@@ -54,7 +54,7 @@ export default function WorkTeaser() {
             <div
               key={project.id}
               ref={setElementRef(index)}
-              className={`project-item block w-full py-16 animate-on-scroll ${
+              className={`project-item group block w-full py-16 animate-on-scroll ${
                 isVisible(index) ? 'animate-in' : ''
               }`}
               style={{ 
@@ -62,46 +62,80 @@ export default function WorkTeaser() {
                 marginBottom: index !== featuredProjects.length - 1 ? '64px' : '0'
               }}
             >
-              <Link 
-                href={`/work/${project.slug}`}
-                className="group flex items-center gap-20 w-auto mx-auto"
-              >
-                {/* Project Card - Left Side */}
-                <div 
-                  className="project-card w-[280px] h-[180px] flex-shrink-0 rounded-xl transition-all duration-300 group-hover:shadow-lg relative"
-                  style={{ backgroundColor: project.color }}
-                >
-                  {/* Year in corner */}
-                  <div className="absolute top-5 right-5">
-                    <span className="text-sm font-medium text-primary/60 tracking-wider">
-                      {project.year}
-                    </span>
+              {/* Last project with button */}
+              {index === featuredProjects.length - 1 ? (
+                <div className="flex flex-col items-start w-full">
+                  <Link 
+                    href={`/work/${project.slug}`}
+                    className="group flex items-center gap-20"
+                  >
+                    {/* Project Card - Left Side */}
+                    <div 
+                      className="project-card w-[280px] h-[180px] flex-shrink-0 rounded-xl transition-all duration-300 group-hover:shadow-lg relative"
+                      style={{ backgroundColor: project.color }}
+                    >
+                      {/* Year in corner */}
+                      <div className="absolute top-5 right-5">
+                        <span className="text-sm font-medium text-primary/60 tracking-wider">
+                          {project.year}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Project Info - Right Side */}
+                    <div className="project-info">
+                      <h3 className="text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
+                        {project.title}
+                      </h3>
+                      <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68]">
+                        {project.company}
+                      </p>
+                    </div>
+                  </Link>
+
+                  {/* View All Projects CTA - Centered Below */}
+                  <div className="mt-20 w-full flex justify-center pt-4 transition-all duration-300 group-hover:mt-28">
+                    <Link 
+                      href="/work"
+                      className="relative inline-flex items-center gap-2 text-lg text-primary transition-all duration-300 group"
+                    >
+                      <span>View All Projects</span>
+                      <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
+                      <span className="absolute bottom-[-6px] left-0 h-[3px] w-0 group-hover:w-full transition-all duration-300" style={{ backgroundColor: '#FFD700' }}></span>
+                    </Link>
                   </div>
                 </div>
+              ) : (
+                <Link 
+                  href={`/work/${project.slug}`}
+                  className="group flex items-center gap-20 w-auto mx-auto"
+                >
+                  {/* Project Card - Left Side */}
+                  <div 
+                    className="project-card w-[280px] h-[180px] flex-shrink-0 rounded-xl transition-all duration-300 group-hover:shadow-lg relative"
+                    style={{ backgroundColor: project.color }}
+                  >
+                    {/* Year in corner */}
+                    <div className="absolute top-5 right-5">
+                      <span className="text-sm font-medium text-primary/60 tracking-wider">
+                        {project.year}
+                      </span>
+                    </div>
+                  </div>
 
-                {/* Project Info - Right Side */}
-                <div className="project-info flex-1">
-                  <h3 className="text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68]">
-                    {project.company}
-                  </p>
-                </div>
-              </Link>
+                  {/* Project Info - Right Side */}
+                  <div className="project-info flex-1">
+                    <h3 className="text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68]">
+                      {project.company}
+                    </p>
+                  </div>
+                </Link>
+              )}
             </div>
           ))}
-        </div>
-
-        {/* View All Projects CTA */}
-        <div className="view-all text-center mt-[60px]">
-          <Link 
-            href="/work"
-            className="inline-flex items-center gap-2 text-lg text-primary hover:text-accent transition-all duration-300 group border-b border-transparent hover:border-current pb-1"
-          >
-            <span>View All Projects</span>
-            <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </Link>
         </div>
       </div>
     </section>

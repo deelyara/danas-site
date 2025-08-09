@@ -78,9 +78,6 @@ export default function Expertise() {
             <h2 className="font-serif selected-work-title text-primary mb-6 font-normal tracking-tight lowercase">
               expertise
             </h2>
-            <p className="text-xl text-secondary font-light leading-relaxed max-w-2xl mx-auto">
-              Strategic marketing capabilities that drive measurable business growth
-            </p>
           </div>
           
           {/* Expertise Grid - Centered and Balanced */}

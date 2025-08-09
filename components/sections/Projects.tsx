@@ -61,63 +61,63 @@ export default function Projects() {
 
   return (
     <section id="projects" className="section-centered bg-background">
-      <div className="container mx-auto container-padding w-full max-w-7xl">
-        {/* Section Header with animation */}
-        <div 
-          ref={headerRef}
-          className={`max-w-3xl mb-16 text-center mx-auto animate-on-scroll ${
-            headerVisible ? 'animate-in' : ''
-          }`}
-        >
-          <h1 className="font-serif selected-work-title text-primary mb-6 font-normal tracking-tight">
-            selected work
-          </h1>
-          <p className="text-xl text-secondary font-light leading-relaxed max-w-3xl mx-auto">
-            A comprehensive collection of strategic marketing projects that have driven measurable growth and transformation across various industries.
-          </p>
-        </div>
-
-        {/* Projects Grid - centered, constrained tiles */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-6xl mx-auto justify-items-center">
-          {projects.map((project, index) => (
-            <Link 
-              key={project.id}
-              href={`/work/${project.slug}`}
-              className="group block w-full"
+      <div className="container mx-auto px-6 md:px-12 w-full max-w-6xl">
+        <div className="text-center">
+          {/* Section Header */}
+          <div className="mb-20" style={{ paddingTop: '60px' }}>
+            <h1 
+              ref={headerRef}
+              className={`font-serif selected-work-title text-primary mb-6 font-normal tracking-tight lowercase animate-on-scroll ${
+                headerVisible ? 'animate-in' : ''
+              }`}
             >
-              <div className="w-[320px] md:w-[340px] lg:w-[360px] mx-auto">
-                <div
-                  ref={setElementRef(index)}
-                  className={`project-card relative animate-on-scroll ${
-                    isVisible(index) ? 'animate-in' : ''
-                  }`}
-                  style={{ 
-                    background: project.gradient,
-                    transitionDelay: `${index * 100}ms`,
-                    aspectRatio: '3/4'
-                  }}
-                >
-                  {/* Year in corner */}
-                  <div className="absolute top-6 right-6">
-                    <span className="text-sm font-medium text-primary/60 tracking-wider">
-                      {project.year}
-                    </span>
-                  </div>
+              projects
+            </h1>
+          </div>
 
-                  {/* Project Info at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="project-title text-primary mb-2 group-hover:text-accent transition-colors duration-300">
-                      {project.title}
-                    </h3>
-                    
-                    <p className="company-name">
-                      {project.company}
-                    </p>
+          
+          {/* Projects Grid - centered, constrained tiles */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 max-w-6xl mx-auto justify-items-center">
+            {projects.map((project, index) => (
+              <Link 
+                key={project.id}
+                href={`/work/${project.slug}`}
+                className="group block w-full"
+              >
+                <div className="w-[320px] md:w-[340px] lg:w-[360px] mx-auto">
+                  <div
+                    ref={setElementRef(index)}
+                    className={`project-card relative animate-on-scroll ${
+                      isVisible(index) ? 'animate-in' : ''
+                    }`}
+                    style={{ 
+                      background: project.gradient,
+                      transitionDelay: `${index * 100}ms`,
+                      aspectRatio: '3/4'
+                    }}
+                  >
+                    {/* Year in corner */}
+                    <div className="absolute top-6 right-6">
+                      <span className="text-sm font-medium text-primary/60 tracking-wider">
+                        {project.year}
+                      </span>
+                    </div>
+
+                    {/* Project Info at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="project-title text-primary mb-2 group-hover:text-accent transition-colors duration-300">
+                        {project.title}
+                      </h3>
+                      
+                      <p className="company-name">
+                        {project.company}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

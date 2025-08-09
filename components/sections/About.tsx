@@ -17,14 +17,14 @@ export default function About() {
     <section id="about" className="section-centered bg-background">
       <div className="container mx-auto container-padding w-full max-w-3xl">
         <div className="text-center">
-          {/* Page Title */}
-          <div 
-            ref={headerRef}
-            className={`mb-16 animate-on-scroll ${
-              isMounted && headerVisible ? 'animate-in' : ''
-            }`}
-          >
-            <h1 className="font-serif selected-work-title text-primary mb-8 font-normal tracking-tight lowercase">
+          {/* Section Header */}
+          <div className="mb-20" style={{ paddingTop: '40px' }}>
+            <h1 
+              ref={headerRef}
+              className={`font-serif selected-work-title text-primary mb-6 font-normal tracking-tight lowercase animate-on-scroll ${
+                isMounted && headerVisible ? 'animate-in' : ''
+              }`}
+            >
               about
             </h1>
           </div>

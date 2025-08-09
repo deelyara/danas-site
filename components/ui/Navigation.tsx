@@ -72,51 +72,66 @@ export default function Navigation() {
             <li>
               <Link 
                 href="/" 
-                className={`text-[13px] font-light transition-colors duration-300 uppercase tracking-[0.08em] ${
+                className={`relative text-[13px] font-light transition-all duration-300 uppercase tracking-[0.08em] group ${
                   isActive('/') ? 'text-primary' : 'text-secondary hover:text-primary'
                 }`}
               >
                 Home
+                <span className={`absolute bottom-[-6px] left-0 h-[3px] transition-all duration-300 ${
+                  isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} style={{ backgroundColor: '#FFD700' }}></span>
               </Link>
             </li>
             <li>
               <Link 
                 href="/about" 
-                className={`text-[13px] font-light transition-colors duration-300 uppercase tracking-[0.08em] ${
+                className={`relative text-[13px] font-light transition-all duration-300 uppercase tracking-[0.08em] group ${
                   isActive('/about') ? 'text-primary' : 'text-secondary hover:text-primary'
                 }`}
               >
                 About
+                <span className={`absolute bottom-[-6px] left-0 h-[3px] transition-all duration-300 ${
+                  isActive('/about') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} style={{ backgroundColor: '#FFD700' }}></span>
               </Link>
             </li>
             <li>
               <Link 
                 href="/work" 
-                className={`text-[13px] font-light transition-colors duration-300 uppercase tracking-[0.08em] ${
+                className={`relative text-[13px] font-light transition-all duration-300 uppercase tracking-[0.08em] group ${
                   isActive('/work') ? 'text-primary' : 'text-secondary hover:text-primary'
                 }`}
               >
                 Work
+                <span className={`absolute bottom-[-6px] left-0 h-[3px] transition-all duration-300 ${
+                  isActive('/work') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} style={{ backgroundColor: '#FFD700' }}></span>
               </Link>
             </li>
             <li>
               <Link 
                 href="/expertise" 
-                className={`text-[13px] font-light transition-colors duration-300 uppercase tracking-[0.08em] ${
+                className={`relative text-[13px] font-light transition-all duration-300 uppercase tracking-[0.08em] group ${
                   isActive('/expertise') ? 'text-primary' : 'text-secondary hover:text-primary'
                 }`}
               >
                 Expertise
+                <span className={`absolute bottom-[-6px] left-0 h-[3px] transition-all duration-300 ${
+                  isActive('/expertise') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} style={{ backgroundColor: '#FFD700' }}></span>
               </Link>
             </li>
             <li>
               <Link 
                 href="/contact" 
-                className={`text-[13px] font-light transition-colors duration-300 uppercase tracking-[0.08em] ${
+                className={`relative text-[13px] font-light transition-all duration-300 uppercase tracking-[0.08em] group ${
                   isActive('/contact') ? 'text-primary' : 'text-secondary hover:text-primary'
                 }`}
               >
                 Contact
+                <span className={`absolute bottom-[-6px] left-0 h-[3px] transition-all duration-300 ${
+                  isActive('/contact') ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} style={{ backgroundColor: '#FFD700' }}></span>
               </Link>
             </li>
           </ul>
@@ -129,19 +144,24 @@ export default function Navigation() {
               <li>
                 <Link 
                   href="/" 
-                  className={`transition-colors duration-300 uppercase tracking-wider font-light ${
+                  className={`relative transition-all duration-300 uppercase tracking-wider font-light group ${
                     isActive('/') ? 'text-primary' : 'text-secondary hover:text-primary'
                   }`}
                 >
                   Home
+                  <span className={`absolute bottom-[-2px] left-0 h-[1px] bg-accent transition-all duration-300 ${
+                    isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}></span>
                 </Link>
               </li>
               <li>
                 <Link 
                   href="/about" 
-                  className={`transition-colors duration-300 uppercase tracking-wider font-light ${
-                    isActive('/about') ? 'text-primary' : 'text-secondary hover:text-primary'
-                  }`}
+                  className={`relative transition-all duration-300 uppercase tracking-wider font-light ${
+                    isActive('/about') 
+                      ? 'text-primary after:w-full after:bg-accent' 
+                      : 'text-secondary hover:text-primary hover:after:w-full hover:after:bg-accent'
+                  } after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300`}
                 >
                   About
                 </Link>
@@ -149,9 +169,11 @@ export default function Navigation() {
               <li>
                 <Link 
                   href="/work" 
-                  className={`transition-colors duration-300 uppercase tracking-wider font-light ${
-                    isActive('/work') ? 'text-primary' : 'text-secondary hover:text-primary'
-                  }`}
+                  className={`relative transition-all duration-300 uppercase tracking-wider font-light ${
+                    isActive('/work') 
+                      ? 'text-primary after:w-full after:bg-accent' 
+                      : 'text-secondary hover:text-primary hover:after:w-full hover:after:bg-accent'
+                  } after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300`}
                 >
                   Work
                 </Link>
@@ -159,9 +181,11 @@ export default function Navigation() {
               <li>
                 <Link 
                   href="/expertise" 
-                  className={`transition-colors duration-300 uppercase tracking-wider font-light ${
-                    isActive('/expertise') ? 'text-primary' : 'text-secondary hover:text-primary'
-                  }`}
+                  className={`relative transition-all duration-300 uppercase tracking-wider font-light ${
+                    isActive('/expertise') 
+                      ? 'text-primary after:w-full after:bg-accent' 
+                      : 'text-secondary hover:text-primary hover:after:w-full hover:after:bg-accent'
+                  } after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300`}
                 >
                   Expertise
                 </Link>
@@ -169,9 +193,11 @@ export default function Navigation() {
               <li>
                 <Link 
                   href="/contact" 
-                  className={`transition-colors duration-300 uppercase tracking-wider font-light ${
-                    isActive('/contact') ? 'text-primary' : 'text-secondary hover:text-primary'
-                  }`}
+                  className={`relative transition-all duration-300 uppercase tracking-wider font-light ${
+                    isActive('/contact') 
+                      ? 'text-primary after:w-full after:bg-accent' 
+                      : 'text-secondary hover:text-primary hover:after:w-full hover:after:bg-accent'
+                  } after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300`}
                 >
                   Contact
                 </Link>
