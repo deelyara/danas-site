@@ -77,6 +77,30 @@ export default function RootLayout({
           <main className="relative z-10">
             {children}
           </main>
+          <footer className="relative z-10 border-t border-primary/5 bg-background">
+            <div className="container mx-auto px-6 py-12">
+              <div className="text-center">
+                <p className="text-[13px] font-light text-secondary tracking-wider">
+                  © 2025 Dana Duisekenova • 
+                  <a 
+                    href="mailto:dana.odair1@gmail.com" 
+                    className="hover:text-primary transition-colors duration-300 ml-1"
+                  >
+                    dana.odair1@gmail.com
+                  </a>
+                  <span className="mx-2">•</span>
+                  <a 
+                    href="https://www.linkedin.com/in/dana-duisekenova-22b327194/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors duration-300"
+                  >
+                    LinkedIn
+                  </a>
+                </p>
+              </div>
+            </div>
+          </footer>
         </ErrorBoundary>
       </body>
     </html>
