@@ -54,7 +54,7 @@ export default function CustomCursor() {
     <>
       {/* Main cursor circle */}
       <div
-        className={`fixed pointer-events-none z-[100] transition-all duration-200 ease-out ${
+        className={`fixed pointer-events-none z-[9999] transition-all duration-200 ease-out ${
           isVisible ? 'opacity-100' : 'opacity-0'
         }`}
         style={{
@@ -72,7 +72,7 @@ export default function CustomCursor() {
       
       {/* Center dot */}
       <div
-        className={`fixed pointer-events-none z-[100] w-1 h-1 bg-primary rounded-full transition-opacity duration-200 ${
+        className={`fixed pointer-events-none z-[9999] w-1 h-1 bg-primary rounded-full transition-opacity duration-200 ${
           isVisible ? 'opacity-60' : 'opacity-0'
         }`}
         style={{

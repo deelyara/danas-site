@@ -2,52 +2,28 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useNavigation } from '../../hooks/useNavigation';
+import { useState, useEffect } from 'react';
 
 export default function Navigation() {
-  const [isVisible, setIsVisible] = useState(true);
-  const [prevScrollY, setPrevScrollY] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const { isVisible, isScrolled } = useNavigation();
   const pathname = usePathname();
+  const [hasInteracted, setHasInteracted] = useState(false);
 
+  // Check if user has previously interacted with navigation
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Track if we're scrolled for styling purposes
-      setIsScrolled(currentScrollY > 50);
-      
-      // Always show when near top
-      if (currentScrollY < 50) {
-        setIsVisible(true);
-      } 
-      // Hide when scrolling down (reduced threshold for faster response)
-      else if (currentScrollY > prevScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } 
-      // Show when scrolling up (with small buffer to prevent flickering)
-      else if (currentScrollY < prevScrollY - 5) {
-        setIsVisible(true);
-      }
-      
-      setPrevScrollY(currentScrollY);
-    };
+    const interacted = localStorage.getItem('nav-interacted');
+    if (interacted) {
+      setHasInteracted(true);
+    }
+  }, []);
 
-    // Use requestAnimationFrame for smoother performance
-    let ticking = false;
-    const optimizedScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          handleScroll();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    window.addEventListener('scroll', optimizedScroll, { passive: true });
-    return () => window.removeEventListener('scroll', optimizedScroll);
-  }, [prevScrollY]);
+  const handleNavClick = () => {
+    if (!hasInteracted) {
+      setHasInteracted(true);
+      localStorage.setItem('nav-interacted', 'true');
+    }
+  };
 
   const isActive = (path: string) => {
     if (path === '/' && pathname === '/') return true;
@@ -57,81 +33,81 @@ export default function Navigation() {
 
   return (
     <nav 
-      className={`fixed top-12 left-0 right-0 z-[1000] transition-all duration-500 ease-out ${
-        isVisible ? 'transform translate-y-0' : 'transform -translate-y-[calc(100%+3rem)]'
-      } ${
-        isScrolled 
-          ? 'bg-background/95 backdrop-blur-xl' 
-          : 'bg-transparent'
-      }`}
+      className="sticky top-0 left-0 right-0 z-[1000] bg-background/100 border-b border-primary/5"
+      style={{ backgroundColor: '#FAF8F4' }}
     >
       <div className="container mx-auto px-6 py-6 md:py-8">
-        {/* Desktop Navigation - Centered */}
-        <div className="hidden md:flex justify-center items-center">
+        {/* Desktop Navigation - Right Aligned */}
+        <div className="hidden md:flex justify-end items-center">
           <ul className="flex items-center gap-12 lg:gap-14">
             <li>
               <Link 
                 href="/" 
-                className={`relative text-[13px] font-light transition-all duration-300 uppercase tracking-[0.08em] group ${
-                  isActive('/') ? 'text-primary' : 'text-secondary hover:text-primary'
+                onClick={handleNavClick}
+                className={`text-[13px] transition-all duration-300 uppercase tracking-[0.08em] ${
+                  isActive('/') ? 'font-semibold' : 'font-light text-secondary hover:text-accent'
                 }`}
+                style={{ 
+                  color: isActive('/') ? '#D4AF37' : undefined 
+                }}
               >
                 Home
-                <span className={`absolute bottom-[-6px] left-0 h-[3px] transition-all duration-300 ${
-                  isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'
-                }`} style={{ backgroundColor: '#FFD700' }}></span>
               </Link>
             </li>
             <li>
               <Link 
                 href="/about" 
-                className={`relative text-[13px] font-light transition-all duration-300 uppercase tracking-[0.08em] group ${
-                  isActive('/about') ? 'text-primary' : 'text-secondary hover:text-primary'
+                onClick={handleNavClick}
+                className={`text-[13px] transition-all duration-300 uppercase tracking-[0.08em] ${
+                  isActive('/about') ? 'font-semibold' : 'font-light text-secondary hover:text-accent'
                 }`}
+                style={{ 
+                  color: isActive('/about') ? '#D4AF37' : undefined 
+                }}
               >
                 About
-                <span className={`absolute bottom-[-6px] left-0 h-[3px] transition-all duration-300 ${
-                  isActive('/about') ? 'w-full' : 'w-0 group-hover:w-full'
-                }`} style={{ backgroundColor: '#FFD700' }}></span>
               </Link>
             </li>
             <li>
               <Link 
                 href="/work" 
-                className={`relative text-[13px] font-light transition-all duration-300 uppercase tracking-[0.08em] group ${
-                  isActive('/work') ? 'text-primary' : 'text-secondary hover:text-primary'
+                onClick={handleNavClick}
+                className={`text-[13px] transition-all duration-300 uppercase tracking-[0.08em] ${
+                  isActive('/work') ? 'font-semibold' : 'font-light text-secondary hover:text-accent'
                 }`}
+                style={{ 
+                  color: isActive('/work') ? '#D4AF37' : undefined 
+                }}
               >
                 Work
-                <span className={`absolute bottom-[-6px] left-0 h-[3px] transition-all duration-300 ${
-                  isActive('/work') ? 'w-full' : 'w-0 group-hover:w-full'
-                }`} style={{ backgroundColor: '#FFD700' }}></span>
               </Link>
             </li>
             <li>
               <Link 
                 href="/expertise" 
-                className={`relative text-[13px] font-light transition-all duration-300 uppercase tracking-[0.08em] group ${
-                  isActive('/expertise') ? 'text-primary' : 'text-secondary hover:text-primary'
+                onClick={handleNavClick}
+                className={`text-[13px] transition-all duration-300 uppercase tracking-[0.08em] ${
+                  isActive('/expertise') ? 'font-semibold' : 'font-light text-secondary hover:text-accent'
                 }`}
+                style={{ 
+                  color: isActive('/expertise') ? '#D4AF37' : undefined 
+                }}
               >
                 Expertise
-                <span className={`absolute bottom-[-6px] left-0 h-[3px] transition-all duration-300 ${
-                  isActive('/expertise') ? 'w-full' : 'w-0 group-hover:w-full'
-                }`} style={{ backgroundColor: '#FFD700' }}></span>
               </Link>
             </li>
             <li>
               <Link 
                 href="/contact" 
-                className={`relative text-[13px] font-light transition-all duration-300 uppercase tracking-[0.08em] group ${
-                  isActive('/contact') ? 'text-primary' : 'text-secondary hover:text-primary'
+                onClick={handleNavClick}
+                className={`text-[13px] transition-all duration-300 uppercase tracking-[0.08em] ${
+                  isActive('/contact') ? 'font-semibold' : 'font-light text-secondary hover:text-accent'
                 }`}
+                style={{ 
+                  color: isActive('/contact') ? '#D4AF37' : undefined 
+                }}
               >
                 Contact
-                <span className={`absolute bottom-[-6px] left-0 h-[3px] transition-all duration-300 ${
-                  isActive('/contact') ? 'w-full' : 'w-0 group-hover:w-full'
-                }`} style={{ backgroundColor: '#FFD700' }}></span>
               </Link>
             </li>
           </ul>
@@ -144,24 +120,21 @@ export default function Navigation() {
               <li>
                 <Link 
                   href="/" 
-                  className={`relative transition-all duration-300 uppercase tracking-wider font-light group ${
-                    isActive('/') ? 'text-primary' : 'text-secondary hover:text-primary'
+                  onClick={handleNavClick}
+                  className={`transition-all duration-300 uppercase tracking-wider font-light ${
+                    isActive('/') ? 'text-accent' : 'text-secondary hover:text-accent'
                   }`}
                 >
                   Home
-                  <span className={`absolute bottom-[-2px] left-0 h-[1px] bg-accent transition-all duration-300 ${
-                    isActive('/') ? 'w-full' : 'w-0 group-hover:w-full'
-                  }`}></span>
                 </Link>
               </li>
               <li>
                 <Link 
                   href="/about" 
-                  className={`relative transition-all duration-300 uppercase tracking-wider font-light ${
-                    isActive('/about') 
-                      ? 'text-primary after:w-full after:bg-accent' 
-                      : 'text-secondary hover:text-primary hover:after:w-full hover:after:bg-accent'
-                  } after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300`}
+                  onClick={handleNavClick}
+                  className={`transition-all duration-300 uppercase tracking-wider font-light ${
+                    isActive('/about') ? 'text-accent' : 'text-secondary hover:text-accent'
+                  }`}
                 >
                   About
                 </Link>
@@ -169,11 +142,10 @@ export default function Navigation() {
               <li>
                 <Link 
                   href="/work" 
-                  className={`relative transition-all duration-300 uppercase tracking-wider font-light ${
-                    isActive('/work') 
-                      ? 'text-primary after:w-full after:bg-accent' 
-                      : 'text-secondary hover:text-primary hover:after:w-full hover:after:bg-accent'
-                  } after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300`}
+                  onClick={handleNavClick}
+                  className={`transition-all duration-300 uppercase tracking-wider font-light ${
+                    isActive('/work') ? 'text-accent' : 'text-secondary hover:text-accent'
+                  }`}
                 >
                   Work
                 </Link>
@@ -181,11 +153,10 @@ export default function Navigation() {
               <li>
                 <Link 
                   href="/expertise" 
-                  className={`relative transition-all duration-300 uppercase tracking-wider font-light ${
-                    isActive('/expertise') 
-                      ? 'text-primary after:w-full after:bg-accent' 
-                      : 'text-secondary hover:text-primary hover:after:w-full hover:after:bg-accent'
-                  } after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300`}
+                  onClick={handleNavClick}
+                  className={`transition-all duration-300 uppercase tracking-wider font-light ${
+                    isActive('/expertise') ? 'text-accent' : 'text-secondary hover:text-accent'
+                  }`}
                 >
                   Expertise
                 </Link>
@@ -193,11 +164,10 @@ export default function Navigation() {
               <li>
                 <Link 
                   href="/contact" 
-                  className={`relative transition-all duration-300 uppercase tracking-wider font-light ${
-                    isActive('/contact') 
-                      ? 'text-primary after:w-full after:bg-accent' 
-                      : 'text-secondary hover:text-primary hover:after:w-full hover:after:bg-accent'
-                  } after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:h-[1px] after:w-0 after:transition-all after:duration-300`}
+                  onClick={handleNavClick}
+                  className={`transition-all duration-300 uppercase tracking-wider font-light ${
+                    isActive('/contact') ? 'text-accent' : 'text-secondary hover:text-accent'
+                  }`}
                 >
                   Contact
                 </Link>

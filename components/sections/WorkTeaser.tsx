@@ -93,15 +93,13 @@ export default function WorkTeaser() {
                     </div>
                   </Link>
 
-                  {/* View All Projects CTA - Centered Below */}
-                  <div className="mt-20 w-full flex justify-center pt-4 transition-all duration-300 group-hover:mt-28">
+                  {/* View All Projects CTA - Standard Button Style */}
+                  <div className="mt-64 w-full flex justify-center">
                     <Link 
                       href="/work"
-                      className="relative inline-flex items-center gap-2 text-lg text-primary transition-all duration-300 group"
+                      className="cta-button"
                     >
-                      <span>View All Projects</span>
-                      <span className="transform transition-transform duration-300 group-hover:translate-x-1">→</span>
-                      <span className="absolute bottom-[-6px] left-0 h-[3px] w-0 group-hover:w-full transition-all duration-300" style={{ backgroundColor: '#FFD700' }}></span>
+                      View All Projects
                     </Link>
                   </div>
                 </div>

@@ -15,11 +15,11 @@ export default function ContactTeaser() {
         >
           <div className="max-w-[600px] mx-auto text-center">
             
-            <h2 className="font-serif text-5xl md:text-6xl text-primary mb-12 font-normal lowercase tracking-tight">
-              ready to start?
+            <h2 className="font-serif text-8xl md:text-9xl text-primary mb-12 font-normal lowercase tracking-tight">
+              ready to <span style={{color: '#ECD06F', fontStyle: 'italic'}}>start</span>?
             </h2>
             
-            <p className="text-xl text-secondary font-light leading-relaxed mb-16 max-w-lg mx-auto">
+            <p className="text-2xl md:text-3xl text-secondary font-light leading-relaxed mb-16 max-w-3xl mx-auto">
               Let's discuss your next marketing initiative and how we can drive measurable growth together.
             </p>
 

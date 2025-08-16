@@ -78,8 +78,8 @@ export default function RootLayout({
             {children}
           </main>
           <footer className="relative z-10 border-t border-primary/5 bg-background">
-            <div className="container mx-auto px-6 py-12">
-              <div className="text-center">
+            <div className="container mx-auto px-6 py-12 flex items-center justify-center">
+              <div className="max-w-[600px] mx-auto text-center">
                 <div className="text-[13px] font-light text-secondary tracking-wider flex items-center justify-center gap-8">
                   <span>© 2025 Dana Duisekenova</span>
                   <span>•</span>
