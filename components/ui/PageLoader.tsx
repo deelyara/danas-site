@@ -27,14 +27,6 @@ export default function PageLoader() {
     >
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative">
-          {/* Loading text or logo */}
-          <div
-            className={`font-serif text-2xl text-primary transition-all duration-700 ${
-              isMounted && !isLoading ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'
-            }`}
-          >
-            Dana Duisekenova
-          </div>
           {/* Subtle loading line */}
           <div className="absolute -bottom-8 left-0 right-0 h-px bg-accent/20">
             <div

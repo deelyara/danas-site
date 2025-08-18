@@ -17,49 +17,42 @@ export default function About() {
     <section id="about" className="section-centered bg-background">
       <div className="container mx-auto container-padding w-full max-w-3xl">
         <div className="text-center">
-          {/* Section Header */}
-          <div className="mb-20" style={{ paddingTop: '40px' }}>
-            <h1
-              ref={headerRef}
-              className={`font-serif selected-work-title text-primary mb-6 font-normal tracking-tight lowercase animate-on-scroll ${isMounted && headerVisible ? 'animate-in' : ''
-                }`}
-            >
+          {/* Page Title */}
+          <div 
+            ref={headerRef}
+            className={`mb-16 animate-on-scroll ${
+              isMounted && headerVisible ? 'animate-in' : ''
+            }`}
+          >
+            <h1 className="font-serif selected-work-title text-primary mb-8 font-normal tracking-tight lowercase">
               about
             </h1>
           </div>
 
           {/* Main Content - Single Column */}
           <div className="max-w-2xl mx-auto text-left">
-            <div
+            <div 
               ref={contentRef}
-              className={`animate-on-scroll ${isMounted && contentVisible ? 'animate-in' : ''
-                }`}
+              className={`animate-on-scroll ${
+                isMounted && contentVisible ? 'animate-in' : ''
+              }`}
               style={{ transitionDelay: '200ms' }}
             >
-              {/* Introduction */}
+              <p className="body-text text-xl md:text-2xl mb-8 leading-relaxed">
+                Hi, I'm <span className="font-semibold">Dana Duisekenova</span> — a marketing strategist with <span className="font-semibold">8+ years</span> of leading high-impact campaigns and managing complex marketing operations.
+              </p>
+              
               <p className="body-text">
-                Hi, I'm <strong className="text-primary">Dana Duisekenova</strong> — a marketing strategist with <em className="text-accent font-medium">8+ years</em> of leading high-impact campaigns and managing complex marketing operations. I specialize in building <strong className="text-primary">data-driven, creative strategies</strong> that deliver measurable growth.
+                I specialize in building <span className="font-semibold">data-driven, creative strategies</span> that deliver measurable growth. Throughout my career, I've taken ownership of multi-channel campaigns from concept to launch — overseeing <span className="font-semibold">PPC, ABM, influencer partnerships, marketing automation</span>, and large-scale content production for brands across industries.
               </p>
 
-              {/* Experience */}
-              <div className="mb-8">
-                <h3 className="text-xl text-primary font-medium tracking-wide mb-4" style={{ fontVariant: 'small-caps' }}>Experience</h3>
-                <p className="body-text">
-                  Throughout my career, I've taken ownership of <strong className="text-primary">multi-channel campaigns from concept to launch</strong> — overseeing PPC, ABM, influencer partnerships, marketing automation, and large-scale content production for brands across industries.
-                </p>
-              </div>
-
-              {/* Approach */}
-              <div className="mb-16">
-                <h3 className="text-xl text-primary font-medium tracking-wide mb-4" style={{ fontVariant: 'small-caps' }}>Approach</h3>
-                <p className="body-text">
-                  I thrive in roles where I can <strong className="text-primary">set the strategic direction, coordinate cross-functional teams,</strong> and ensure every initiative aligns with business goals. My approach combines <em className="text-accent font-medium">analytical precision with creative execution</em>, making sure every project I lead not only meets but <strong className="text-primary">exceeds performance targets</strong>.
-                </p>
-              </div>
+              <p className="body-text mb-16">
+                I thrive in roles where I can <span className="font-semibold">set the strategic direction</span>, coordinate cross-functional teams, and ensure every initiative aligns with business goals. My approach combines <span className="font-semibold">analytical precision with creative execution</span>, making sure every project I lead not only meets but exceeds performance targets.
+              </p>
 
               {/* CTA */}
               <div className="text-center">
-                <Link
+                <Link 
                   href="/contact"
                   className="cta-button"
                 >

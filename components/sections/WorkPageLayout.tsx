@@ -31,42 +31,44 @@ export default function WorkPageLayout({
   const sortedProjects = [...projects].sort((a, b) => a.order - b.order);
 
   return (
-    <section className="min-h-screen bg-background py-20">
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 w-full max-w-5xl">
-        {/* Page Header with proper spacing */}
-        <header className="text-center mb-20" style={{ paddingTop: '80px' }}>
-          <h1 
-            ref={headerRef}
-            className={`font-serif text-4xl md:text-5xl text-primary mb-8 font-normal tracking-tight lowercase animate-on-scroll ${
-              headerVisible ? 'animate-in' : ''
-            }`}
-          >
-            {pageTitle}
-          </h1>
-          
-          {subtitle && (
-            <p className="text-base text-secondary max-w-2xl mx-auto leading-relaxed">
-              {subtitle}
-            </p>
-          )}
-        </header>
+    <section className="section-centered bg-background">
+      <div className="container mx-auto container-padding w-full max-w-5xl">
+        <div className="text-center">
+          {/* Page Header with proper spacing */}
+          <div className="mb-20" style={{ paddingTop: '40px' }}>
+            <h1 
+              ref={headerRef}
+              className={`font-serif selected-work-title text-primary mb-6 font-normal tracking-tight lowercase animate-on-scroll ${
+                headerVisible ? 'animate-in' : ''
+              }`}
+            >
+              {pageTitle}
+            </h1>
+            
+            {subtitle && (
+              <p className="text-base text-secondary max-w-2xl mx-auto leading-relaxed">
+                {subtitle}
+              </p>
+            )}
+          </div>
 
-        {/* Projects List */}
-        <div className="max-w-4xl mx-auto">
-          {sortedProjects.map((project, index) => (
-            <ProjectEntry
-              key={project.id}
-              project={{
-                ...project,
-                index
-              }}
-              animationDelay={index * 150}
-            />
-          ))}
+          {/* All Projects List */}
+          <div className="max-w-6xl mx-auto space-y-24">
+            {sortedProjects.map((project, index) => (
+              <ProjectEntry
+                key={project.id}
+                project={{
+                  ...project,
+                  index
+                }}
+                animationDelay={index * 150}
+              />
+            ))}
+          </div>
+
+          {/* Optional footer divider */}
+          <EditorialDivider variant="space" spacing="large" />
         </div>
-
-        {/* Optional footer divider */}
-        <EditorialDivider variant="space" spacing="large" />
       </div>
     </section>
   );

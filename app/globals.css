@@ -210,9 +210,149 @@ nav {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Remove default table styles - use flexbox/grid instead */
+/* Beautiful Table Styles for Project Content */
 table {
-  display: block;
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 40px 0 !important;
+  background: #FDFCF9 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  display: table !important;
+  border: 1px solid rgba(26, 26, 26, 0.06) !important;
+}
+
+table thead {
+  display: table-header-group !important;
+}
+
+table tbody {
+  display: table-row-group !important;
+}
+
+table tr {
+  display: table-row !important;
+}
+
+table th,
+table td {
+  display: table-cell !important;
+  padding: 20px 24px !important;
+  text-align: left !important;
+  vertical-align: middle !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(26, 26, 26, 0.08) !important;
+}
+
+table th {
+  background: #ECD06F !important;
+  color: #1A1A1A !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-family: var(--font-sans) !important;
+}
+
+table td {
+  font-size: 16px !important;
+  color: #1A1A1A !important;
+  font-family: var(--font-sans) !important;
+  line-height: 1.5 !important;
+}
+
+table tbody tr:nth-child(even) {
+  background: rgba(26, 26, 26, 0.02) !important;
+}
+
+table tbody tr:hover {
+  background: rgba(236, 208, 111, 0.1) !important;
+  transform: translateY(-1px) !important;
+  transition: all 0.2s ease !important;
+}
+
+table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px !important;
+  }
+  
+  table th,
+  table td {
+    padding: 12px 16px !important;
+  }
+}
+
+/* Content blocks for consistent spacing and width */
+.editorial-content .content-block {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 64px 0 !important;
+}
+
+.editorial-content .content-block:first-child {
+  margin-top: 32px !important;
+}
+
+/* Images within content blocks */
+.editorial-content .content-block img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Videos within content blocks */
+.editorial-content .content-block video {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  background: transparent !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* Remove any default video backgrounds */
+.editorial-content .content-block video::-webkit-media-controls-overlay-play-button {
+  background: transparent !important;
+}
+
+.editorial-content .content-block video::-webkit-media-controls-start-playback-button {
+  background: transparent !important;
+}
+
+/* Always show video controls */
+.editorial-content .content-block video::-webkit-media-controls {
+  display: flex !important;
+}
+
+.editorial-content .content-block video::-webkit-media-controls-panel {
+  display: flex !important;
+  opacity: 1 !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* For grid videos, maintain aspect ratio */
+.editorial-content .content-block .grid video {
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+/* Tables within content blocks */
+.editorial-content .content-block table {
+  width: 100% !important;
+}
+
+/* Ensure both images and tables have the same container width */
+.editorial-content img,
+.editorial-content table {
+  max-width: 100% !important;
 }
 
 /* Utility classes for consistent spacing */

@@ -1,39 +1,37 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useScrollAnimation, useMultipleScrollAnimation } from '../../hooks/useScrollAnimation';
+import { editorialProjects } from '../../lib/projectData';
 
 export default function WorkTeaser() {
   const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation();
   const { setElementRef, isVisible } = useMultipleScrollAnimation(3); // 3 featured projects
 
-  // Featured projects with updated colors and third project
-  const featuredProjects = [
-    {
-      id: "revenue-growth-campaign",
-      slug: "revenue-growth-campaign",
-      title: "Revenue Growth Campaign",
-      company: "TECHCORP",
-      year: "2023",
-      color: "#E8DCC6" // warm beige
-    },
-    {
-      id: "roi-optimization-project",
-      slug: "roi-optimization-project", 
-      title: "ROI Optimization Project",
-      company: "STARTUPX",
-      year: "2023",
-      color: "#B8C5D6" // muted blue
-    },
-    {
-      id: "brand-strategy-initiative",
-      slug: "pipeline-generation-system", // Using existing slug for now
-      title: "Brand Strategy Initiative",
-      company: "SCALEUP INC",
-      year: "2022",
-      color: "#D4C5B0" // soft tan
-    }
-  ];
+  // Get the real featured projects and add colors and images
+  const featuredProjects = editorialProjects
+    .filter(project => project.featured)
+    .slice(0, 3)
+    .map((project, index) => {
+      const colors = ["#E8DCC6", "#B8C5D6", "#D4C5B0"]; // warm beige, muted blue, soft tan
+      const images = [
+        "/Cheerful%20Buddha%20case%20study/PKR06926.jpg", // cheerful buddha - first featured project
+        "/work%20teaser/wellness%20outreach.png", // wellness automation - second featured project
+        "/work%20teaser/social%20campaign.png" // multi-funnel - third featured project
+      ];
+      const objectPositions = [
+        "object-cover", // cheerful buddha - standard cover
+        "object-cover object-bottom", // wellness automation - cover with bottom positioning  
+        "object-cover" // multi-funnel - standard cover
+      ];
+      return {
+        ...project,
+        color: colors[index] || "#E8DCC6",
+        image: images[index],
+        objectPosition: objectPositions[index] || "object-cover"
+      };
+    });
 
   return (
     <section id="work-teaser" className="section-centered bg-background">
@@ -49,52 +47,56 @@ export default function WorkTeaser() {
         </div>
 
         {/* Projects Container */}
-        <div className="projects-container w-full max-w-[1000px] mx-auto">
+        <div className="projects-container w-full max-w-[1000px] mx-auto px-4 md:px-0">
           {featuredProjects.map((project, index) => (
             <div
               key={project.id}
               ref={setElementRef(index)}
-              className={`project-item group block w-full py-16 animate-on-scroll ${
+              className={`project-item group block w-full py-8 md:py-16 animate-on-scroll ${
                 isVisible(index) ? 'animate-in' : ''
               }`}
               style={{ 
                 transitionDelay: `${index * 100}ms`,
-                marginBottom: index !== featuredProjects.length - 1 ? '64px' : '0'
+                marginBottom: index !== featuredProjects.length - 1 ? '32px md:64px' : '0'
               }}
             >
               {/* Last project with button */}
               {index === featuredProjects.length - 1 ? (
-                <div className="flex flex-col items-start w-full">
+                <div className="w-full">
                   <Link 
                     href={`/work/${project.slug}`}
-                    className="group flex items-center gap-20"
+                    className="group flex flex-col md:flex-row md:items-center gap-6 md:gap-20"
                   >
-                    {/* Project Card - Left Side */}
-                    <div 
-                      className="project-card w-[280px] h-[180px] flex-shrink-0 rounded-xl transition-all duration-300 group-hover:shadow-lg relative"
-                      style={{ backgroundColor: project.color }}
-                    >
-                      {/* Year in corner */}
-                      <div className="absolute top-5 right-5">
-                        <span className="text-sm font-medium text-primary/60 tracking-wider">
-                          {project.year}
-                        </span>
-                      </div>
-                    </div>
+                  {/* Project Card - Top on mobile, Left on desktop */}
+                  <div 
+                    className="project-card w-full md:w-[280px] h-[200px] md:h-[180px] flex-shrink-0 rounded-xl transition-all duration-300 group-hover:shadow-lg relative overflow-hidden mx-auto md:mx-0"
+                    style={{ backgroundColor: project.color, maxWidth: '320px' }}
+                  >
+                    {/* Project Image */}
+                    {project.image && (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className={project.objectPosition}
+                      />
+                    )}
 
-                    {/* Project Info - Right Side */}
-                    <div className="project-info">
-                      <h3 className="text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68]">
-                        {project.company}
-                      </p>
-                    </div>
-                  </Link>
+                  </div>
+
+                  {/* Project Info - Bottom on mobile, Right on desktop */}
+                  <div className="project-info text-center md:text-left">
+                    <h3 className="text-[24px] md:text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68]">
+                      {project.company}
+                    </p>
+                  </div>
+                </Link>
 
                   {/* View All Projects CTA - Standard Button Style */}
-                  <div className="mt-64 w-full flex justify-center">
+                  <div className="mt-16 md:mt-64 w-full flex justify-center">
                     <Link 
                       href="/work"
                       className="cta-button"
@@ -106,24 +108,28 @@ export default function WorkTeaser() {
               ) : (
                 <Link 
                   href={`/work/${project.slug}`}
-                  className="group flex items-center gap-20 w-auto mx-auto"
+                  className="group flex flex-col md:flex-row md:items-center gap-6 md:gap-20 w-auto mx-auto"
                 >
-                  {/* Project Card - Left Side */}
+                  {/* Project Card - Top on mobile, Left on desktop */}
                   <div 
-                    className="project-card w-[280px] h-[180px] flex-shrink-0 rounded-xl transition-all duration-300 group-hover:shadow-lg relative"
-                    style={{ backgroundColor: project.color }}
+                    className="project-card w-full md:w-[280px] h-[200px] md:h-[180px] flex-shrink-0 rounded-xl transition-all duration-300 group-hover:shadow-lg relative overflow-hidden mx-auto md:mx-0"
+                    style={{ backgroundColor: project.color, maxWidth: '320px' }}
                   >
-                    {/* Year in corner */}
-                    <div className="absolute top-5 right-5">
-                      <span className="text-sm font-medium text-primary/60 tracking-wider">
-                        {project.year}
-                      </span>
-                    </div>
+                    {/* Project Image */}
+                    {project.image && (
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className={project.objectPosition}
+                      />
+                    )}
+
                   </div>
 
-                  {/* Project Info - Right Side */}
-                  <div className="project-info flex-1">
-                    <h3 className="text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
+                  {/* Project Info - Bottom on mobile, Right on desktop */}
+                  <div className="project-info flex-1 text-center md:text-left">
+                    <h3 className="text-[24px] md:text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
                       {project.title}
                     </h3>
                     <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68]">

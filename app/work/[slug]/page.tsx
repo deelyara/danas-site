@@ -69,8 +69,77 @@ function markdownToHtml(markdown: string, projectTitle: string) {
     .replace(/\*\*([^*]+)\*\*/g, '<strong class="font-sans font-semibold text-primary">$1</strong>')
     .replace(/^\* (.*$)/gim, '<li class="font-sans text-base text-secondary mb-3 ml-6">$1</li>')
     .replace(/^- (.*$)/gim, '<li class="font-sans text-base text-secondary mb-3 ml-6">$1</li>')
-    .replace(/!\[([^\]]*)\]\(([^)]*)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="block cursor-zoom-in hover:opacity-90 transition-opacity duration-200"><img src="$2" alt="$1" class="w-full max-w-4xl mx-auto my-8 rounded-lg shadow-sm" /></a>')
+    // Process grid images/videos (special syntax: ![alt](src) ![alt](src) on same line)
+    .replace(/!\[([^\]]*)\]\(([^)]*)\)\s+!\[([^\]]*)\]\(([^)]*)\)/g, (match, alt1, src1, alt2, src2) => {
+      const createMediaElement = (alt, src) => {
+        if (src.match(/\.(mp4|webm|ogg|mov)$/i)) {
+          // Create a simple gradient poster as fallback
+          const posterDataUrl = 'data:image/svg+xml;base64,' + btoa(`
+            <svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#ECD06F;stop-opacity:0.8" />
+                  <stop offset="100%" style="stop-color:#1A1A1A;stop-opacity:0.9" />
+                </linearGradient>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#grad)"/>
+              <circle cx="400" cy="225" r="40" fill="white" opacity="0.9"/>
+              <polygon points="385,210 385,240 415,225" fill="#1A1A1A"/>
+            </svg>
+          `);
+          return `<video controls controlslist="nodownload" preload="metadata" poster="${posterDataUrl}" class="w-full rounded-lg shadow-sm"><source src="${src}" type="video/mp4"><p>Your browser doesn't support video. <a href="${src}">Download the video</a>.</p></video>`;
+        } else {
+          return `<a href="${src}" target="_blank" rel="noopener noreferrer" class="block cursor-zoom-in hover:opacity-90 transition-opacity duration-200"><img src="${src}" alt="${alt}" class="w-full rounded-lg shadow-sm" /></a>`;
+        }
+      };
+      
+      return `<div class="content-block my-16"><div class="grid grid-cols-1 md:grid-cols-2 gap-6">${createMediaElement(alt1, src1)}${createMediaElement(alt2, src2)}</div></div>`;
+    })
+    .replace(/!\[([^\]]*)\]\(([^)]*)\)/g, (match, alt, src) => {
+      // Check if it's a video file
+      if (src.match(/\.(mp4|webm|ogg|mov)$/i)) {
+        // Create a simple gradient poster as fallback
+        const posterDataUrl = 'data:image/svg+xml;base64,' + btoa(`
+          <svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#ECD06F;stop-opacity:0.8" />
+                <stop offset="100%" style="stop-color:#1A1A1A;stop-opacity:0.9" />
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grad)"/>
+            <circle cx="400" cy="225" r="40" fill="white" opacity="0.9"/>
+            <polygon points="385,210 385,240 415,225" fill="#1A1A1A"/>
+          </svg>
+        `);
+        return `<div class="content-block my-16"><video controls controlslist="nodownload" preload="metadata" class="w-full mx-auto rounded-lg shadow-sm"><source src="${src}" type="video/mp4"><p>Your browser doesn't support video. <a href="${src}">Download the video</a>.</p></video></div>`;
+      } else {
+        // Regular image
+        return `<div class="content-block my-16"><a href="${src}" target="_blank" rel="noopener noreferrer" class="block cursor-zoom-in hover:opacity-90 transition-opacity duration-200"><img src="${src}" alt="${alt}" class="w-full mx-auto rounded-lg shadow-sm" /></a></div>`;
+      }
+    })
     .replace(/^\*([^*]+)\*$/gm, '<p class="font-sans text-sm text-secondary text-center italic mb-6">$1</p>')
+    // Process tables
+    .replace(/^\|(.+)\|$/gm, (match, content) => {
+      // Split content by | and clean up
+      const cells = content.split('|').map(cell => cell.trim()).filter(cell => cell);
+      
+      // Check if this is a header separator row (contains only -, |, and spaces)
+      if (content.match(/^[\s\-\|]+$/)) {
+        return ''; // Skip separator rows
+      }
+      
+      // Determine if this is likely a header row (first row or after separator)
+      const isHeader = match.includes('Funnel Stage') || match.includes('Spend') || match.includes('Reach');
+      
+      if (isHeader) {
+        return `<div class="content-block my-16"><table><thead><tr>${cells.map(cell => `<th>${cell}</th>`).join('')}</tr></thead><tbody>`;
+      } else {
+        return `<tr>${cells.map(cell => `<td>${cell}</td>`).join('')}</tr>`;
+      }
+    })
+    // Close table after processing all rows
+    .replace(/(<tr><td>.*<\/td><\/tr>)(?!\s*<tr>)/g, '$1</tbody></table></div>')
     .replace(/\n\n/g, '</p><p class="font-sans text-base text-secondary leading-relaxed mb-6">')
     .replace(/^(?!<[h|l|i])/gm, '<p class="font-sans text-base text-secondary leading-relaxed mb-6">')
     .replace(/<p class="font-sans text-base text-secondary leading-relaxed mb-6">(<[h|l|i])/g, '$1')

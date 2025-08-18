@@ -9,6 +9,7 @@ export default function Navigation() {
   const { isVisible, isScrolled } = useNavigation();
   const pathname = usePathname();
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Check if user has previously interacted with navigation
   useEffect(() => {
@@ -23,6 +24,7 @@ export default function Navigation() {
       setHasInteracted(true);
       localStorage.setItem('nav-interacted', 'true');
     }
+    setMobileMenuOpen(false); // Close mobile menu on link click
   };
 
   const isActive = (path: string) => {
@@ -113,16 +115,37 @@ export default function Navigation() {
           </ul>
         </div>
 
-        {/* Mobile Navigation - Centered */}
+        {/* Mobile Navigation - Hamburger Menu */}
         <div className="md:hidden">
-          <div className="flex flex-col items-center space-y-4">
-            <ul className="flex items-center gap-6 text-[11px]">
+          <div className="flex justify-between items-center">
+            {/* Logo/Brand */}
+            <Link href="/" className="text-lg font-serif text-primary">
+              Dana
+            </Link>
+            
+            {/* Hamburger Button */}
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-primary hover:text-accent transition-colors duration-300"
+              aria-label="Toggle menu"
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span className={`block h-0.5 w-full bg-current transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                <span className={`block h-0.5 w-full bg-current transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                <span className={`block h-0.5 w-full bg-current transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              </div>
+            </button>
+          </div>
+          
+          {/* Mobile Menu Dropdown */}
+          <div className={`absolute top-full left-0 right-0 bg-background border-b border-primary/5 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+            <ul className="flex flex-col py-6 px-6 space-y-4">
               <li>
                 <Link 
                   href="/" 
                   onClick={handleNavClick}
-                  className={`transition-all duration-300 uppercase tracking-wider font-light ${
-                    isActive('/') ? 'text-accent' : 'text-secondary hover:text-accent'
+                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-wider ${
+                    isActive('/') ? 'text-accent font-medium' : 'text-secondary hover:text-accent'
                   }`}
                 >
                   Home
@@ -132,8 +155,8 @@ export default function Navigation() {
                 <Link 
                   href="/about" 
                   onClick={handleNavClick}
-                  className={`transition-all duration-300 uppercase tracking-wider font-light ${
-                    isActive('/about') ? 'text-accent' : 'text-secondary hover:text-accent'
+                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-wider ${
+                    isActive('/about') ? 'text-accent font-medium' : 'text-secondary hover:text-accent'
                   }`}
                 >
                   About
@@ -143,8 +166,8 @@ export default function Navigation() {
                 <Link 
                   href="/work" 
                   onClick={handleNavClick}
-                  className={`transition-all duration-300 uppercase tracking-wider font-light ${
-                    isActive('/work') ? 'text-accent' : 'text-secondary hover:text-accent'
+                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-wider ${
+                    isActive('/work') ? 'text-accent font-medium' : 'text-secondary hover:text-accent'
                   }`}
                 >
                   Work
@@ -154,8 +177,8 @@ export default function Navigation() {
                 <Link 
                   href="/expertise" 
                   onClick={handleNavClick}
-                  className={`transition-all duration-300 uppercase tracking-wider font-light ${
-                    isActive('/expertise') ? 'text-accent' : 'text-secondary hover:text-accent'
+                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-wider ${
+                    isActive('/expertise') ? 'text-accent font-medium' : 'text-secondary hover:text-accent'
                   }`}
                 >
                   Expertise
@@ -165,8 +188,8 @@ export default function Navigation() {
                 <Link 
                   href="/contact" 
                   onClick={handleNavClick}
-                  className={`transition-all duration-300 uppercase tracking-wider font-light ${
-                    isActive('/contact') ? 'text-accent' : 'text-secondary hover:text-accent'
+                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-wider ${
+                    isActive('/contact') ? 'text-accent font-medium' : 'text-secondary hover:text-accent'
                   }`}
                 >
                   Contact
