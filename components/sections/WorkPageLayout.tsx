@@ -52,17 +52,18 @@ export default function WorkPageLayout({
             )}
           </div>
 
-          {/* All Projects List */}
-          <div className="max-w-6xl mx-auto space-y-24">
+          {/* All Projects List with proper spacing */}
+          <div className="max-w-6xl mx-auto">
             {sortedProjects.map((project, index) => (
-              <ProjectEntry
-                key={project.id}
-                project={{
-                  ...project,
-                  index
-                }}
-                animationDelay={index * 150}
-              />
+              <div key={project.id} style={{ marginBottom: index !== sortedProjects.length - 1 ? '64px' : '0' }}>
+                <ProjectEntry
+                  project={{
+                    ...project,
+                    index
+                  }}
+                  animationDelay={index * 150}
+                />
+              </div>
             ))}
           </div>
 

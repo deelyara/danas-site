@@ -77,20 +77,75 @@ export default function RootLayout({
           <main className="relative z-10">
             {children}
           </main>
-          <footer className="relative z-10 border-t border-primary/5 bg-background">
-            <div className="container mx-auto px-6 py-12 flex items-center justify-center">
-              <div className="max-w-[600px] mx-auto text-center">
-                <div className="text-[13px] font-light text-secondary tracking-wider flex items-center justify-center gap-8">
-                  <span>© 2025 Dana Duisekenova</span>
-                  <span>•</span>
-                  <a 
-                    href="mailto:dana.odair1@gmail.com" 
-                    className="hover:text-primary transition-colors duration-300"
-                  >
-                    dana.odair1@gmail.com
-                  </a>
-                </div>
+          <footer className="relative z-10 bg-background" style={{ marginTop: '160px' }}>
+            {/* Creative divider - dots pattern */}
+            <div style={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+              marginBottom: '80px',
+              gap: '16px'
+            }}>
+              <div style={{ width: '4px', height: '4px', backgroundColor: '#ECD06F', borderRadius: '50%' }}></div>
+              <div style={{ width: '4px', height: '4px', backgroundColor: '#1A1A1A', borderRadius: '50%', opacity: '0.3' }}></div>
+              <div style={{ width: '4px', height: '4px', backgroundColor: '#ECD06F', borderRadius: '50%' }}></div>
+            </div>
+            
+            <div style={{ 
+              padding: '0 32px 80px 32px',
+              maxWidth: '1200px',
+              margin: '0 auto',
+              textAlign: 'center'
+            }}>
+              {/* Minimalist layout */}
+              <div style={{ marginBottom: '48px' }}>
+                <p style={{ 
+                  fontSize: '13px', 
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  color: '#6B6B68',
+                  marginBottom: '24px'
+                }}>
+                  Dana Duisekenova
+                </p>
+                <a 
+                  href="mailto:dana.odair1@gmail.com" 
+                  className="footer-email"
+                  style={{ 
+                    fontSize: '24px',
+                    color: '#1A1A1A',
+                    textDecoration: 'none',
+                    fontWeight: '300',
+                    letterSpacing: '-0.02em',
+                    transition: 'color 0.3s'
+                  }}
+                >
+                  dana.odair1@gmail.com
+                </a>
               </div>
+              
+              {/* Simple nav */}
+              <nav style={{ 
+                display: 'flex', 
+                justifyContent: 'center', 
+                gap: '40px',
+                marginBottom: '48px',
+                flexWrap: 'wrap'
+              }}>
+                <a href="/work" style={{ fontSize: '13px', color: '#6B6B68', textDecoration: 'none' }}>Work</a>
+                <a href="/about" style={{ fontSize: '13px', color: '#6B6B68', textDecoration: 'none' }}>About</a>
+                <a href="/expertise" style={{ fontSize: '13px', color: '#6B6B68', textDecoration: 'none' }}>Expertise</a>
+                <a href="/contact" style={{ fontSize: '13px', color: '#6B6B68', textDecoration: 'none' }}>Contact</a>
+              </nav>
+              
+              {/* Copyright */}
+              <p style={{ 
+                fontSize: '11px',
+                color: '#6B6B68',
+                opacity: '0.5',
+                letterSpacing: '0.1em'
+              }}>
+                © 2025
+              </p>
             </div>
           </footer>
         </ErrorBoundary>

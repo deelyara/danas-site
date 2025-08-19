@@ -55,6 +55,35 @@ p, h1, h2, h3, h4, h5, h6 {
   /* Borders and dividers */
   --color-border: rgba(26, 26, 26, 0.05);
   --color-border-light: rgba(26, 26, 26, 0.03);
+  
+  /* Professional Spacing Scale (8px base) */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 1rem;     /* 16px */
+  --space-md: 1.5rem;   /* 24px */
+  --space-lg: 2rem;     /* 32px */
+  --space-xl: 3rem;     /* 48px */
+  --space-2xl: 4rem;    /* 64px */
+  --space-3xl: 6rem;    /* 96px */
+  --space-4xl: 8rem;    /* 128px */
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 2rem;      /* 32px */
+  --text-4xl: 2.5rem;    /* 40px */
+  --text-5xl: 3rem;      /* 48px */
+  --text-6xl: 3.75rem;   /* 60px */
+  --text-7xl: 4.5rem;    /* 72px */
+  
+  /* Heading to Content Gaps */
+  --gap-h1: var(--space-lg);    /* 32px after h1 */
+  --gap-h2: var(--space-md);    /* 24px after h2 */
+  --gap-h3: var(--space-sm);    /* 16px after h3 */
+  --gap-h4: var(--space-xs);    /* 8px after h4 */
 }
 
 /* Base styles */
@@ -85,11 +114,11 @@ body {
   height: 100vh;
 }
 
-/* Global Section Styles - Editorial Spacing */
+/* Global Section Styles - Professional Spacing */
 section {
-  padding-top: 160px;
-  padding-bottom: 120px;
-  margin-bottom: 120px;
+  padding-top: var(--space-4xl);
+  padding-bottom: var(--space-3xl);
+  margin-bottom: var(--space-3xl);
 }
 
 /* Full-screen sections for homepage */
@@ -103,7 +132,7 @@ section {
   margin-bottom: 0;
 }
 
-/* Editorial Typography Hierarchy */
+/* Editorial Typography Hierarchy - Consistent System */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -111,10 +140,86 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
+/* Professional Typography System */
+h1 {
+  font-size: 3rem !important; /* 48px */
+  line-height: 1.2 !important;
+  font-weight: 400 !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.5rem !important; /* 24px - smaller gap */
+}
+
+h1 + p,
+h1 + div {
+  margin-top: 0 !important;
+}
+
+h2 {
+  font-size: 2.5rem !important; /* 40px */
+  line-height: 1.3 !important;
+  font-weight: 400 !important;
+  margin-top: 3rem !important; /* Space before */
+  margin-bottom: 1.25rem !important; /* 20px gap after */
+}
+
+h2:first-child {
+  margin-top: 0 !important;
+}
+
+h2 + p,
+h2 + div {
+  margin-top: 0 !important;
+}
+
+h3 {
+  font-size: 2rem !important; /* 32px */
+  line-height: 1.4 !important;
+  font-weight: 400 !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1rem !important; /* 16px gap after */
+}
+
+h3:first-child {
+  margin-top: 0 !important;
+}
+
+h3 + p,
+h3 + div {
+  margin-top: 0 !important;
+}
+
+h4 {
+  font-size: 1.5rem !important; /* 24px */
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  margin-top: 2rem !important;
+  margin-bottom: 0.75rem !important; /* 12px gap after */
+}
+
+h4:first-child {
+  margin-top: 0 !important;
+}
+
+h5 {
+  font-size: 1.25rem !important; /* 20px */
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important; /* 8px gap after */
+}
+
+h6 {
+  font-size: 1.125rem !important; /* 18px */
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important; /* 8px gap after */
+}
+
 /* Hero name - Large serif */
 .hero-name {
   font-family: var(--font-serif);
-  font-size: clamp(120px, 12vw, 160px);
+  font-size: clamp(var(--text-6xl), 12vw, 160px);
   font-weight: 400;
   line-height: 0.9;
   letter-spacing: -0.03em;
@@ -122,30 +227,17 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero intro */
 .hero-intro {
-  font-size: 48px;
+  font-size: var(--text-3xl);
   font-weight: 400;
   line-height: 1.2;
-}
-
-/* Section headers - corrected sizing */
-h1 {
-  font-size: clamp(36px, 4vw, 48px);
-  margin-bottom: 32px;
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: clamp(24px, 3vw, 32px);
-  margin-bottom: 24px;
-  line-height: 1.3;
 }
 
 /* Project titles - proper sizing */
 .project-title {
-  font-size: clamp(24px, 2.5vw, 32px);
+  font-size: var(--text-3xl);
   font-weight: 400;
   line-height: 1.3;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-sm);
 }
 
 /* Company names */
@@ -157,12 +249,18 @@ h2 {
   color: var(--color-secondary);
 }
 
-/* Body text */
+/* Body text - consistent spacing */
 p, .body-text {
-  font-size: 18px;
-  line-height: 1.8;
-  margin-bottom: 32px;
-  color: var(--color-secondary);
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.25rem !important; /* 20px */
+  color: var(--color-secondary) !important;
+}
+
+/* Last paragraph in a section shouldn't have bottom margin */
+p:last-child {
+  margin-bottom: 0 !important;
 }
 
 /* Header scroll optimization */
@@ -531,6 +629,11 @@ table tbody tr:last-child td {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Footer email hover */
+.footer-email:hover {
+  color: #ECD06F !important;
 }
 
 /* Contact Section Styles */

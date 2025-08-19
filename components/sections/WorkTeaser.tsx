@@ -52,12 +52,12 @@ export default function WorkTeaser() {
             <div
               key={project.id}
               ref={setElementRef(index)}
-              className={`project-item group block w-full py-8 md:py-16 animate-on-scroll ${
+              className={`project-item group block w-full animate-on-scroll ${
                 isVisible(index) ? 'animate-in' : ''
               }`}
               style={{ 
                 transitionDelay: `${index * 100}ms`,
-                marginBottom: index !== featuredProjects.length - 1 ? '32px md:64px' : '0'
+                marginBottom: index !== featuredProjects.length - 1 ? '48px' : '0'
               }}
             >
               {/* Last project with button */}

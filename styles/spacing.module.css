@@ -1,0 +1,63 @@
+/* Professional Spacing System - CSS Modules Best Practice */
+
+/* Navigation */
+.navContainer {
+  padding: 24px 32px;
+}
+
+/* Work Cards Spacing */
+.workCard {
+  margin-bottom: 48px;
+}
+
+.workCardLast {
+  margin-bottom: 0;
+}
+
+/* Projects Page Spacing */
+.projectEntry {
+  margin-bottom: 64px;
+}
+
+.projectEntryLast {
+  margin-bottom: 0;
+}
+
+/* Heading to Content Gaps - Consistent System */
+.h1Gap {
+  margin-bottom: 32px !important;
+}
+
+.h2Gap {
+  margin-bottom: 24px !important;
+}
+
+.h3Gap {
+  margin-bottom: 16px !important;
+}
+
+.h4Gap {
+  margin-bottom: 12px !important;
+}
+
+/* Paragraph spacing */
+.paragraph {
+  margin-bottom: 20px !important;
+}
+
+/* Section spacing */
+.sectionSpacing {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media (max-width: 768px) {
+  .sectionSpacing {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  
+  .navContainer {
+    padding: 20px 24px;
+  }
+}

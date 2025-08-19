@@ -34,7 +34,7 @@ export default function Hero() {
       <div
         className="absolute top-20 right-0 w-96 h-96 bg-accent/3 rounded-full blur-3xl"
         style={{
-          transform: isMounted ? `translateY(${scrollY * 0.3}px)` : 'translateY(0px)',
+          transform: isMounted ? `translateY(${scrollY * 0.05}px)` : 'translateY(0px)',
         }}
       />
 
@@ -46,14 +46,14 @@ export default function Hero() {
             <div className={`transition-all duration-1000 ${isMounted && isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <div className="parallax-text text-left"
                   style={{
-                    transform: isMounted ? `translateY(${scrollY * 0.1}px)` : 'translateY(0px)',
+                    transform: isMounted ? `translateY(${scrollY * 0.02}px)` : 'translateY(0px)',
                   }}>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.9] mb-6 font-normal" style={{ color: '#1A1A1A' }}>
                   Hello, I'm{' '}
                   <span className="font-serif italic inline-block" 
                         style={{
                           color: '#ECD06F',
-                          transform: isMounted ? `rotate(-2deg) translateY(${scrollY * 0.05}px)` : 'rotate(-2deg) translateY(0px)',
+                          transform: 'rotate(-2deg)'
                         }}>
                     Dana
                   </span>.
@@ -87,7 +87,7 @@ export default function Hero() {
                   height={680}
                   className="rounded-2xl object-cover shadow-2xl"
                   style={{
-                    transform: isMounted ? `translateY(${scrollY * 0.05}px)` : 'translateY(0px)',
+                    transform: isMounted ? `translateY(${scrollY * 0.01}px)` : 'translateY(0px)',
                   }}
                   priority
                 />

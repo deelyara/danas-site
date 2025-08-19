@@ -38,7 +38,7 @@ export default function Navigation() {
       className="sticky top-0 left-0 right-0 z-[1000] bg-background/100 border-b border-primary/5"
       style={{ backgroundColor: '#FAF8F4' }}
     >
-      <div className="container mx-auto px-6 py-6 md:py-8">
+      <div className="container mx-auto px-8" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
         {/* Desktop Navigation - Right Aligned */}
         <div className="hidden md:flex justify-end items-center">
           <ul className="flex items-center gap-12 lg:gap-14">
