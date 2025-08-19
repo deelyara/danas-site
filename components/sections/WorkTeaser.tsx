@@ -16,9 +16,9 @@ export default function WorkTeaser() {
     .map((project, index) => {
       const colors = ["#E8DCC6", "#B8C5D6", "#D4C5B0"]; // warm beige, muted blue, soft tan
       const images = [
-        "/Cheerful%20Buddha%20case%20study/PKR06926.jpg", // cheerful buddha - first featured project
-        "/work%20teaser/wellness%20outreach.png", // wellness automation - second featured project
-        "/work%20teaser/social%20campaign.png" // multi-funnel - third featured project
+        "/cheerful-buddha-case-study/PKR06926.jpg", // cheerful buddha - first featured project
+        "/work-teaser/wellness-outreach.png", // wellness automation - second featured project
+        "/work-teaser/social-campaign.png" // multi-funnel - third featured project
       ];
       const objectPositions = [
         "object-cover", // cheerful buddha - standard cover

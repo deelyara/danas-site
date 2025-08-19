@@ -9,22 +9,22 @@ import { editorialProjects } from '../../lib/projectData';
 // Project images and styling data
 const projectVisuals = {
   "wellness-automation": {
-    image: "/Automating%20wellness/beginning.png",
+    image: "/automating-wellness/beginning.png",
     gradient: "linear-gradient(135deg, #E8DCC6 0%, #D4C2B0 100%)",
     objectFit: "object-cover"
   },
   "multi-funnel": {
-    image: "/AI%20powered%20automation/Multi-funnel%20/illustration-Case%20Study_%20Multi-Funnel%20Paid%20Social%20Campaign.png",
+    image: "/ai-powered-automation/multi-funnel/illustration-case-study-multi-funnel-paid-social-campaign.png",
     gradient: "linear-gradient(135deg, #B8C5D6 0%, #A0B3C8 100%)",
     objectFit: "object-cover"
   },
   "newsletter": {
-    image: "/AI%20powered%20automation/newsletter/newsletter.png",
+    image: "/ai-powered-automation/newsletter/newsletter.png",
     gradient: "linear-gradient(135deg, #F8E6E0 0%, #E8D4CC 100%)",
     objectFit: "object-cover"
   },
   "cheerfull-budda": {
-    image: "/Cheerful%20Buddha%20case%20study/PKR06926.jpg",
+    image: "/cheerful-buddha-case-study/PKR06926.jpg",
     gradient: "linear-gradient(135deg, #E8F5E8 0%, #D4E8D4 100%)",
     objectFit: "object-cover"
   }

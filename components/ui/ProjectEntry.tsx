@@ -22,22 +22,22 @@ interface ProjectEntryProps {
 // Project images and styling data
 const projectVisuals = {
   "wellness-automation": {
-    image: "/work%20teaser/wellness%20outreach.png",
+    image: "/work-teaser/wellness-outreach.png",
     gradient: "linear-gradient(135deg, #E8DCC6 0%, #D4C2B0 100%)",
     objectFit: "object-cover"
   },
   "multi-funnel": {
-    image: "/work%20teaser/social%20campaign.png",
+    image: "/work-teaser/social-campaign.png",
     gradient: "linear-gradient(135deg, #B8C5D6 0%, #A0B3C8 100%)",
     objectFit: "object-cover"
   },
   "newsletter": {
-    image: "/work%20teaser/newsletter.png",
+    image: "/work-teaser/newsletter.png",
     gradient: "linear-gradient(135deg, #F8E6E0 0%, #E8D4CC 100%)",
     objectFit: "object-cover"
   },
   "cheerfull-budda": {
-    image: "/Cheerful%20Buddha%20case%20study/PKR06926.jpg",
+    image: "/cheerful-buddha-case-study/PKR06926.jpg",
     gradient: "linear-gradient(135deg, #E8F5E8 0%, #D4E8D4 100%)",
     objectFit: "object-cover"
   }
