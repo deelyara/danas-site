@@ -64,7 +64,7 @@ export default function Hero() {
               </div>
 
               {/* CTA Button */}
-              <div className={`transition-all duration-1000 delay-300 ${isMounted && isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <div className={`hero-explore-button transition-all duration-1000 delay-300 ${isMounted && isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                 <Link 
                   href="/work"
                   className="cta-button breathe-animation inline-flex items-center gap-4"

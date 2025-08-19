@@ -35,10 +35,10 @@ export default function WorkPageLayout({
       <div className="container mx-auto container-padding w-full max-w-5xl">
         <div className="text-center">
           {/* Page Header with proper spacing */}
-          <div className="mb-20" style={{ paddingTop: '40px' }}>
+          <div style={{ marginBottom: '80px' }}>
             <h1 
               ref={headerRef}
-              className={`font-serif selected-work-title text-primary mb-6 font-normal tracking-tight lowercase animate-on-scroll ${
+              className={`page-heading font-serif lowercase animate-on-scroll ${
                 headerVisible ? 'animate-in' : ''
               }`}
             >

@@ -24,7 +24,7 @@ export default function About() {
               isMounted && headerVisible ? 'animate-in' : ''
             }`}
           >
-            <h1 className="font-serif selected-work-title text-primary mb-8 font-normal tracking-tight lowercase">
+            <h1 className="page-heading lowercase">
               about
             </h1>
           </div>

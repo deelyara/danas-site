@@ -140,13 +140,32 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* Professional Typography System */
+/* Professional Typography System - Page Headers */
+.page-heading {
+  font-size: 3.5rem !important;
+  line-height: 1.1 !important;
+  font-weight: 400 !important;
+  font-family: var(--font-serif) !important;
+  margin-top: 0 !important;
+  padding-top: 5rem !important; /* 80px from navbar */
+  margin-bottom: 3rem !important; /* 48px to content */
+  color: var(--color-primary) !important;
+}
+
+@media (max-width: 768px) {
+  .page-heading {
+    font-size: 2.5rem !important;
+    padding-top: 3rem !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
 h1 {
-  font-size: 3rem !important; /* 48px */
+  font-size: 3rem !important;
   line-height: 1.2 !important;
   font-weight: 400 !important;
   margin-top: 0 !important;
-  margin-bottom: 1.5rem !important; /* 24px - smaller gap */
+  margin-bottom: 2rem !important;
 }
 
 h1 + p,
@@ -453,6 +472,146 @@ table tbody tr:last-child td {
   max-width: 100% !important;
 }
 
+
+/* Expertise Page Professional Styles */
+.expertise-container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 32px !important;
+}
+
+.expertise-intro {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+  color: var(--color-secondary) !important;
+  max-width: 42rem !important;
+  margin-bottom: 4rem !important;
+}
+
+.expertise-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 2rem !important;
+  margin-bottom: 6rem !important;
+}
+
+@media (max-width: 1024px) {
+  .expertise-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+.expertise-card {
+  background: white !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  height: 100% !important;
+  border: 1px solid rgba(26, 26, 26, 0.08) !important;
+  transition: all 0.3s ease !important;
+  cursor: pointer !important;
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+.expertise-card-number {
+  font-size: 48px !important;
+  font-weight: 200 !important;
+  margin-bottom: 20px !important;
+  font-family: var(--font-serif) !important;
+}
+
+.expertise-card-title {
+  font-size: 24px !important;
+  font-family: var(--font-serif) !important;
+  color: var(--color-primary) !important;
+  margin-bottom: 16px !important;
+}
+
+.expertise-card-description {
+  font-size: 14px !important;
+  color: var(--color-secondary) !important;
+  margin-bottom: 24px !important;
+  line-height: 1.6 !important;
+}
+
+.expertise-skills-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.expertise-skill-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  font-size: 14px !important;
+  color: var(--color-secondary) !important;
+}
+
+.expertise-skill-bullet {
+  margin-right: 8px !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+}
+
+.expertise-tools-section {
+  padding: 5rem 3rem !important;
+  border-radius: 16px !important;
+  background-color: #FAF8F4 !important;
+  border: 1px solid rgba(26, 26, 26, 0.06) !important;
+  margin-bottom: 5rem !important;
+}
+
+.expertise-tools-title {
+  font-size: 32px !important;
+  font-family: var(--font-serif) !important;
+  color: var(--color-primary) !important;
+  text-align: center !important;
+  margin-bottom: 3rem !important;
+}
+
+.expertise-tools-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 3rem !important;
+}
+
+@media (max-width: 768px) {
+  .expertise-tools-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+  }
+}
+
+.expertise-tools-category {
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  margin-bottom: 16px !important;
+  font-weight: 600 !important;
+  color: #ECD06F !important;
+}
+
+.expertise-tools-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+}
+
+.expertise-tool-item {
+  font-size: 14px !important;
+  color: var(--color-secondary) !important;
+  transition: color 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.expertise-tool-item:hover {
+  color: var(--color-primary) !important;
+}
+
 /* Utility classes for consistent spacing */
 .section-padding {
   padding-top: 160px;
@@ -476,18 +635,105 @@ table tbody tr:last-child td {
   }
 }
 
-/* Project card styles */
-.project-card {
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease;
-  cursor: pointer;
-  aspect-ratio: 3/4; /* Make cards taller as requested */
+/* Project Entry Card Styles */
+.project-entry-card {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(26, 26, 26, 0.08) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  transition: all 0.3s ease !important;
+  display: block !important;
 }
 
-.project-card:hover {
-  transform: translateY(-12px); /* Enhanced hover elevation */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+.project-entry-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+.project-entry-layout {
+  display: flex !important;
+  flex-direction: row !important;
+  min-height: 280px !important;
+}
+
+.project-entry-image {
+  position: relative !important;
+  width: 40% !important;
+  min-width: 350px !important;
+  flex-shrink: 0 !important;
+  overflow: hidden !important;
+}
+
+.project-entry-image img {
+  object-fit: cover !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.project-entry-content {
+  flex: 1 !important;
+  padding: 40px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.project-entry-meta {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #9A9A9A !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 12px !important;
+}
+
+.project-entry-title {
+  font-size: 26px !important;
+  line-height: 1.3 !important;
+  font-family: var(--font-serif) !important;
+  color: var(--color-primary) !important;
+  margin-bottom: 14px !important;
+  font-weight: 400 !important;
+}
+
+.project-entry-description {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: #6B6B68 !important;
+  margin-bottom: 24px !important;
+  max-width: 450px !important;
+}
+
+.project-entry-cta {
+  display: inline-block !important;
+  padding: 8px 18px !important;
+  font-size: 13px !important;
+  color: var(--color-primary) !important;
+  border: 1px solid var(--color-primary) !important;
+  border-radius: 20px !important;
+  transition: all 0.3s ease !important;
+}
+
+.project-entry-cta:hover {
+  background: var(--color-accent) !important;
+  border-color: var(--color-accent) !important;
+}
+
+@media (max-width: 768px) {
+  .project-entry-layout {
+    flex-direction: column !important;
+    min-height: auto !important;
+  }
+  
+  .project-entry-image {
+    width: 100% !important;
+    height: 240px !important;
+    min-width: 100% !important;
+  }
+  
+  .project-entry-content {
+    padding: 28px !important;
+  }
 }
 
 /* CTA Button Styles */
@@ -555,6 +801,11 @@ table tbody tr:last-child td {
 
 .project-card:nth-child(4) {
   transition-delay: 0.3s;
+}
+
+/* Hero Section Improvements */
+.hero-explore-button {
+  margin-top: 2rem !important;
 }
 
 /* Hero Improvements */
