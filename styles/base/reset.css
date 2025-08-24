@@ -1,0 +1,63 @@
+/* CSS Reset - Consolidated and Optimized */
+
+/* Box-sizing for all elements (single declaration) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling with consistent padding */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; /* Account for fixed navigation */
+  font-family: var(--font-sans);
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Body base styles */
+body {
+  line-height: 1.8; /* Using the later, more specific value */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* Media elements */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Form elements inherit font */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Prevent text overflow */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

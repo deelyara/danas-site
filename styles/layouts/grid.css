@@ -1,0 +1,87 @@
+/* Grid Layout Systems */
+
+/* Expertise Grid */
+.expertise-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.expertise-intro {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  max-width: 42rem;
+  margin-bottom: 4rem;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 6rem;
+}
+
+/* Expertise Tools Section */
+.expertise-tools-section {
+  padding: 5rem 3rem;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-background);
+  border: 1px solid var(--color-border-medium);
+  margin-bottom: 5rem;
+}
+
+.expertise-tools-title {
+  font-size: 32px;
+  font-family: var(--font-serif);
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.expertise-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.expertise-tools-category {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.expertise-tools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.expertise-tool-item {
+  font-size: 14px;
+  color: var(--color-secondary);
+  transition: color var(--transition-fast);
+  cursor: pointer;
+}
+
+.expertise-tool-item:hover {
+  color: var(--color-primary);
+}
+
+/* Responsive grids */
+@media (max-width: 1024px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .expertise-tools-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}

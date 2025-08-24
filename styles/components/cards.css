@@ -1,0 +1,186 @@
+/* Card Components */
+
+/* Project Entry Card Styles */
+.project-entry-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-heavy);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  display: block;
+}
+
+.project-entry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-entry-layout {
+  display: flex;
+  flex-direction: row;
+  min-height: 280px;
+}
+
+.project-entry-image {
+  position: relative;
+  width: 40%;
+  min-width: 350px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.project-entry-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.project-entry-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.project-entry-meta {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.project-entry-title {
+  font-size: 26px;
+  line-height: 1.3;
+  font-family: var(--font-serif);
+  color: var(--color-primary);
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+
+.project-entry-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-secondary);
+  margin-bottom: 24px;
+  max-width: 450px;
+}
+
+.project-entry-cta {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 13px;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-base);
+}
+
+.project-entry-cta:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Expertise Cards */
+.expertise-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  height: 100%;
+  border: 1px solid var(--color-border-heavy);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.expertise-card-number {
+  font-size: 48px;
+  font-weight: 200;
+  margin-bottom: 20px;
+  font-family: var(--font-serif);
+}
+
+.expertise-card-title {
+  font-size: 24px;
+  font-family: var(--font-serif);
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.expertise-card-description {
+  font-size: 14px;
+  color: var(--color-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.expertise-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.expertise-skill-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  color: var(--color-secondary);
+}
+
+.expertise-skill-bullet {
+  margin-right: 8px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* Project Entry Hover Effects */
+.project-entry {
+  border-bottom: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.project-entry:last-child {
+  border-bottom: none;
+}
+
+.project-entry:hover {
+  background-color: rgba(236, 208, 111, 0.02);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-entry-layout {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .project-entry-image {
+    width: 100%;
+    height: 240px;
+    min-width: 100%;
+  }
+  
+  .project-entry-content {
+    padding: 28px;
+  }
+}
+
+/* Stagger project card animations */
+.project-card:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.project-card:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.project-card:nth-child(4) {
+  transition-delay: 0.3s;
+}

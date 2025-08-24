@@ -1,0 +1,18 @@
+/* Utility Helper Classes */
+
+/* Selected work title */
+.selected-work-title {
+  font-size: 56px;
+  line-height: 1.1;
+}
+
+/* Enhanced smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    scroll-behavior: smooth;
+  }
+}
