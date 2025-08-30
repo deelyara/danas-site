@@ -57,14 +57,9 @@
   margin-top: 0;
 }
 
-/* Editorial content paragraphs */
+/* Editorial content paragraphs - extend base typography */
 .editorial-content p {
-  margin-bottom: 24px;
-  line-height: 1.7;
-  color: var(--color-secondary);
-  font-size: 17px;
-  font-family: var(--font-sans);
-  max-width: 70ch;
+  margin-bottom: var(--space-md);
 }
 
 /* Editorial content images */
@@ -89,19 +84,15 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
 
-/* Editorial content lists */
+/* Editorial content lists - simplified */
 .editorial-content ul,
 .editorial-content ol {
-  margin: 12px 0 24px 0;
-  padding-left: 24px;
-  font-family: var(--font-sans);
+  margin: var(--space-sm) 0 var(--space-md) 0;
+  padding-left: var(--space-md);
 }
 
 .editorial-content li {
-  margin-bottom: 8px;
-  line-height: 1.6;
-  font-family: var(--font-sans);
-  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
 }
 
 /* Content blocks for consistent spacing */

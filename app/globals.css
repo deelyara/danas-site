@@ -1,4 +1,4 @@
-/* Global CSS - Modular Architecture */
+/* Global CSS - Optimized Modular Architecture */
 
 /* 1. Base Styles - Foundation (BEFORE Tailwind) */
 @import "../styles/base/variables.css";
@@ -7,22 +7,28 @@
 /* 2. Tailwind Base */
 @import "tailwindcss";
 
-/* 3. Typography (AFTER Tailwind base) */
+/* 3. Typography (AFTER Tailwind base) - Single source of truth */
 @import "../styles/base/typography.css";
 
 /* 4. Layout Systems */
 @import "../styles/layouts/sections.css";
-/* Removed legacy editorial markdown layouts */
 @import "../styles/layouts/grid.css";
 @import "../styles/layouts/project.css";
+@import "../styles/layouts/editorial.css";
 
 /* 5. Components */
 @import "../styles/components/buttons.css";
-@import "../styles/components/cards.css";
-@import "../styles/components/work-cards.css";
+@import "../styles/components/cards.css"; /* Includes work-cards styles */
 @import "../styles/components/tables.css";
 @import "../styles/components/navigation.css";
 
 /* 6. Utilities */
-@import "../styles/utilities/animations.css";
-@import "../styles/utilities/helpers.css";
+@import "../styles/utilities/animations.css"; /* Includes helper utilities */
+
+/* 
+ * Deprecated/Merged files:
+ * - work-cards.css → merged into cards.css
+ * - helpers.css → merged into animations.css
+ * - project-page.css → merged into project.css
+ * - spacing.module.css → use Tailwind utilities
+ */

@@ -1,6 +1,6 @@
 /* Typography System - Consolidated without !important abuse */
 
-/* Base body typography */
+/* Base body typography - consolidated from reset.css */
 body {
   color: var(--color-primary);
   background-color: var(--color-background);
@@ -9,8 +9,10 @@ body {
     radial-gradient(circle at 75% 75%, rgba(180, 165, 150, 0.015) 0%, transparent 50%);
   font-family: var(--font-sans);
   font-size: 17px;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Editorial Typography Hierarchy */
@@ -81,7 +83,7 @@ h3 + p, h3 + div {
   margin-top: 0;
 }
 
-/* Body text - Consistent with spacing scale */
+/* Body text - Single source of truth */
 p, .body-text {
   font-family: var(--font-sans);
   font-weight: 300;
@@ -90,10 +92,26 @@ p, .body-text {
   margin-top: 0;
   margin-bottom: var(--space-md);
   color: var(--color-secondary);
+  max-width: 70ch; /* Optimal reading width */
 }
 
 p:last-child {
   margin-bottom: 0;
+}
+
+/* Lists - Consolidated */
+ul, ol {
+  margin: var(--space-sm) 0 var(--space-md) 0;
+  padding-left: var(--space-lg);
+  font-family: var(--font-sans);
+}
+
+li {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  color: var(--color-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-xs);
 }
 
 /* Special typography classes */

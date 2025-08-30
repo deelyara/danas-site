@@ -172,47 +172,7 @@
   padding-bottom: var(--space-xl);
 }
 
-.project-section h2 {
-  font-family: var(--font-serif);
-  font-size: clamp(1.75rem, 3vw, 2.25rem);
-  line-height: var(--leading-snug);
-  color: var(--color-primary);
-  margin-bottom: var(--space-lg);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-
-.project-section p {
-  font-family: var(--font-sans);
-  font-size: 17px;
-  line-height: var(--leading-relaxed);
-  color: var(--color-secondary);
-  margin-bottom: var(--space-md);
-}
-
-.project-section ul {
-  margin: var(--space-md) 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-.project-section li {
-  font-size: var(--text-base);
-  line-height: var(--leading-relaxed);
-  color: var(--color-secondary);
-  margin-bottom: 6px;
-  padding-left: var(--space-md);
-  position: relative;
-}
-
-.project-section li:before {
-  content: "•";
-  position: absolute;
-  left: var(--space-xs);
-  color: var(--color-accent);
-  font-weight: 700;
-  font-size: 0.85em;
-}
+/* Typography handled by base/typography.css - removed duplicates */
 
 /* Project Media */
 .project-media {
@@ -429,39 +389,15 @@
   object-fit: cover;
 }
 
-/* Typography within sections */
-.project-text {
-  font-family: var(--font-sans);
-  font-weight: 300;
-  font-size: 17px;
-  line-height: var(--leading-relaxed);
-  color: var(--color-secondary);
-  margin-bottom: var(--space-lg);
-  max-width: 60ch;
-}
-
+/* Typography modifiers - extend base styles */
 .project-text-large {
-  font-family: var(--font-sans);
-  font-weight: 300;
   font-size: var(--text-lg);
-  line-height: var(--leading-relaxed);
-  color: var(--color-secondary);
   margin-bottom: var(--space-xl);
-  max-width: 60ch;
 }
 
 .project-text-small {
-  font-family: var(--font-sans);
   font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
   color: var(--color-muted);
-}
-
-/* Ensure project paragraph text uses our sans scale everywhere */
-article .project-text, 
-.project-section .project-text {
-  font-family: var(--font-sans), system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  font-size: 17px;
 }
 
 /* Lists */

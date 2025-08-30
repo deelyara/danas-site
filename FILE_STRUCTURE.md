@@ -95,6 +95,7 @@ Project-specific components for individual project pages:
 Large, page-level components that compose entire sections:
 
 - **`Hero.tsx`** - Homepage hero with parallax effects, image, and CTA
+- **`Testimonials.tsx`** - Client testimonials grid with scroll animations
 - **`About.tsx`** - About section with personal info and expertise
 - **`AboutTeaser.tsx`** - Homepage about preview section
 - **`Contact.tsx`** - Full contact page with form and information  

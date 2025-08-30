@@ -28,17 +28,22 @@ section {
   padding-bottom: 120px;
 }
 
-/* Container styles */
+/* Universal Container System - Single source of truth */
 .container {
-  padding-left: max(24px, env(safe-area-inset-left));
-  padding-right: max(24px, env(safe-area-inset-right));
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: max(var(--space-md), env(safe-area-inset-left));
+  padding-right: max(var(--space-md), env(safe-area-inset-right));
 }
 
-/* Container padding utilities - Using spacing scale */
-.container-padding {
-  padding-left: var(--space-3xl);  /* 96px - better than 80px for scale */
-  padding-right: var(--space-3xl);
-}
+/* Container max-width variants */
+.container-sm { max-width: var(--container-sm); }
+.container-md { max-width: var(--container-md); }
+.container-lg { max-width: var(--container-lg); }
+.container-xl { max-width: var(--container-xl); }
+.container-2xl { max-width: var(--container-2xl); }
+.container-full { max-width: 100%; }
 
 /* Section padding utilities */
 .section-padding {
@@ -85,14 +90,14 @@ main > div {
 
 @media (min-width: 768px) {
   .container {
-    padding-left: max(48px, env(safe-area-inset-left));
-    padding-right: max(48px, env(safe-area-inset-right));
+    padding-left: max(var(--space-xl), env(safe-area-inset-left));
+    padding-right: max(var(--space-xl), env(safe-area-inset-right));
   }
 }
 
 @media (min-width: 1024px) {
   .container {
-    padding-left: max(80px, env(safe-area-inset-left));
-    padding-right: max(80px, env(safe-area-inset-right));
+    padding-left: max(var(--space-2xl), env(safe-area-inset-left));
+    padding-right: max(var(--space-2xl), env(safe-area-inset-right));
   }
 }
