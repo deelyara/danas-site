@@ -1,0 +1,209 @@
+import ProjectLayout from '@/components/project/ProjectLayout';
+import ProjectHero from '@/components/project/ProjectHero';
+import ProjectSection from '@/components/project/ProjectSection';
+import ProjectMedia, { MediaGrid } from '@/components/project/ProjectMedia';
+import ProjectMetrics from '@/components/project/ProjectMetrics';
+import { wellnessAutomationData } from '@/lib/projects/wellnessAutomation';
+
+export default function WellnessAutomationPage() {
+  const { 
+    title, 
+    company, 
+    year, 
+    description, 
+    tableOfContents, 
+    media, 
+    metrics,
+    nextProject,
+    prevProject 
+  } = wellnessAutomationData;
+
+  return (
+    <ProjectLayout 
+      tableOfContents={tableOfContents}
+      nextProject={nextProject}
+      prevProject={prevProject}
+    >
+      <ProjectHero 
+        title={title}
+        company={company}
+        year={year}
+        description={description}
+      />
+
+      <ProjectMedia 
+        src={media.hero}
+        alt="Zapier Workflow Beginning"
+        caption="Initial workflow setup showing the trigger and first automation steps"
+        width={1600}
+        height={1067}
+        priority={true}
+      />
+
+      <ProjectSection id="overview" title="Project Overview" className="project-section-overview">
+        <p className="project-text-large">
+          In an effort to scale influencer marketing and outreach for a new wellness product line, I built an automated workflow leveraging Zapier, Apify, OpenAI, Google Sheets, and Hunter.io. The goal was to identify relevant YouTube creators, assess their content fit, find contact details, and draft personalized collaboration emails entirely without manual effort.
+        </p>
+      </ProjectSection>
+
+      <ProjectSection id="challenge" title="The Challenge">
+        <p className="project-text">
+          Traditional influencer outreach is time-consuming, manual, and inconsistent especially when dealing with:
+        </p>
+        <ul className="project-list">
+          <li>Scanning hundreds of YouTube channels to find relevant ones</li>
+          <li>Evaluating each creator's audience engagement and content alignment</li>
+          <li>Researching contact information manually</li>
+          <li>Drafting personalized messages for outreach at scale</li>
+        </ul>
+        <p className="project-text">
+          Our challenge was to automate this entire flow without compromising quality, personalization, or targeting precision.
+        </p>
+      </ProjectSection>
+
+      <ProjectSection id="project-breakdown" title="Breaking Down the Project">
+        <div className="project-grid-2col">
+          <div className="project-grid-item">
+            <h4 className="project-subheading">Aspect 1: Channel Discovery with Apify</h4>
+            <p className="project-text-small">
+              I set up an Apify actor to scrape YouTube for channels mentioning keywords like "stress relief," "wellness routine," "natural supplements" etc. The output included:
+            </p>
+            <ul className="project-list">
+              <li>Channel name</li>
+              <li>Subscriber count</li>
+              <li>Video performance metrics</li>
+              <li>Channel URL</li>
+            </ul>
+          </div>
+          <div className="project-grid-item">
+            <h4 className="project-subheading">Aspect 2: Smart Evaluation via GPT</h4>
+            <p className="project-text-small">
+              Each scraped channel was analyzed using OpenAI GPT-4, scoring it on:
+            </p>
+            <ul className="project-list">
+              <li>Relevance to wellness products</li>
+              <li>Views-to-subscribers ratio</li>
+              <li>Brand fit (trustworthiness, tone, professionalism)</li>
+              <li>Overall engagement</li>
+            </ul>
+            <p className="project-text-small">
+              The result: a score from 0–10 plus a qualitative explanation of why the creator was a good (or poor) fit.
+            </p>
+          </div>
+          <div className="project-grid-item">
+            <h4 className="project-subheading">Aspect 3: Contact Discovery with Hunter.io</h4>
+            <p className="project-text-small">
+              For all channels scoring 7 or above, we used Hunter.io to automatically:
+            </p>
+            <ul className="project-list">
+              <li>Extract email addresses from their website, BIO description or domain</li>
+              <li>Verify business emails</li>
+            </ul>
+          </div>
+          <div className="project-grid-item">
+            <h4 className="project-subheading">Aspect 4: Personalized Outreach with GPT</h4>
+            <p className="project-text-small">
+              Finally, GPT was prompted to write a personalized email pitch tailored to:
+            </p>
+            <ul className="project-list">
+              <li>Creator's niche and recent content</li>
+              <li>Our wellness brand's mission</li>
+              <li>A proposed collaboration idea (e.g., product review, challenge, sponsored video)</li>
+            </ul>
+          </div>
+        </div>
+        <p className="project-text">
+          All of this data—scores, emails, messages—was stored neatly in Google Sheets.
+        </p>
+      </ProjectSection>
+
+      <ProjectSection id="solution-strategy" title="Solution Strategy">
+        <p className="project-text">
+          We orchestrated the entire flow using Zapier, triggered when the Apify actor finished scraping. Here's the automation chain:
+        </p>
+        
+        <ProjectMedia 
+          src={media.workflow.beginning}
+          alt="Zapier Workflow Beginning"
+          caption="Initial workflow setup showing the trigger and first automation steps"
+          width={1600}
+          height={1067}
+        />
+        
+        <ol className="project-list">
+          <li><strong>Trigger</strong>: Apify → Finished Actor Run</li>
+          <li><strong>Google Sheets</strong>: Store raw channel data</li>
+          <li><strong>OpenAI GPT</strong>: Score each channel</li>
+          <li><strong>Google Sheets</strong>: Save score and explanation</li>
+          <li><strong>Zapier Filter</strong>: Only proceed if score ≥ 7</li>
+          <li><strong>Hunter.io</strong>: Find verified contact email</li>
+          <li><strong>OpenAI GPT</strong>: Generate personalized email</li>
+          <li><strong>Google Sheets</strong>: Store email + outreach message</li>
+        </ol>
+        
+        <p className="project-text">
+          <strong>Optional Add-ons</strong>:
+        </p>
+        <ul className="project-list">
+          <li>Slack alert for high-scoring creators</li>
+          <li>Gmail integration to auto-send or create drafts</li>
+        </ul>
+        
+        <ProjectMedia 
+          src={media.workflow.continuation}
+          alt="Zapier Workflow Continuation"
+          caption="Extended workflow showing the complete automation chain with filtering and personalization steps"
+          width={1600}
+          height={1067}
+        />
+      </ProjectSection>
+
+
+      <ProjectSection id="results" title="Impact & Results">
+        <h3 className="project-section-title">Results After 2 Weeks of Running the Automation:</h3>
+        <ProjectMetrics metrics={metrics} />
+        
+        <ProjectMedia 
+          src={media.dashboard}
+          alt="Results Dashboard"
+          caption="Dashboard view showing the automation results and performance metrics"
+          width={1600}
+          height={1067}
+        />
+        
+        <div className="project-grid-2col">
+          <div className="project-grid-item">
+            <h4 className="project-subheading">Time Saved</h4>
+            <p className="project-text-small">
+              Reduced outreach time from 8–10 hours/week to under 30 minutes/week
+            </p>
+            <p className="project-text-small">
+              Manual work minimized to reviewing high-quality leads
+            </p>
+          </div>
+          <div className="project-grid-item">
+            <h4 className="project-subheading">Strategic Advantage</h4>
+            <p className="project-text-small">
+              <strong>Personalized at scale</strong>: GPT enabled high-converting messages that didn't feel templated
+            </p>
+            <p className="project-text-small">
+              <strong>Faster outreach</strong> = faster collaborations = faster ROI
+            </p>
+          </div>
+        </div>
+      </ProjectSection>
+      
+      <ProjectSection id="conclusion" title="Conclusion">
+        <p className="project-text">
+          This project showcases how combining automation, AI, and scraping tools can transform traditional influencer marketing. By building this modular, scalable Zapier system, I saved a company significant time while maintaining high-quality, personalized outreach at scale.
+        </p>
+      </ProjectSection>
+    </ProjectLayout>
+  );
+}
+
+// Metadata for SEO
+export const metadata = {
+  title: 'Automating Wellness Influencer Outreach Using Zapier | Dana Airapetova',
+  description: 'Automated workflow leveraging Zapier, Apify, OpenAI, Google Sheets, and Hunter.io to identify relevant YouTube creators, assess content fit, find contact details, and draft personalized collaboration emails.',
+};

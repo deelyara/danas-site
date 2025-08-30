@@ -101,43 +101,43 @@
 }
 
 .expertise-card-number {
-  font-size: 48px;
+  font-size: var(--text-5xl);  /* 48px - using scale */
   font-weight: 200;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-md);  /* 24px - better than 20px for scale */
   font-family: var(--font-serif);
 }
 
 .expertise-card-title {
-  font-size: 24px;
+  font-size: var(--text-2xl);  /* 24px - using scale */
   font-family: var(--font-serif);
   color: var(--color-primary);
-  margin-bottom: 16px;
+  margin-bottom: var(--space-sm);  /* 16px - using scale */
 }
 
 .expertise-card-description {
-  font-size: 14px;
+  font-size: var(--text-sm);  /* 14px - using scale */
   color: var(--color-secondary);
-  margin-bottom: 24px;
-  line-height: 1.6;
+  margin-bottom: var(--space-md);  /* 24px - using scale */
+  line-height: var(--leading-relaxed);
 }
 
 .expertise-skills-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-xs);  /* 8px - using scale */
 }
 
 .expertise-skill-item {
   display: flex;
   align-items: flex-start;
-  font-size: 14px;
+  font-size: var(--text-sm);  /* 14px - using scale */
   color: var(--color-secondary);
 }
 
 .expertise-skill-bullet {
-  margin-right: 8px;
-  font-size: 16px;
-  line-height: 20px;
+  margin-right: var(--space-xs);  /* 8px - using scale */
+  font-size: var(--text-base);  /* 16px - using scale */
+  line-height: 1.25;  /* 20px with 16px font */
 }
 
 /* Project Entry Hover Effects */

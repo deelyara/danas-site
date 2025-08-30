@@ -34,21 +34,21 @@ section {
   padding-right: max(24px, env(safe-area-inset-right));
 }
 
-/* Container padding utilities */
+/* Container padding utilities - Using spacing scale */
 .container-padding {
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: var(--space-3xl);  /* 96px - better than 80px for scale */
+  padding-right: var(--space-3xl);
 }
 
 /* Section padding utilities */
 .section-padding {
-  padding-top: 160px;
-  padding-bottom: 120px;
+  padding-top: calc(var(--space-4xl) + var(--space-lg));  /* 160px = 128 + 32 */
+  padding-bottom: calc(var(--space-3xl) + var(--space-md));  /* 120px = 96 + 24 */
 }
 
 /* Editorial spacing */
 .editorial-spacing {
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-xl);  /* 48px - using scale */
 }
 
 /* Main content area */
@@ -69,17 +69,17 @@ main > div {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   section {
-    padding-top: 120px;
-    padding-bottom: 80px;
+    padding-top: calc(var(--space-3xl) + var(--space-md));  /* 120px = 96 + 24 */
+    padding-bottom: calc(var(--space-2xl) + var(--space-sm));  /* 80px = 64 + 16 */
   }
   
   .container-padding {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: var(--space-xl);  /* 48px - better than 40px for scale */
+    padding-right: var(--space-xl);
   }
   
   .editorial-spacing {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-lg);  /* 32px - using scale */
   }
 }
 

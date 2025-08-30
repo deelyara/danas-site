@@ -35,7 +35,7 @@ export default function WorkPageLayout({
       <div className="container mx-auto container-padding w-full max-w-5xl">
         <div className="text-center">
           {/* Page Header with proper spacing */}
-          <div style={{ marginBottom: '80px' }}>
+          <div className="work-page-header">
             <h1 
               ref={headerRef}
               className={`page-heading font-serif lowercase animate-on-scroll ${
@@ -46,7 +46,7 @@ export default function WorkPageLayout({
             </h1>
             
             {subtitle && (
-              <p className="text-base text-secondary max-w-2xl mx-auto leading-relaxed">
+              <p className="work-page-subtitle">
                 {subtitle}
               </p>
             )}
@@ -55,7 +55,7 @@ export default function WorkPageLayout({
           {/* All Projects List with proper spacing */}
           <div className="max-w-6xl mx-auto">
             {sortedProjects.map((project, index) => (
-              <div key={project.id} style={{ marginBottom: index !== sortedProjects.length - 1 ? '64px' : '0' }}>
+              <div key={project.id} className={`work-entry-wrapper ${index === sortedProjects.length - 1 ? 'last' : ''}`}>
                 <ProjectEntry
                   project={{
                     ...project,

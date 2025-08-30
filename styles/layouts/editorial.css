@@ -212,3 +212,41 @@
     margin: 48px auto;
   }
 }
+
+/* Work page additional styles */
+.work-page-header {
+  margin-bottom: var(--space-3xl);
+}
+
+.work-page-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-secondary);
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: var(--leading-relaxed);
+}
+
+.work-entry-wrapper {
+  margin-bottom: var(--space-3xl);
+}
+
+.work-entry-wrapper.last {
+  margin-bottom: 0;
+}
+
+/* Homepage project items */
+.project-item {
+  margin-bottom: var(--space-3xl);
+}
+
+.project-item.last {
+  margin-bottom: 0;
+}
+
+.project-description {
+  font-size: var(--text-base);
+  color: var(--color-secondary);
+  line-height: var(--leading-normal);
+  margin-top: var(--space-xs);
+  opacity: 0.9;
+}

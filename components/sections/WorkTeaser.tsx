@@ -54,10 +54,9 @@ export default function WorkTeaser() {
               ref={setElementRef(index)}
               className={`project-item group block w-full animate-on-scroll ${
                 isVisible(index) ? 'animate-in' : ''
-              }`}
+              } ${index === featuredProjects.length - 1 ? 'last' : ''}`}
               style={{ 
-                transitionDelay: `${index * 100}ms`,
-                marginBottom: index !== featuredProjects.length - 1 ? '48px' : '0'
+                transitionDelay: `${index * 100}ms`
               }}
             >
               {/* Last project with button */}
@@ -89,8 +88,11 @@ export default function WorkTeaser() {
                     <h3 className="text-[24px] md:text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
                       {project.title}
                     </h3>
-                    <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68]">
+                    <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68] mb-2">
                       {project.company}
+                    </p>
+                    <p className="project-description text-base text-secondary/80 leading-relaxed">
+                      {project.description}
                     </p>
                   </div>
                 </Link>
@@ -132,8 +134,11 @@ export default function WorkTeaser() {
                     <h3 className="text-[24px] md:text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
                       {project.title}
                     </h3>
-                    <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68]">
+                    <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68] mb-2">
                       {project.company}
+                    </p>
+                    <p className="project-description text-base text-secondary/80 leading-relaxed">
+                      {project.description}
                     </p>
                   </div>
                 </Link>

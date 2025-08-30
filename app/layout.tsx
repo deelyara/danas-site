@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable} scroll-smooth`}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -64,7 +64,7 @@ export default function RootLayout({
         />
       </head>
       <body 
-        className={`${inter.variable} ${instrumentSerif.variable} font-sans antialiased bg-background text-primary`}
+        className={`font-sans antialiased bg-background text-primary`}
         suppressHydrationWarning={true}
       >
         <ErrorBoundary>
