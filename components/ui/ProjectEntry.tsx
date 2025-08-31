@@ -33,7 +33,7 @@ const projectVisuals = {
     accentColor: "#F8E6E0"
   },
   "cheerful-buddha": {
-    image: "/cheerful-buddha-case-study/PKR06926.jpg",
+    image: "/cheerful-buddha-case-study/shot-three.jpg",
     accentColor: "#E8F5E8"
   }
 } as const;
