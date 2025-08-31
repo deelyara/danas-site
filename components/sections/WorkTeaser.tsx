@@ -16,7 +16,7 @@ export default function WorkTeaser() {
     .map((project, index) => {
       const colors = ["#E8DCC6", "#B8C5D6", "#D4C5B0"]; // warm beige, muted blue, soft tan
       const images = [
-        "/cheerful-buddha-case-study/PKR06926.jpg", // cheerful buddha - first featured project
+        "/cheerful-buddha-case-study/shot-three.jpg", // cheerful buddha - first featured project
         "/work-teaser/wellness-outreach.png", // wellness automation - second featured project
         "/work-teaser/social-campaign.png" // multi-funnel - third featured project
       ];
