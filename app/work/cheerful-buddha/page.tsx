@@ -43,216 +43,74 @@ export default function CheerfulBuddhaPage() {
 
       <ProjectSection id="overview" title="Project Overview" className="project-section-overview">
         <p className="project-text-large">
-          This comprehensive role involves directing photoshoots, optimizing campaigns, 
-          and ensuring the brand maintains an engaging, visually consistent, and 
-          performance-driven presence across all channels. Working directly with the 
-          founding team, I've built a marketing system that delivers both creative 
-          impact and measurable commercial results.
+          Cheerful Buddha is a wellness brand offering functional food and beverage products. My role spans social media strategy, content production, paid ad management, and marketing automation. I direct photoshoots, optimize campaigns, ensure the brand's presence is engaging, visually consistent, and performance-driven.
         </p>
       </ProjectSection>
 
       <ProjectSection id="challenge" title="The Challenge">
         <p className="project-text">
-          In the competitive wellness market, Cheerful Buddha needed to:
-        </p>
-        <ul className="project-list">
-          <li>Stand out with fresh, authentic, on-brand content</li>
-          <li>Run efficient ad campaigns that drive measurable results</li>
-          <li>Maintain consistent customer communication at scale</li>
-          <li>Balance creative excellence with data-driven decision making</li>
-          <li>Ensure seamless integration across all marketing channels</li>
-        </ul>
-        <p className="project-text">
-          The core challenge was creating a cohesive system that delivered both 
-          creative impact and commercial performance.
+          Cheerful Buddha wanted to stand out in the crowded wellness market with fresh, on-brand content while also running efficient ad campaigns and maintaining consistent customer communication. The challenge was balancing creative output with data-driven marketing and ensuring that all channels worked seamlessly together.
         </p>
       </ProjectSection>
 
-      <ProjectSection id="strategy" title="Comprehensive Marketing Strategy">
-        <p className="project-text">
-          I developed a multi-channel approach that integrates organic content, 
-          paid advertising, and marketing automation into a cohesive ecosystem. 
-          Each element is carefully orchestrated to support the others, creating 
-          compound effects that drive sustainable growth.
-        </p>
-      </ProjectSection>
-
-      <ProjectSection id="social-media" title="Social Media Management">
-        <p className="project-text">
-          I develop and execute comprehensive content strategies across multiple platforms:
-        </p>
-        <ul className="project-list">
-          <li>Create monthly content calendars for Instagram, Facebook, and TikTok</li>
-          <li>Write engaging captions that resonate with the wellness community</li>
-          <li>Manage posting schedules for optimal engagement</li>
-          <li>Actively interact with the audience to build a thriving community</li>
-        </ul>
-        
-        <ProjectMedia 
-          src={media.social}
-          alt="Social Media Content Example"
-          caption="Engaging social content that drives community interaction"
-          width={1200}
-          height={900}
-        />
-        
-        <ProjectMedia 
-          src={media.videos.content1}
-          type="video"
-          alt="Content Creation Video"
-          caption="Behind-the-scenes content creation process"
-        />
-      </ProjectSection>
-
-      <ProjectSection id="creative" title="Creative Direction & Content Production">
-        <p className="project-text">
-          As creative director and photographer, I ensure all visual content aligns with brand values:
-        </p>
-        <ul className="project-list">
-          <li>Plan and art direct content shoots with seasonal messaging</li>
-          <li>Personally shoot product and lifestyle photography</li>
-          <li>Optimize visuals for both organic reach and paid campaigns</li>
-          <li>Maintain consistent brand aesthetic across all touchpoints</li>
-        </ul>
-        
-        <MediaGrid columns={2}>
-          <ProjectMedia 
-            src={media.products}
-            alt="Product Styling"
-            caption="Artistic product composition"
-            width={1600}
-            height={1067}
-          />
-          <ProjectMedia 
-            src={media.videos.content2}
-            type="video"
-            alt="Behind the Scenes"
-            caption="Creative process in action"
-          />
-        </MediaGrid>
-      </ProjectSection>
-
-      <ProjectSection id="advertising" title="Paid Advertising Excellence">
-        <p className="project-text">
-          I manage and optimize multi-channel paid campaigns with precision:
-        </p>
-        <div className="project-grid-2col">
-          <div className="project-grid-item">
-            <h4 className="project-subheading">Platform Management</h4>
-            <p className="project-text-small">
-              Meta Business Suite and Google Ads campaigns optimized for maximum ROI
-            </p>
+      <ProjectSection id="breakdown" title="Breaking Down the Project">
+        <div className="project-numbered-list">
+          <div className="project-numbered-item">
+            <h4 className="project-subheading">1. Social Media Management</h4>
+            <ul className="project-list">
+              <li>Develop and execute monthly content calendars for Instagram, Facebook, and TikTok.</li>
+              <li>Write engaging captions, manage posting schedules, and interact with the audience to maintain an active community.</li>
+            </ul>
           </div>
-          <div className="project-grid-item">
-            <h4 className="project-subheading">Testing Strategy</h4>
-            <p className="project-text-small">
-              Continuous A/B testing of creatives, copy, and audiences
-            </p>
+          
+          <div className="project-numbered-item">
+            <h4 className="project-subheading">2. Creative Direction & Content Production</h4>
+            <ul className="project-list">
+              <li>Plan and art direct all content shoots to align with the brand's aesthetic and seasonal messaging.</li>
+              <li>Personally shoot product and lifestyle photography, ensuring visuals are optimized for both organic and paid campaigns.</li>
+            </ul>
           </div>
-          <div className="project-grid-item">
-            <h4 className="project-subheading">Performance Optimization</h4>
-            <p className="project-text-small">
-              Data-driven improvements to CTR and conversion rates
-            </p>
+          
+          <div className="project-numbered-item">
+            <h4 className="project-subheading">3. Paid Advertising</h4>
+            <ul className="project-list">
+              <li>Manage and optimize ad campaigns in Meta Business Suite and Google Ads.</li>
+              <li>Run A/B testing for creatives, copy, and targeting to improve click-through and conversion rates.</li>
+              <li>Allocate budgets strategically to maximize ROI across channels.</li>
+            </ul>
           </div>
-          <div className="project-grid-item">
-            <h4 className="project-subheading">Budget Allocation</h4>
-            <p className="project-text-small">
-              Strategic spend distribution for maximum impact
-            </p>
+          
+          <div className="project-numbered-item">
+            <h4 className="project-subheading">4. Marketing Automation</h4>
+            <ul className="project-list">
+              <li>Build multi-step automations in Zapier to connect e-commerce, CRM, and email platforms.</li>
+              <li>Automate customer follow-ups, lead nurturing, and promotional sequences to reduce manual workload.</li>
+            </ul>
+          </div>
+          
+          <div className="project-numbered-item">
+            <h4 className="project-subheading">5. Data & Performance Tracking</h4>
+            <ul className="project-list">
+              <li>Monitor analytics for both organic and paid campaigns to identify top-performing content.</li>
+              <li>Use insights to refine creative direction and ad targeting.</li>
+            </ul>
           </div>
         </div>
-
-        <MediaGrid columns={2}>
-          <ProjectMedia 
-            src={media.screenshots.performance1}
-            alt="Campaign Performance"
-            caption="Meta Ads campaign performance"
-            width={1440}
-            height={900}
-          />
-          <ProjectMedia 
-            src={media.screenshots.performance2}
-            alt="Analytics Dashboard"
-            caption="Performance analytics and insights"
-            width={1440}
-            height={900}
-          />
-        </MediaGrid>
       </ProjectSection>
 
-      <ProjectSection id="automation" title="Marketing Automation">
+      <ProjectSection id="strategy" title="Solution Strategy">
         <p className="project-text">
-          Leveraging automation tools to scale personalized customer experiences:
+          I combined hands-on creative production with automation-driven marketing. By keeping the brand's content pipeline full while optimizing campaigns and streamlining backend processes, I ensured consistent visibility and measurable results.
         </p>
+      </ProjectSection>
+
+      <ProjectSection id="results" title="Impact & Results">
         <ul className="project-list">
-          <li>Email marketing campaigns with advanced segmentation</li>
-          <li>Automated customer journey workflows</li>
-          <li>Personalized product recommendations</li>
-          <li>Abandoned cart recovery sequences</li>
-          <li>Post-purchase engagement programs</li>
+          <li>Increased social media engagement through consistent, high-quality content and interactive posts.</li>
+          <li>Improved ad performance with targeted creatives and ongoing optimization.</li>
+          <li>Reduced manual campaign setup time through automated workflows.</li>
+          <li>Established a cohesive brand aesthetic across organic and paid channels.</li>
         </ul>
-      </ProjectSection>
-
-      <ProjectSection id="seasonal" title="Seasonal Campaign Excellence">
-        <p className="project-text">
-          Creating compelling seasonal campaigns that drive significant revenue spikes 
-          during key trading periods. Each campaign is meticulously planned months in 
-          advance with custom creative assets, targeted messaging, and multi-channel 
-          activation strategies.
-        </p>
-        
-        <MediaGrid columns={2}>
-          <ProjectMedia 
-            src={media.seasonal.christmas}
-            alt="Christmas Campaign"
-            caption="Holiday campaign creative"
-            width={1600}
-            height={1600}
-          />
-          <ProjectMedia 
-            src={media.seasonal.lionsmane}
-            alt="Product Launch Campaign"
-            caption="New product launch assets"
-            width={1200}
-            height={1200}
-          />
-        </MediaGrid>
-
-        <ProjectMedia 
-          src={media.videos.friends}
-          type="video"
-          alt="Cheerful Friends Campaign"
-          caption="Community-focused campaign video"
-        />
-      </ProjectSection>
-
-      <ProjectSection id="results" title="Results & Impact">
-        <ProjectMetrics metrics={metrics} />
-        
-        <div className="project-achievements">
-          <h3 className="project-section-title">Key Achievements</h3>
-          <div className="project-achievement-list">
-            <div className="project-achievement-item">
-              <h4 className="project-achievement-title">Community Growth</h4>
-              <p className="project-achievement-text">
-                Built an engaged community of 25,000+ wellness enthusiasts across social platforms
-              </p>
-            </div>
-            <div className="project-achievement-item">
-              <h4 className="project-achievement-title">Brand Recognition</h4>
-              <p className="project-achievement-text">
-                Established Cheerful Buddha as a leading voice in the functional wellness space
-              </p>
-            </div>
-            <div className="project-achievement-item">
-              <h4 className="project-achievement-title">Revenue Impact</h4>
-              <p className="project-achievement-text">
-                Marketing efforts directly contributed to 3x revenue growth year-over-year
-              </p>
-            </div>
-          </div>
-        </div>
       </ProjectSection>
     </ProjectLayout>
   );

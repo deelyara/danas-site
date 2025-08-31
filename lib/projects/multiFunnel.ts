@@ -10,13 +10,11 @@ export const multiFunnelData = {
   
   // Table of contents
   tableOfContents: [
-    { id: 'overview', title: 'Project Overview' },
-    { id: 'challenge', title: 'The Challenge' },
-    { id: 'campaign-structure', title: 'Campaign Structure & Performance' },
+    { id: 'objectives', title: 'Objectives' },
+    { id: 'campaign-performance', title: 'Campaign Performance' },
     { id: 'key-insights', title: 'Key Insights' },
-    { id: 'optimization-strategy', title: 'Optimization Strategy' },
-    { id: 'results', title: 'Results & Impact' },
-    { id: 'conclusion', title: 'Conclusion' }
+    { id: 'optimization-actions', title: 'Optimization Actions' },
+    { id: 'outcomes', title: 'Outcomes' }
   ],
   
   // Media assets

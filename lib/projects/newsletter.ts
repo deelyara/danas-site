@@ -12,10 +12,9 @@ export const newsletterData = {
   tableOfContents: [
     { id: 'overview', title: 'Project Overview' },
     { id: 'challenge', title: 'The Challenge' },
-    { id: 'solution', title: 'Solution Architecture' },
-    { id: 'workflow', title: 'Implementation Workflow' },
-    { id: 'results', title: 'Results & Impact' },
-    { id: 'technical', title: 'Technical Architecture' },
+    { id: 'breakdown', title: 'Breaking Down the Project' },
+    { id: 'strategy', title: 'Solution Strategy' },
+    { id: 'results', title: 'Impact & Results' },
     { id: 'conclusion', title: 'Conclusion' }
   ],
   

@@ -9,13 +9,13 @@ const expertiseAreas = [
     id: 'creative',
     title: 'Creative Production',
     subtitle: 'From concept to campaign',
-    description: 'Strategic storytelling and multi-channel campaign execution that drives engagement.',
+    description: 'Creative campaigns are the most enjoyable part of my work. I love team brainstorming and seeing ideas take shape through concept, strategy, and execution.',
     skills: [
-      'Campaign Strategy',
+      'Creative Concepting',
+      'Campaign Execution',
       'Video Production',
-      'Brand Voice',
-      'Content Creation',
-      'Influencer Marketing'
+      'Photo Production',
+      'Art Direction'
     ],
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -28,13 +28,13 @@ const expertiseAreas = [
     id: 'automation',
     title: 'Marketing Automation',
     subtitle: 'Systems that scale',
-    description: 'Intelligent marketing systems that nurture leads and drive conversions 24/7.',
+    description: 'I enjoy making marketing processes faster, smarter, and more consistent. The best moment is when all 10+ steps fire and the whole system works on its own.',
     skills: [
-      'Workflow Design',
-      'Lead Nurturing',
-      'Email Automation',
+      'Automation Design',
+      'Workflow Optimization',
       'CRM Integration',
-      'Process SOPs'
+      'Email Sequences',
+      'Process Scaling'
     ],
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -47,13 +47,13 @@ const expertiseAreas = [
     id: 'analytics',
     title: 'Data & Performance',
     subtitle: 'Insights that drive growth',
-    description: 'Data-driven strategies that improve ROI through continuous optimization.',
+    description: 'My approach blends in-depth analysis with actionable execution. I combine data and creativity to connect with the right people in the right way.',
     skills: [
-      'PPC Management',
-      'Analytics Tracking',
-      'A/B Testing',
-      'Competitive Analysis',
-      'CRO'
+      'Marketing Strategy',
+      'PPC',
+      'Lead Generation',
+      'KPI Analysis',
+      'Metrics Tracking'
     ],
     icon: (
       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -130,8 +130,7 @@ export default function ExpertiseRedesigned() {
               expertise
             </h1>
             <p className="text-lg md:text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
-              A decade of experience across creative production, marketing automation, and data-driven growth. 
-              I build systems that scale.
+              I've always been a big nerd and I try to learn something new every day. I just need an internet connection and some snacks - afterwards you can expect me to come out of the room with a new skill.
             </p>
           </div>
         </div>

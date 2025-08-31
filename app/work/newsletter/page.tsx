@@ -44,149 +44,152 @@ export default function NewsletterPage() {
 
       <ProjectSection id="overview" title="Project Overview" className="project-section-overview">
         <p className="project-text-large">
-          I built an end-to-end automation for creating engaging, brand-aligned newsletters using Zapier, 
-          Anthropic's Claude, OpenAI, and MailerLite. This system transforms research material in a Google 
-          Sheet into a ready-to-send newsletter campaign in around 10 minutes - completely hands-free.
+          I built an end-to-end automation for creating engaging, brand-aligned newsletters using Zapier, Anthropic's Claude, OpenAI, and MailerLite.
+        </p>
+        <p className="project-text">
+          This system takes research material in a Google Sheet and without any manual formatting or copywriting turns it into a ready-to-send newsletter campaign in around 10 minutes.
         </p>
       </ProjectSection>
 
       <ProjectSection id="challenge" title="The Challenge">
         <p className="project-text">
-          Writing a high-quality newsletter every week is a significant time investment requiring:
+          Writing a high-quality newsletter every week requires:
         </p>
         <ul className="project-list">
           <li>Reviewing research materials and transcripts</li>
-          <li>Summarizing top insights into digestible content</li>
-          <li>Crafting engaging, educational copy</li>
-          <li>Writing compelling subject lines</li>
-          <li>Designing HTML that matches brand guidelines</li>
-          <li>Uploading and scheduling campaigns in email platforms</li>
+          <li>Summarizing top insights</li>
+          <li>Making the content fun and educational</li>
+          <li>Writing a catchy subject line</li>
+          <li>Designing HTML that matches brand style</li>
+          <li>Uploading and scheduling campaigns in MailerLite</li>
         </ul>
         <p className="project-text">
-          For a solo marketer or small team, this process can consume 4-5 hours every week. The challenge 
-          was to fully automate this workflow while maintaining quality, brand consistency, and engagement.
+          For a solo marketer or small team, this can take hours every week. The challenge was to fully automate the workflow while keeping the output engaging, on-brand, and ready to publish.
         </p>
       </ProjectSection>
 
-      <ProjectSection id="solution" title="Solution Architecture">
-        <p className="project-text">
-          The solution consists of six interconnected steps that fully automate the newsletter creation process:
-        </p>
-        
-        <div className="project-grid-2col">
-          {solutionSteps.map((step) => (
-            <div key={step.step} className="project-grid-item">
-              <h4 className="project-subheading">Step {step.step}: {step.title}</h4>
-              <p className="project-text-small">
-                <strong>Tool:</strong> {step.tool}
-              </p>
-              <p className="project-text-small">
-                {step.description}
-              </p>
-            </div>
-          ))}
+      <ProjectSection id="breakdown" title="Breaking Down the Project">
+        <div className="project-aspect">
+          <h4 className="project-subheading">Aspect 1: Trigger from Research Entry</h4>
+          <p className="project-text">
+            I used Google Sheets as the starting point. When a new research item (video transcript + notes) is added, Zapier triggers the workflow automatically.
+          </p>
         </div>
 
-        <div className="project-text">
-          <h4 className="project-subheading">Step 2: AI-Powered Content Generation - Detailed Process</h4>
+        <div className="project-aspect">
+          <h4 className="project-subheading">Aspect 2: Content Generation with Claude</h4>
           <p className="project-text">
             <strong>Tool: Anthropic Claude</strong>
           </p>
           <p className="project-text">
-            Claude analyzes the transcript and generates:
+            Claude takes the transcript and generates:
           </p>
           <ul className="project-list">
             <li>A fun, educational newsletter format</li>
             <li>3 key takeaways from the research</li>
-            <li>A seamless call-to-action for the brand's product</li>
+            <li>A seamless call-to-action promoting an app that turns notes and PDFs into mind maps using MapThis at map-this.com</li>
           </ul>
           <p className="project-text">
-            Key prompt engineering elements:
+            <strong>Prompt Highlights:</strong>
           </p>
           <ul className="project-list">
-            <li>Start with an engaging title and quick introduction</li>
-            <li>Extract only the top 3 most valuable takeaways</li>
-            <li>Maintain an educational yet entertaining tone</li>
-            <li>Include natural, value-driven CTAs</li>
+            <li>Start with a title + quick intro</li>
+            <li>List only the top 3 takeaways</li>
+            <li>Keep the tone engaging and educational</li>
+            <li>Include a natural, non-salesy CTA</li>
           </ul>
+        </div>
+
+        <div className="project-aspect">
+          <h4 className="project-subheading">Aspect 3: Subject Line Creation with ChatGPT</h4>
+          <p className="project-text">
+            <strong>Tool: OpenAI GPT</strong>
+          </p>
+          <p className="project-text">
+            Claude's newsletter content is passed into ChatGPT, which generates a short, engaging subject line that fits the tone of the piece.
+          </p>
+        </div>
+
+        <div className="project-aspect">
+          <h4 className="project-subheading">Aspect 4: Content Cleanup</h4>
+          <p className="project-text">
+            <strong>Tool: OpenAI GPT (Extract Structured Data)</strong>
+          </p>
+          <p className="project-text">
+            The raw output from Claude is cleaned to remove:
+          </p>
+          <ul className="project-list">
+            <li>Any system messages</li>
+            <li>Formatting artifacts</li>
+            <li>Anything outside the final newsletter copy</li>
+          </ul>
+        </div>
+
+        <div className="project-aspect">
+          <h4 className="project-subheading">Aspect 5: HTML Styling for Branding</h4>
+          <p className="project-text">
+            <strong>Tool: OpenAI GPT</strong>
+          </p>
+          <p className="project-text">
+            ChatGPT converts the cleaned newsletter content into HTML using a predefined brand template. The HTML includes: language attribute, brand colors, fonts, margins, padding, mobile-friendly width and responsive design etc.
+          </p>
+        </div>
+
+        <div className="project-aspect">
+          <h4 className="project-subheading">Aspect 6: Campaign Creation in MailerLite</h4>
+          <p className="project-text">
+            <strong>Tool: MailerLite via Zapier</strong>
+          </p>
+          <p className="project-text">
+            Zapier creates a draft campaign in MailerLite using:
+          </p>
+          <ul className="project-list">
+            <li>Subject line from Step 3</li>
+            <li>HTML newsletter from Step 5</li>
+          </ul>
+          <p className="project-text">
+            From there, all that's needed is a quick review.
+          </p>
         </div>
       </ProjectSection>
 
-      <ProjectSection id="workflow" title="Implementation Workflow">
+      <ProjectSection id="strategy" title="Solution Strategy">
         <p className="project-text">
-          The complete automation chain operates through the following sequence:
+          I orchestrated the following Zapier chain:
         </p>
-        <ul className="project-list">
-          <li><strong>Trigger:</strong> Google Sheets → New Row Added</li>
-          <li><strong>Content Generation:</strong> Claude → Newsletter with 3 takeaways + CTA</li>
-          <li><strong>Subject Creation:</strong> OpenAI GPT → Engaging subject line</li>
-          <li><strong>Content Cleanup:</strong> OpenAI GPT → Remove artifacts and formatting issues</li>
-          <li><strong>HTML Styling:</strong> OpenAI GPT → Apply brand template</li>
-          <li><strong>Campaign Creation:</strong> MailerLite → Draft campaign ready for review</li>
-        </ul>
+        <ol className="project-list">
+          <li>Trigger: Google Sheets → New Row</li>
+          <li>Claude: Generate newsletter content (top 3 takeaways + CTA)</li>
+          <li>OpenAI GPT: Write subject line</li>
+          <li>OpenAI GPT: Clean up newsletter content</li>
+          <li>OpenAI GPT: Apply HTML brand template</li>
+          <li>MailerLite: Create draft campaign</li>
+        </ol>
       </ProjectSection>
 
-      <ProjectSection id="results" title="Results & Impact">
-        <ProjectMetrics metrics={metrics} />
-        
+      <ProjectSection id="results" title="Impact & Results">
         <div className="project-text">
-          <h3 className="project-section-title">Time Savings</h3>
+          <h4 className="project-subheading">Newsletters created automatically</h4>
           <ul className="project-list">
-            <li><strong>Before:</strong> 4-5 hours per week for newsletter creation</li>
-            <li><strong>After:</strong> 10 minutes per week (just review time)</li>
-            <li><strong>Efficiency Gain:</strong> 96% reduction in time investment</li>
+            <li>Reduced creation time from 4–5 hours/week to 10 minutes/week</li>
+            <li>Consistent design and tone without manual effort</li>
           </ul>
           
-          <h3 className="project-section-title">Quality Improvements</h3>
+          <h4 className="project-subheading">Strategic Benefits:</h4>
           <ul className="project-list">
-            <li><strong>Consistent brand voice</strong> across all newsletters</li>
-            <li><strong>Zero formatting errors</strong> due to automated HTML generation</li>
-            <li><strong>Higher engagement rates</strong> from AI-optimized subject lines</li>
+            <li>Newsletter quality is now consistent regardless of workload</li>
+            <li>Freed up time to focus on research and audience growth</li>
+            <li>Reduced dependency on manual copywriting and design work</li>
           </ul>
-          
-          <h3 className="project-section-title">Strategic Benefits</h3>
-          <ul className="project-list">
-            <li>Team can focus on high-value research and strategy</li>
-            <li>Newsletter publication never delayed due to resource constraints</li>
-            <li>Scalable system that can handle multiple newsletters without additional effort</li>
-            <li>Complete audit trail of all content generation steps</li>
-          </ul>
-        </div>
-      </ProjectSection>
-      
-      <ProjectSection id="technical" title="Technical Architecture">
-        <p className="project-text">
-          The system leverages:
-        </p>
-        <ul className="project-list">
-          <li><strong>Zapier</strong> as the orchestration layer</li>
-          <li><strong>Google Sheets</strong> for content management</li>
-          <li><strong>Claude API</strong> for intelligent content generation</li>
-          <li><strong>OpenAI API</strong> for subject lines and HTML formatting</li>
-          <li><strong>MailerLite API</strong> for campaign management</li>
-        </ul>
-        
-        <div className="project-grid-2col">
-          {tools.map((tool, index) => (
-            <div key={index} className="project-grid-item">
-              <p className="project-text-small">
-                {tool}
-              </p>
-            </div>
-          ))}
         </div>
       </ProjectSection>
       
       <ProjectSection id="conclusion" title="Conclusion">
-        <p className="project-text-large">
-          This project demonstrates how AI and automation can transform time-consuming content creation 
-          tasks into efficient, scalable systems. By combining multiple AI models with smart automation, 
-          we achieved a 96% reduction in newsletter creation time while maintaining - and even improving - 
-          content quality and brand consistency.
+        <p className="project-text">
+          By combining Zapier, Claude, and OpenAI, this project turned a time-consuming manual process into a fully automated content machine.
         </p>
         <p className="project-text">
-          The system now runs entirely hands-free, turning research into ready-to-send newsletters in 
-          minutes rather than hours.
+          Now, research can instantly be transformed into ready-to-send newsletters beautifully formatted, brand-aligned, and engaging—without lifting a finger beyond adding a new row in a spreadsheet.
         </p>
       </ProjectSection>
 

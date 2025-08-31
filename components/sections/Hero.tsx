@@ -29,14 +29,6 @@ export default function Hero() {
     <section id="hero" className="relative overflow-hidden bg-background" style={{ minHeight: '85vh' }}>
       {/* Animated Grain Texture Overlay */}
       <div className="grain-texture absolute inset-0 pointer-events-none opacity-[0.08]" />
-      
-      {/* Subtle background elements */}
-      <div
-        className="absolute top-20 right-0 w-96 h-96 bg-accent/3 rounded-full blur-3xl"
-        style={{
-          transform: isMounted ? `translateY(${scrollY * 0.05}px)` : 'translateY(0px)',
-        }}
-      />
 
       <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 flex items-center justify-center" style={{ minHeight: '85vh', paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full max-w-7xl mx-auto">

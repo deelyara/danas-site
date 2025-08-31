@@ -43,29 +43,15 @@ export default function MultiFunnelPage() {
         priority={true}
       />
 
-      <ProjectSection id="overview" title="Project Overview" className="project-section-overview">
-        <p className="project-text-large">
-          Executed a comprehensive multi-stage paid social campaign for a wellness brand over a two-week period (October 12-25, 2024). The campaign strategically targeted audiences across three distinct funnels - awareness, traffic, and conversion - leveraging seasonal content to maximize engagement and drive measurable results ahead of Black Friday.
-        </p>
-      </ProjectSection>
-
-      <ProjectSection id="challenge" title="The Challenge">
-        <p className="project-text">
-          The wellness brand needed to:
-        </p>
+      <ProjectSection id="objectives" title="Objectives">
         <ul className="project-list">
-          <li>Build brand awareness among both cold and warm audiences</li>
-          <li>Drive meaningful traffic to their Instagram profile and blog</li>
-          <li>Convert seasonal interest into actual purchases</li>
-          <li>Maximize impact with a limited budget across multiple objectives</li>
+          <li>Increase brand awareness across cold & warm audiences</li>
+          <li>Drive traffic to Instagram and blog</li>
+          <li>Convert interest into purchases using seasonal creatives</li>
         </ul>
       </ProjectSection>
 
-      <ProjectSection id="campaign-structure" title="Campaign Structure & Performance">
-        <p className="project-text">
-          The campaign was structured across three strategic funnels, each optimized for specific objectives:
-        </p>
-
+      <ProjectSection id="campaign-performance" title="Campaign Performance">
         <div className="project-table">
           <table>
             <thead>
@@ -93,78 +79,32 @@ export default function MultiFunnelPage() {
       </ProjectSection>
 
       <ProjectSection id="key-insights" title="Key Insights">
-        <p className="project-text">
-          Through careful analysis of campaign performance, several critical insights emerged:
-        </p>
-
         <ul className="project-list">
-          <li><strong>Cold prospects delivered the highest reach</strong> (172K impressions), demonstrating strong potential for brand awareness</li>
-          <li><strong>Cacao Bliss static ad with seasonal pumpkins</strong> outperformed all other creatives, validating the importance of seasonal relevance</li>
-          <li><strong>CTR reached 4.42%</strong> — significantly above industry average of 1-2%</li>
-          <li><strong>Instagram followers increased by +675</strong> in just 2 weeks</li>
-          <li><strong>Seasonal content alignment</strong> (tea, cacao, warm drinks) drove higher engagement rates</li>
+          <li>Cold prospects delivered the highest reach (172K)</li>
+          <li>Cacao Bliss static ad with pumpkins outperformed all creatives</li>
+          <li>CTR reached 4.42% — well above industry average</li>
+          <li>IG followers increased by +675 in 2 weeks</li>
+          <li>Seasonal content (tea, cacao, warm drinks) = higher engagement</li>
         </ul>
       </ProjectSection>
 
-      <ProjectSection id="optimization-strategy" title="Optimization Strategy">
-        <p className="project-text">
-          Throughout the campaign, we implemented real-time optimizations:
-        </p>
-
-        <ol className="project-list">
-          <li><strong>Audience Consolidation</strong>: Combined similar audience segments to improve CPC efficiency</li>
-          <li><strong>Creative Format Prioritization</strong>: Shifted focus to static image ads based on Instagram performance data</li>
-          <li><strong>Budget Reallocation</strong>: Moved spend to high-performing content and audiences</li>
-          <li><strong>Seasonal Alignment</strong>: Adjusted messaging to match autumn/winter themes</li>
-          <li><strong>Conversion Focus</strong>: Directed traffic to high-intent blog posts with strong conversion potential</li>
-        </ol>
+      <ProjectSection id="optimization-actions" title="Optimization Actions">
+        <ul className="project-list">
+          <li>Consolidated audiences to improve CPC</li>
+          <li>Prioritized image ads for better IG performance</li>
+          <li>Shifted budget to high-performing content</li>
+          <li>Aligned content themes with seasonality</li>
+          <li>Focused conversions on high-intent blog posts</li>
+        </ul>
       </ProjectSection>
 
-
-      <ProjectSection id="results" title="Results & Impact">
-        <ProjectMetrics metrics={metrics} />
-
-        <div className="project-achievements">
-          <h3 className="project-section-title">Key Achievements</h3>
-          <div className="project-achievement-list">
-            <div className="project-achievement-item">
-              <h4 className="project-achievement-title">Reached over 400K users</h4>
-              <p className="project-achievement-text">
-                Successfully reached over 400,000 users in just 2 weeks, building significant brand awareness ahead of Black Friday.
-              </p>
-            </div>
-            <div className="project-achievement-item">
-              <h4 className="project-achievement-title">Boosted brand visibility</h4>
-              <p className="project-achievement-text">
-                Strategically positioned the brand for success during the critical Black Friday period with targeted awareness campaigns.
-              </p>
-            </div>
-            <div className="project-achievement-item">
-              <h4 className="project-achievement-title">Surpassed 10K Instagram followers</h4>
-              <p className="project-achievement-text">
-                Achieved the milestone of over 10,000 Instagram followers, with +675 new followers gained during the campaign period.
-              </p>
-            </div>
-            <div className="project-achievement-item">
-              <h4 className="project-achievement-title">Exceptional CTR performance</h4>
-              <p className="project-achievement-text">
-                Achieved 4.42% CTR, significantly outperforming the industry average of 1-2%, demonstrating highly effective creative and targeting.
-              </p>
-            </div>
-            <div className="project-achievement-item">
-              <h4 className="project-achievement-title">Improved conversion efficiency</h4>
-              <p className="project-achievement-text">
-                Optimized lower-funnel targeting resulted in improved conversion efficiency with 1,077 high-quality site visits from the conversion funnel.
-              </p>
-            </div>
-          </div>
-        </div>
-      </ProjectSection>
-
-      <ProjectSection id="conclusion" title="Conclusion">
-        <p className="project-text">
-          This multi-funnel approach demonstrates the power of strategic paid social campaigns when properly structured and optimized. By aligning creative content with seasonal trends, continuously optimizing based on performance data, and maintaining clear funnel-specific objectives, we achieved exceptional results that positioned the brand for success during the critical Black Friday period.
-        </p>
+      <ProjectSection id="outcomes" title="Outcomes">
+        <ul className="project-list">
+          <li>Boosted visibility ahead of Black Friday</li>
+          <li>Reached over 400K users in 2 weeks</li>
+          <li>Surpassed 10K IG followers</li>
+          <li>Significantly improved lower-funnel conversion efficiency</li>
+        </ul>
       </ProjectSection>
     </ProjectLayout>
   );

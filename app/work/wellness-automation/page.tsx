@@ -160,8 +160,16 @@ export default function WellnessAutomationPage() {
 
 
       <ProjectSection id="results" title="Impact & Results">
-        <h3 className="project-section-title">Results After 2 Weeks of Running the Automation:</h3>
-        <ProjectMetrics metrics={metrics} />
+        <p className="project-text">
+          <strong>Results After 2 Weeks of Running the Automation:</strong>
+        </p>
+        <ul className="project-list">
+          <li>150+ YouTube channels scanned</li>
+          <li>57 qualified creators (score ≥ 7)</li>
+          <li>42 verified emails found</li>
+          <li>35 personalized outreach emails drafted</li>
+          <li>12 positive replies and 5 ongoing collaborations</li>
+        </ul>
         
         <ProjectMedia 
           src={media.dashboard}
@@ -171,31 +179,26 @@ export default function WellnessAutomationPage() {
           height={1067}
         />
         
-        <div className="project-grid-2col">
-          <div className="project-grid-item">
-            <h4 className="project-subheading">Time Saved</h4>
-            <p className="project-text-small">
-              Reduced outreach time from 8–10 hours/week to under 30 minutes/week
-            </p>
-            <p className="project-text-small">
-              Manual work minimized to reviewing high-quality leads
-            </p>
-          </div>
-          <div className="project-grid-item">
-            <h4 className="project-subheading">Strategic Advantage</h4>
-            <p className="project-text-small">
-              <strong>Personalized at scale</strong>: GPT enabled high-converting messages that didn't feel templated
-            </p>
-            <p className="project-text-small">
-              <strong>Faster outreach</strong> = faster collaborations = faster ROI
-            </p>
-          </div>
-        </div>
+        <p className="project-text">
+          <strong>Time Saved:</strong>
+        </p>
+        <ul className="project-list">
+          <li>Reduced outreach time from 8–10 hours/week to under 30 minutes/week</li>
+          <li>Manual work minimized to reviewing high-quality leads</li>
+        </ul>
+        
+        <p className="project-text">
+          <strong>Strategic Advantage:</strong>
+        </p>
+        <ul className="project-list">
+          <li>Personalized at scale: GPT enabled high-converting messages that didn't feel templated</li>
+          <li>Faster outreach = faster collaborations = faster ROI</li>
+        </ul>
       </ProjectSection>
       
       <ProjectSection id="conclusion" title="Conclusion">
         <p className="project-text">
-          This project showcases how combining automation, AI, and scraping tools can transform traditional influencer marketing. By building this modular, scalable Zapier system, I saved a company significant time while maintaining high-quality, personalized outreach at scale.
+          This project showcases how combining automation, AI, and scraping tools can transform traditional influencer marketing. By building this modular, scalable Zapier system, I saved a company a lot of time.
         </p>
       </ProjectSection>
     </ProjectLayout>

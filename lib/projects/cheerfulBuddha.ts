@@ -12,13 +12,9 @@ export const cheerfulBuddhaData = {
   tableOfContents: [
     { id: 'overview', title: 'Project Overview' },
     { id: 'challenge', title: 'The Challenge' },
-    { id: 'strategy', title: 'Marketing Strategy' },
-    { id: 'social-media', title: 'Social Media Management' },
-    { id: 'creative', title: 'Creative Direction' },
-    { id: 'advertising', title: 'Paid Advertising' },
-    { id: 'automation', title: 'Marketing Automation' },
-    { id: 'seasonal', title: 'Seasonal Campaigns' },
-    { id: 'results', title: 'Results & Impact' }
+    { id: 'breakdown', title: 'Breaking Down the Project' },
+    { id: 'strategy', title: 'Solution Strategy' },
+    { id: 'results', title: 'Impact & Results' }
   ],
   
   // Media assets
