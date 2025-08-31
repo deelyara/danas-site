@@ -59,6 +59,7 @@
   color: var(--color-primary);
   margin-bottom: 14px;
   font-weight: 400;
+  letter-spacing: 0; /* Normal spacing for better readability at this size */
 }
 
 .project-entry-description {

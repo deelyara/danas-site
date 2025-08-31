@@ -248,7 +248,8 @@
   font-size: var(--text-2xl);
   color: var(--color-primary);
   margin-bottom: var(--space-xl);
-  font-weight: 500;
+  font-weight: 400;
+  letter-spacing: 0;
 }
 
 .project-metrics-grid {
@@ -389,15 +390,56 @@
   object-fit: cover;
 }
 
-/* Typography modifiers - extend base styles */
+/* Video grid for standing/portrait videos */
+.video-grid-portrait {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .video-grid-portrait {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+  }
+}
+
+.video-grid-portrait .project-media video {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
+/* Typography modifiers - Project text styles */
+.project-text {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+  max-width: 70ch;
+}
+
 .project-text-large {
+  font-family: var(--font-sans);
   font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-secondary);
   margin-bottom: var(--space-xl);
+  max-width: 70ch;
+  font-weight: 300;
 }
 
 .project-text-small {
+  font-family: var(--font-sans);
   font-size: var(--text-sm);
+  line-height: var(--leading-normal);
   color: var(--color-muted);
+  margin-bottom: var(--space-sm);
+  max-width: 70ch;
 }
 
 /* Lists */
@@ -412,8 +454,9 @@
   position: relative;
   font-family: var(--font-sans);
   padding-left: var(--space-md);
-  margin-bottom: var(--space-xs); /* 8px instead of 6px */
-  font-size: var(--text-base);
+  margin-bottom: var(--space-sm); /* Better spacing between items */
+  font-size: var(--text-base); /* 16px */
+  font-weight: 300; /* Consistent with body text */
   line-height: var(--leading-relaxed);
   color: var(--color-secondary);
 }
@@ -423,8 +466,9 @@
   position: absolute;
   left: var(--space-xs);
   color: var(--color-accent);
-  font-weight: bold;
-  font-size: 0.9em;
+  font-weight: 600;
+  font-size: 1em;
+  line-height: inherit;
 }
 
 /* Grids */
@@ -447,13 +491,15 @@
   border-radius: var(--radius-md);
 }
 
-/* Subheadings */
-.project-subheading {
+/* Subheadings - Better readability with adjusted spacing */
+h4.project-subheading {
   font-family: var(--font-serif);
   font-size: var(--text-xl);
   color: var(--color-primary);
   margin-bottom: var(--space-sm);
   font-weight: 400;
+  letter-spacing: 0.025em; /* More open spacing for readability at smaller sizes */
+  line-height: var(--leading-snug);
 }
 
 /* Section titles */
@@ -491,4 +537,20 @@
 .project-achievement-text {
   color: var(--color-secondary);
   line-height: var(--leading-relaxed);
+}
+
+/* Project Aspect - Used in breaking down sections */
+.project-aspect {
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+}
+
+.project-aspect h4 {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.025em; /* More open for readability at smaller sizes */
+  line-height: var(--leading-snug);
 }

@@ -31,14 +31,6 @@ export default function WellnessAutomationPage() {
         description={description}
       />
 
-      <ProjectMedia 
-        src={media.hero}
-        alt="Zapier Workflow Beginning"
-        caption="Initial workflow setup showing the trigger and first automation steps"
-        width={1600}
-        height={1067}
-        priority={true}
-      />
 
       <ProjectSection id="overview" title="Project Overview" className="project-section-overview">
         <p className="project-text-large">
@@ -122,13 +114,23 @@ export default function WellnessAutomationPage() {
           We orchestrated the entire flow using Zapier, triggered when the Apify actor finished scraping. Here's the automation chain:
         </p>
         
-        <ProjectMedia 
-          src={media.workflow.beginning}
-          alt="Zapier Workflow Beginning"
-          caption="Initial workflow setup showing the trigger and first automation steps"
-          width={1600}
-          height={1067}
-        />
+        <div className="project-media" style={{ marginBottom: '0' }}>
+          <ProjectMedia 
+            src={media.workflow.beginning}
+            alt="Zapier Workflow Beginning"
+            width={1920}
+            height={1080}
+          />
+        </div>
+        <div className="project-media" style={{ marginTop: '0' }}>
+          <ProjectMedia 
+            src={media.workflow.continuation}
+            alt="Zapier Workflow Continuation"
+            caption="Complete Zapier automation workflow from trigger to personalized outreach"
+            width={1920}
+            height={1080}
+          />
+        </div>
         
         <ol className="project-list">
           <li><strong>Trigger</strong>: Apify → Finished Actor Run</li>
@@ -148,14 +150,6 @@ export default function WellnessAutomationPage() {
           <li>Slack alert for high-scoring creators</li>
           <li>Gmail integration to auto-send or create drafts</li>
         </ul>
-        
-        <ProjectMedia 
-          src={media.workflow.continuation}
-          alt="Zapier Workflow Continuation"
-          caption="Extended workflow showing the complete automation chain with filtering and personalization steps"
-          width={1600}
-          height={1067}
-        />
       </ProjectSection>
 
 
@@ -170,14 +164,6 @@ export default function WellnessAutomationPage() {
           <li>35 personalized outreach emails drafted</li>
           <li>12 positive replies and 5 ongoing collaborations</li>
         </ul>
-        
-        <ProjectMedia 
-          src={media.dashboard}
-          alt="Results Dashboard"
-          caption="Dashboard view showing the automation results and performance metrics"
-          width={1600}
-          height={1067}
-        />
         
         <p className="project-text">
           <strong>Time Saved:</strong>

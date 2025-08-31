@@ -32,14 +32,22 @@ export default function CheerfulBuddhaPage() {
         description={description}
       />
 
-      <ProjectMedia 
-        src={media.hero}
-        alt="Cheerful Buddha Product Photography"
-        caption="Premium product photography showcasing Cheerful Buddha's wellness range"
-        width={1600}
-        height={1067}
-        priority={true}
-      />
+      <MediaGrid columns={2}>
+        <ProjectMedia 
+          src="/cheerful-buddha-case-study/shot-three.jpg"
+          alt="Cheerful Buddha Product Photography"
+          width={800}
+          height={1000}
+          priority={true}
+        />
+        <ProjectMedia 
+          src="/cheerful-buddha-case-study/shot-four.JPG"
+          alt="Cheerful Buddha Wellness Products"
+          width={800}
+          height={1000}
+          priority={true}
+        />
+      </MediaGrid>
 
       <ProjectSection id="overview" title="Project Overview" className="project-section-overview">
         <p className="project-text-large">
@@ -54,6 +62,21 @@ export default function CheerfulBuddhaPage() {
       </ProjectSection>
 
       <ProjectSection id="breakdown" title="Breaking Down the Project">
+        <MediaGrid columns={2}>
+          <ProjectMedia 
+            src="/cheerful-buddha-case-study/shot-one.png"
+            alt="Cheerful Buddha Product Shot 1"
+            width={800}
+            height={1000}
+          />
+          <ProjectMedia 
+            src="/cheerful-buddha-case-study/shot-two.png"
+            alt="Cheerful Buddha Product Shot 2"
+            width={800}
+            height={1000}
+          />
+        </MediaGrid>
+        
         <div className="project-numbered-list">
           <div className="project-numbered-item">
             <h4 className="project-subheading">1. Social Media Management</h4>
@@ -102,6 +125,42 @@ export default function CheerfulBuddhaPage() {
         <p className="project-text">
           I combined hands-on creative production with automation-driven marketing. By keeping the brand's content pipeline full while optimizing campaigns and streamlining backend processes, I ensured consistent visibility and measurable results.
         </p>
+      </ProjectSection>
+
+      <ProjectSection id="content" title="Video Content Production">
+        <p className="project-text">
+          Created engaging video content for social media campaigns, showcasing product benefits and brand lifestyle through vertical format optimized for Instagram Stories and Reels.
+        </p>
+        <div className="video-grid-portrait">
+          <ProjectMedia 
+            src="/cheerful-buddha-case-study/C0553-1.mp4"
+            alt="Cheerful Buddha Video Content 1"
+            type="video"
+            width={1080}
+            height={1920}
+          />
+          <ProjectMedia 
+            src="/cheerful-buddha-case-study/C0755-1.mp4"
+            alt="Cheerful Buddha Video Content 2"
+            type="video"
+            width={1080}
+            height={1920}
+          />
+          <ProjectMedia 
+            src="/cheerful-buddha-case-study/C0908-1.mp4"
+            alt="Cheerful Buddha Video Content 3"
+            type="video"
+            width={1080}
+            height={1920}
+          />
+          <ProjectMedia 
+            src="/cheerful-buddha-case-study/cheerful-friends-1.mp4"
+            alt="Cheerful Buddha Friends Campaign"
+            type="video"
+            width={1080}
+            height={1920}
+          />
+        </div>
       </ProjectSection>
 
       <ProjectSection id="results" title="Impact & Results">

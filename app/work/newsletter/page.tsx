@@ -37,8 +37,8 @@ export default function NewsletterPage() {
         src={media.hero}
         alt="AI-Powered Newsletter Automation System"
         caption="End-to-end automation system for creating newsletters using AI and workflow automation"
-        width={1600}
-        height={1067}
+        width={1920}
+        height={1080}
         priority={true}
       />
 

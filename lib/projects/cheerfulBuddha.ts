@@ -14,6 +14,7 @@ export const cheerfulBuddhaData = {
     { id: 'challenge', title: 'The Challenge' },
     { id: 'breakdown', title: 'Breaking Down the Project' },
     { id: 'strategy', title: 'Solution Strategy' },
+    { id: 'content', title: 'Video Content Production' },
     { id: 'results', title: 'Impact & Results' }
   ],
   

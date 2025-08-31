@@ -60,7 +60,7 @@ export default function Navigation() {
               <Link 
                 href="/" 
                 onClick={handleNavClick}
-                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.08em] font-medium ${
+                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.12em] font-medium ${
                   isActive('/') ? 'text-accent' : 'text-secondary hover:text-accent'
                 }`}
               >
@@ -71,7 +71,7 @@ export default function Navigation() {
               <Link 
                 href="/about" 
                 onClick={handleNavClick}
-                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.08em] font-medium ${
+                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.12em] font-medium ${
                   isActive('/about') ? 'text-accent' : 'text-secondary hover:text-accent'
                 }`}
               >
@@ -82,7 +82,7 @@ export default function Navigation() {
               <Link 
                 href="/work" 
                 onClick={handleNavClick}
-                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.08em] font-medium ${
+                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.12em] font-medium ${
                   isActive('/work') ? 'text-accent' : 'text-secondary hover:text-accent'
                 }`}
               >
@@ -93,7 +93,7 @@ export default function Navigation() {
               <Link 
                 href="/expertise" 
                 onClick={handleNavClick}
-                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.08em] font-medium ${
+                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.12em] font-medium ${
                   isActive('/expertise') ? 'text-accent' : 'text-secondary hover:text-accent'
                 }`}
               >
@@ -104,7 +104,7 @@ export default function Navigation() {
               <Link 
                 href="/contact" 
                 onClick={handleNavClick}
-                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.08em] font-medium ${
+                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.12em] font-medium ${
                   isActive('/contact') ? 'text-accent' : 'text-secondary hover:text-accent'
                 }`}
               >
@@ -146,7 +146,7 @@ export default function Navigation() {
                 <Link 
                   href="/" 
                   onClick={handleNavClick}
-                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-wider ${
+                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-[0.12em] ${
                     isActive('/') ? 'text-accent font-medium' : 'text-secondary hover:text-accent'
                   }`}
                 >
@@ -157,7 +157,7 @@ export default function Navigation() {
                 <Link 
                   href="/about" 
                   onClick={handleNavClick}
-                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-wider ${
+                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-[0.12em] ${
                     isActive('/about') ? 'text-accent font-medium' : 'text-secondary hover:text-accent'
                   }`}
                 >
@@ -168,7 +168,7 @@ export default function Navigation() {
                 <Link 
                   href="/work" 
                   onClick={handleNavClick}
-                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-wider ${
+                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-[0.12em] ${
                     isActive('/work') ? 'text-accent font-medium' : 'text-secondary hover:text-accent'
                   }`}
                 >
@@ -179,7 +179,7 @@ export default function Navigation() {
                 <Link 
                   href="/expertise" 
                   onClick={handleNavClick}
-                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-wider ${
+                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-[0.12em] ${
                     isActive('/expertise') ? 'text-accent font-medium' : 'text-secondary hover:text-accent'
                   }`}
                 >
@@ -190,7 +190,7 @@ export default function Navigation() {
                 <Link 
                   href="/contact" 
                   onClick={handleNavClick}
-                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-wider ${
+                  className={`block py-2 text-sm transition-all duration-300 uppercase tracking-[0.12em] ${
                     isActive('/contact') ? 'text-accent font-medium' : 'text-secondary hover:text-accent'
                   }`}
                 >

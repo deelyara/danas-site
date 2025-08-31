@@ -62,9 +62,10 @@ export default function ProjectMedia({
             height={height}
             className={`project-media-image ${isLoading ? 'loading' : ''}`}
             onLoadingComplete={() => setIsLoading(false)}
-            quality={75}
+            quality={85}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             priority={priority}
+            style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
             placeholder="blur"
             blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCwAA8A/9k="
           />

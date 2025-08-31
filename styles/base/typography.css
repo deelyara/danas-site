@@ -4,11 +4,8 @@
 body {
   color: var(--color-primary);
   background-color: var(--color-background);
-  background-image: 
-    radial-gradient(circle at 25% 25%, rgba(139, 125, 115, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(180, 165, 150, 0.015) 0%, transparent 50%);
   font-family: var(--font-sans);
-  font-size: 17px;
+  font-size: var(--text-base); /* 16px - consistent scale */
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,7 +17,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   font-weight: 400;
   color: var(--color-primary);
-  letter-spacing: -0.02em;
 }
 
 /* Heading sizes and spacing - Vertical Rhythm System */
@@ -29,6 +25,7 @@ h1 {
   line-height: var(--leading-tight);
   margin-top: 0;
   margin-bottom: var(--space-lg);
+  letter-spacing: -0.02em; /* Tighter for large display text */
 }
 
 h2 {
@@ -36,6 +33,7 @@ h2 {
   line-height: var(--leading-snug);
   margin-top: var(--space-xl);
   margin-bottom: var(--space-md);
+  letter-spacing: -0.01em; /* Less condensed */
 }
 
 h3 {
@@ -43,6 +41,7 @@ h3 {
   line-height: var(--leading-snug);
   margin-top: var(--space-xl);
   margin-bottom: var(--space-sm);
+  letter-spacing: 0; /* Normal spacing */
 }
 
 h4 {
@@ -50,6 +49,7 @@ h4 {
   line-height: var(--leading-normal);
   margin-top: var(--space-lg);
   margin-bottom: var(--space-sm);
+  letter-spacing: 0.01em; /* Slightly more open for readability */
 }
 
 h5 {
@@ -57,6 +57,7 @@ h5 {
   line-height: var(--leading-normal);
   margin-top: var(--space-md);  /* 24px */
   margin-bottom: var(--space-xs);  /* 8px */
+  letter-spacing: 0.02em; /* More open at smaller sizes */
 }
 
 h6 {
@@ -64,6 +65,7 @@ h6 {
   line-height: var(--leading-normal);
   margin-top: var(--space-md);  /* 24px */
   margin-bottom: var(--space-xs);  /* 8px */
+  letter-spacing: 0.02em; /* More open at smaller sizes */
 }
 
 /* Reset margins for first headings */
@@ -87,7 +89,7 @@ h3 + p, h3 + div {
 p, .body-text {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: 17px;
+  font-size: var(--text-base); /* 16px - using scale */
   line-height: var(--leading-relaxed);
   margin-top: 0;
   margin-bottom: var(--space-md);
@@ -99,7 +101,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
-/* Lists - Consolidated */
+/* Lists - Base styles */
 ul, ol {
   margin: var(--space-sm) 0 var(--space-md) 0;
   padding-left: var(--space-lg);
@@ -108,7 +110,8 @@ ul, ol {
 
 li {
   font-family: var(--font-sans);
-  font-size: 17px;
+  font-size: var(--text-base); /* 16px - consistent with body text */
+  font-weight: 300; /* Match body text weight */
   color: var(--color-secondary);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-xs);
@@ -131,7 +134,7 @@ li {
   font-size: clamp(var(--text-6xl), 12vw, 160px);
   font-weight: 400;
   line-height: 0.9;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.03em; /* Keep tight for large display text */
 }
 
 .hero-intro {
@@ -148,14 +151,16 @@ li {
 }
 
 .company-name {
+  font-family: var(--font-sans);
   font-size: var(--text-sm);  /* 14px - using scale */
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em; /* Good spacing for uppercase */
   font-weight: 500;
   color: var(--color-secondary);
 }
 
 .project-number {
+  font-family: var(--font-sans);
   font-size: var(--text-sm);  /* 14px - using scale */
   font-weight: 500;
   color: var(--color-accent);
