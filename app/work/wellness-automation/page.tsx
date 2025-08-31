@@ -34,7 +34,7 @@ export default function WellnessAutomationPage() {
 
       <ProjectSection id="overview" title="Project Overview" className="project-section-overview">
         <p className="project-text-large">
-          In an effort to scale influencer marketing and outreach for a new wellness product line, I built an automated workflow leveraging Zapier, Apify, OpenAI, Google Sheets, and Hunter.io. The goal was to identify relevant YouTube creators, assess their content fit, find contact details, and draft personalized collaboration emails entirely without manual effort.
+          This automated system streamlines the entire influencer outreach process, from discovery to initial contact, eliminating hours of manual research and outreach work while maintaining personalization and quality.
         </p>
       </ProjectSection>
 

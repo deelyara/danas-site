@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Instrument_Serif } from 'next/font/google'
+import Link from 'next/link'
 import './globals.css'
 
 import PageLoader from '@/components/ui/PageLoader'
@@ -26,6 +27,19 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: 'Dana Duisekenova - Marketing Leader',
   description: 'Strategic marketing leader with 8+ years of experience building scalable growth engines and transforming businesses through data-driven marketing excellence.',
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'none',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({
@@ -100,10 +114,10 @@ export default function RootLayout({
                 
                 {/* Navigation links */}
                 <div className="flex justify-center gap-6 mb-6 flex-wrap">
-                  <a href="/work" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">Work</a>
-                  <a href="/about" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">About</a>
-                  <a href="/expertise" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">Expertise</a>
-                  <a href="/contact" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">Contact</a>
+                  <Link href="/work" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">Work</Link>
+                  <Link href="/about" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">About</Link>
+                  <Link href="/expertise" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">Expertise</Link>
+                  <Link href="/contact" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">Contact</Link>
                 </div>
                 
                 {/* Copyright - centered */}

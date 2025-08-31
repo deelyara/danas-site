@@ -41,7 +41,7 @@ const projects = editorialProjects.map(project => ({
 }));
 
 export default function Projects() {
-  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLHeadingElement>();
   const { setElementRef, isVisible } = useMultipleScrollAnimation(projects.length);
 
   return (

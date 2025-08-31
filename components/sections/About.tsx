@@ -7,8 +7,8 @@ import Image from 'next/image';
 
 export default function About() {
   const [isMounted, setIsMounted] = useState(false);
-  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation();
-  const { elementRef: contentRef, isVisible: contentVisible } = useScrollAnimation({ rootMargin: '0px 0px -100px 0px' });
+  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLDivElement>();
+  const { elementRef: contentRef, isVisible: contentVisible } = useScrollAnimation<HTMLDivElement>({ rootMargin: '0px 0px -100px 0px' });
 
   useEffect(() => {
     setIsMounted(true);

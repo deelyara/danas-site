@@ -18,7 +18,7 @@ export default function ProjectPageWrapper() {
   const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
-    if (tableOfContents.length === 0) return;
+    // if (tableOfContents.length === 0) return;
 
     // Set up intersection observer for TOC
     const observerOptions = {
@@ -37,8 +37,8 @@ export default function ProjectPageWrapper() {
     const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
     // Observe all headings with IDs
-    const headings = document.querySelectorAll('h2[id], h3[id], h4[id]');
-    headings.forEach(heading => observer.observe(heading));
+    // const headings = document.querySelectorAll('h2[id], h3[id], h4[id]');
+    // headings.forEach(heading => observer.observe(heading));
 
     // Handle smooth scrolling for TOC links
     const handleTOCClick = (e: MouseEvent) => {
@@ -69,10 +69,10 @@ export default function ProjectPageWrapper() {
     document.addEventListener('click', handleTOCClick);
 
     return () => {
-      headings.forEach(heading => observer.unobserve(heading));
+      // headings.forEach(heading => observer.unobserve(heading));
       document.removeEventListener('click', handleTOCClick);
     };
-  }, [tableOfContents]);
+  }, []);
 
   return null;
 }

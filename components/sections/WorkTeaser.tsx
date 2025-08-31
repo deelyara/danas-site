@@ -6,7 +6,7 @@ import { useScrollAnimation, useMultipleScrollAnimation } from '../../hooks/useS
 import { editorialProjects } from '../../lib/projectData';
 
 export default function WorkTeaser() {
-  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLDivElement>();
   const { setElementRef, isVisible } = useMultipleScrollAnimation(3); // 3 featured projects
 
   // Get the real featured projects and add colors and images

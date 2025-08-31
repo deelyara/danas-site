@@ -44,10 +44,10 @@ export default function NewsletterPage() {
 
       <ProjectSection id="overview" title="Project Overview" className="project-section-overview">
         <p className="project-text-large">
-          I built an end-to-end automation for creating engaging, brand-aligned newsletters using Zapier, Anthropic's Claude, OpenAI, and MailerLite.
+          The system leverages multiple AI models working in sequence to handle content generation, subject line optimization, HTML formatting, and campaign creation - all triggered automatically when new research is added.
         </p>
-        <p className="project-text">
-          This system takes research material in a Google Sheet and without any manual formatting or copywriting turns it into a ready-to-send newsletter campaign in around 10 minutes.
+        <p className="project-text-large">
+          This approach reduces newsletter creation time by 96% while maintaining consistent brand voice and improving engagement rates through AI-optimized content.
         </p>
       </ProjectSection>
 

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 export default function ContactTeaser() {
-  const { elementRef, isVisible } = useScrollAnimation();
+  const { elementRef, isVisible } = useScrollAnimation<HTMLDivElement>();
 
   return (
     <section id="contact-teaser" className="full-screen contact-background flex items-center justify-center relative overflow-hidden">

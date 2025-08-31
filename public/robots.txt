@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Block all search engine crawlers and bots
+# This portfolio is private and not intended for public discovery

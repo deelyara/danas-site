@@ -51,7 +51,7 @@ export default function CheerfulBuddhaPage() {
 
       <ProjectSection id="overview" title="Project Overview" className="project-section-overview">
         <p className="project-text-large">
-          Cheerful Buddha is a wellness brand offering functional food and beverage products. My role spans social media strategy, content production, paid ad management, and marketing automation. I direct photoshoots, optimize campaigns, ensure the brand's presence is engaging, visually consistent, and performance-driven.
+          This comprehensive marketing project involves directing photoshoots, optimizing campaigns, and ensuring the brand maintains an engaging, visually consistent, and performance-driven presence across all channels.
         </p>
       </ProjectSection>
 
@@ -89,7 +89,7 @@ export default function CheerfulBuddhaPage() {
           <div className="project-numbered-item">
             <h4 className="project-subheading">2. Creative Direction & Content Production</h4>
             <ul className="project-list">
-              <li>Plan and art direct all content shoots to align with the brand's aesthetic and seasonal messaging.</li>
+              <li>Plan and art direct all content shoots to align with the brand&apos;s aesthetic and seasonal messaging.</li>
               <li>Personally shoot product and lifestyle photography, ensuring visuals are optimized for both organic and paid campaigns.</li>
             </ul>
           </div>
@@ -123,7 +123,7 @@ export default function CheerfulBuddhaPage() {
 
       <ProjectSection id="strategy" title="Solution Strategy">
         <p className="project-text">
-          I combined hands-on creative production with automation-driven marketing. By keeping the brand's content pipeline full while optimizing campaigns and streamlining backend processes, I ensured consistent visibility and measurable results.
+          I combined hands-on creative production with automation-driven marketing. By keeping the brand&apos;s content pipeline full while optimizing campaigns and streamlining backend processes, I ensured consistent visibility and measurable results.
         </p>
       </ProjectSection>
 

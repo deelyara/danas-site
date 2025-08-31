@@ -72,5 +72,5 @@ export const cheerfulBuddhaData = {
   
   // Navigation
   nextProject: { slug: "wellness-automation", title: "Wellness Influencer Outreach" },
-  prevProject: null
+  prevProject: undefined
 };

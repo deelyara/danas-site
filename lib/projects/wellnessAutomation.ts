@@ -50,6 +50,6 @@ export const wellnessAutomationData = {
   ],
   
   // Navigation
-  nextProject: null,
+  nextProject: undefined,
   prevProject: { slug: "cheerful-buddha", title: "Social Media & Marketing Campaign" }
 };

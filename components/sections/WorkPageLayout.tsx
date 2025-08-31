@@ -25,7 +25,7 @@ export default function WorkPageLayout({
   pageTitle = "projects",
   subtitle 
 }: WorkPageLayoutProps) {
-  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLHeadingElement>();
 
   // Sort projects by order
   const sortedProjects = [...projects].sort((a, b) => a.order - b.order);

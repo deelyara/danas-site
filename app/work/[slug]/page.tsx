@@ -72,7 +72,7 @@ function markdownToHtml(markdown: string, projectTitle: string) {
     .replace(/^- (.*$)/gim, '<li class="font-sans text-base text-secondary mb-3 ml-6">$1</li>')
     // Process grid images/videos (special syntax: ![alt](src) ![alt](src) on same line)
     .replace(/!\[([^\]]*)\]\(([^)]*)\)\s+!\[([^\]]*)\]\(([^)]*)\)/g, (match, alt1, src1, alt2, src2) => {
-      const createMediaElement = (alt, src) => {
+      const createMediaElement = (alt: string, src: string) => {
         // Map local video paths to Cloudinary URLs
         const videoMapping: Record<string, string> = {
           '/Cheerful%20Buddha%20case%20study/C0553%20(1).mp4': 'https://res.cloudinary.com/deh7ugjqb/video/upload/v1756052880/C0553-1_mhkb4x.mp4',
@@ -150,7 +150,7 @@ function markdownToHtml(markdown: string, projectTitle: string) {
     // Process tables
     .replace(/^\|(.+)\|$/gm, (match, content) => {
       // Split content by | and clean up
-      const cells = content.split('|').map(cell => cell.trim()).filter(cell => cell);
+      const cells = content.split('|').map((cell: string) => cell.trim()).filter((cell: string) => cell);
       
       // Check if this is a header separator row (contains only -, |, and spaces)
       if (content.match(/^[\s\-\|]+$/)) {
@@ -161,9 +161,9 @@ function markdownToHtml(markdown: string, projectTitle: string) {
       const isHeader = match.includes('Funnel Stage') || match.includes('Spend') || match.includes('Reach');
       
       if (isHeader) {
-        return `<div class="content-block my-16"><table><thead><tr>${cells.map(cell => `<th>${cell}</th>`).join('')}</tr></thead><tbody>`;
+        return `<div class="content-block my-16"><table><thead><tr>${cells.map((cell: string) => `<th>${cell}</th>`).join('')}</tr></thead><tbody>`;
       } else {
-        return `<tr>${cells.map(cell => `<td>${cell}</td>`).join('')}</tr>`;
+        return `<tr>${cells.map((cell: string) => `<td>${cell}</td>`).join('')}</tr>`;
       }
     })
     // Close table after processing all rows

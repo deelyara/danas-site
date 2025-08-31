@@ -30,7 +30,7 @@ const testimonials: Testimonial[] = [
 ];
 
 export default function Testimonials() {
-  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation();
+  const { elementRef: headerRef, isVisible: headerVisible } = useScrollAnimation<HTMLDivElement>();
   const { setElementRef, isVisible } = useMultipleScrollAnimation(testimonials.length);
 
   return (
