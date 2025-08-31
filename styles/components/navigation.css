@@ -1,0 +1,30 @@
+/* Navigation Styles */
+
+/* Header optimization */
+nav {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Navigation backdrop effects */
+.nav-backdrop {
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background-color: rgba(250, 248, 244, 0.4);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.02);
+}
+
+/* Alternative shadow approach */
+.nav-shadow {
+  background-color: rgba(250, 248, 244, 0.95);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Smooth navigation transitions */
+.nav-transition {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              background-color var(--transition-base),
+              backdrop-filter var(--transition-base);
+}

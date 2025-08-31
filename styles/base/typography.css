@@ -1,0 +1,182 @@
+/* Typography System - Consolidated without !important abuse */
+
+/* Base body typography - consolidated from reset.css */
+body {
+  color: var(--color-primary);
+  background-color: var(--color-background);
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(139, 125, 115, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(180, 165, 150, 0.015) 0%, transparent 50%);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Editorial Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+}
+
+/* Heading sizes and spacing - Vertical Rhythm System */
+h1 {
+  font-size: clamp(2.25rem, 3.5vw, 3.25rem);
+  line-height: var(--leading-tight);
+  margin-top: 0;
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: var(--leading-snug);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: clamp(1.375rem, 2.25vw, 2rem);
+  line-height: var(--leading-snug);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+}
+
+h4 {
+  font-size: clamp(1.125rem, 1.75vw, 1.5rem);
+  line-height: var(--leading-normal);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+h5 {
+  font-size: var(--text-xl);  /* 20px */
+  line-height: var(--leading-normal);
+  margin-top: var(--space-md);  /* 24px */
+  margin-bottom: var(--space-xs);  /* 8px */
+}
+
+h6 {
+  font-size: var(--text-lg);  /* 18px */
+  line-height: var(--leading-normal);
+  margin-top: var(--space-md);  /* 24px */
+  margin-bottom: var(--space-xs);  /* 8px */
+}
+
+/* Reset margins for first headings */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
+
+/* Remove margin between heading and immediate content */
+h1 + p, h1 + div,
+h2 + p, h2 + div,
+h3 + p, h3 + div {
+  margin-top: 0;
+}
+
+/* Body text - Single source of truth */
+p, .body-text {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 17px;
+  line-height: var(--leading-relaxed);
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+  color: var(--color-secondary);
+  max-width: 70ch; /* Optimal reading width */
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists - Consolidated */
+ul, ol {
+  margin: var(--space-sm) 0 var(--space-md) 0;
+  padding-left: var(--space-lg);
+  font-family: var(--font-sans);
+}
+
+li {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  color: var(--color-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-xs);
+}
+
+/* Special typography classes */
+.page-heading {
+  font-size: 3.5rem;  /* Between --text-5xl and --text-6xl */
+  line-height: var(--leading-tight);
+  font-weight: 400;
+  font-family: var(--font-serif);
+  margin-top: 0;
+  padding-top: var(--space-4xl);  /* 128px - using scale */
+  margin-bottom: var(--space-xl);  /* 48px - using scale */
+  color: var(--color-primary);
+}
+
+.hero-name {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-6xl), 12vw, 160px);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.hero-intro {
+  font-size: var(--text-3xl);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.project-title {
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  line-height: 1.3;
+  margin-bottom: var(--space-sm);
+}
+
+.company-name {
+  font-size: var(--text-sm);  /* 14px - using scale */
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  color: var(--color-secondary);
+}
+
+.project-number {
+  font-size: var(--text-sm);  /* 14px - using scale */
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .page-heading {
+    font-size: var(--text-4xl);  /* 40px - using scale */
+    padding-top: var(--space-2xl);  /* 64px */
+    margin-bottom: var(--space-lg);  /* 32px */
+  }
+  
+  .project-entry h2 {
+    font-size: var(--text-3xl);  /* 32px */
+    line-height: var(--leading-snug);
+  }
+  
+  .project-entry p {
+    font-size: var(--text-base);  /* 16px */
+    line-height: var(--leading-relaxed);
+  }
+}

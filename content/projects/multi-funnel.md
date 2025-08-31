@@ -14,7 +14,7 @@ The wellness brand needed to:
 
 The campaign was structured across three strategic funnels, each optimized for specific objectives:
 
-![Campaign Performance Overview](/AI%20powered%20automation/Multi-funnel%20/illustration-Case%20Study_%20Multi-Funnel%20Paid%20Social%20Campaign.png)
+![Campaign Performance Overview](/ai-powered-automation/multi-funnel/illustration-case-study-multi-funnel-paid-social-campaign.png)
 
 | Funnel Stage | Spend | Reach | Clicks / Views | CPC |
 |--------------|-------|-------|----------------|-----|

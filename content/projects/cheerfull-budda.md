@@ -2,7 +2,7 @@
 
 Cheerful Buddha is a wellness brand offering functional food and beverage products. I manage their complete digital marketing ecosystem spanning social media strategy, content production, paid advertising, and marketing automation. This comprehensive role involves directing photoshoots, optimizing campaigns, and ensuring the brand maintains an engaging, visually consistent, and performance-driven presence across all channels.
 
-![Cheerful Buddha Product Photography](/Cheerful%20Buddha%20case%20study/PKR06797%20%281%29.jpg)
+![Cheerful Buddha Product Photography](/cheerful-buddha-case-study/PKR06797-1.jpg)
 
 ## The Challenge
 
@@ -25,9 +25,9 @@ I develop and execute comprehensive content strategies across multiple platforms
 - Manage posting schedules for optimal engagement
 - Actively interact with the audience to build a thriving community
 
-![Social Media Content Example](/Cheerful%20Buddha%20case%20study/IMG_9747.JPG)
+![Social Media Content Example](/cheerful-buddha-case-study/IMG_9747.JPG)
 
-![Content Creation Video](/Cheerful%20Buddha%20case%20study/C0553%20%281%29.mp4)
+![Content Creation Video](/cheerful-buddha-case-study/C0553-1.mp4)
 
 ### 2. Creative Direction & Content Production
 
@@ -37,9 +37,9 @@ As creative director and photographer, I ensure all visual content aligns with b
 - Optimize visuals for both organic reach and paid campaigns
 - Maintain consistent brand aesthetic across all touchpoints
 
-![Product Styling](/Cheerful%20Buddha%20case%20study/PKR06926.jpg)
+![Product Styling](/cheerful-buddha-case-study/PKR06926.jpg)
 
-![Behind the Scenes Video](/Cheerful%20Buddha%20case%20study/C0755%20%281%29.mp4)
+![Behind the Scenes Video](/cheerful-buddha-case-study/C0755-1.mp4)
 
 ### 3. Paid Advertising Excellence
 
@@ -49,7 +49,7 @@ I manage and optimize multi-channel paid campaigns:
 - **Performance Optimization**: Data-driven improvements to CTR and conversion rates
 - **Budget Allocation**: Strategic spend distribution for maximum ROI
 
-![Campaign Performance](/Cheerful%20Buddha%20case%20study/Screen%20Shot%202025-07-12%20at%2019.06.01.png)
+![Campaign Performance](/cheerful-buddha-case-study/screen-shot-2025-07-12-at-19.06.01.png)
 
 ### 4. Marketing Automation Systems
 
@@ -68,13 +68,13 @@ Analytics inform every decision:
 - Use insights to refine creative direction
 - Continuously optimize targeting and messaging
 
-![Analytics Dashboard](/Cheerful%20Buddha%20case%20study/Screen%20Shot%202025-07-12%20at%2019.09.43.png)
+![Analytics Dashboard](/cheerful-buddha-case-study/screen-shot-2025-07-12-at-19.09.43.png)
 
 ## Seasonal Campaign Excellence
 
 One of our standout successes has been seasonal campaign execution:
 
-![Holiday Campaign](/Cheerful%20Buddha%20case%20study/merry_christmas.jpg) ![Team Collaboration](/Cheerful%20Buddha%20case%20study/cheerful%20friends%20%281%29.mp4)
+![Holiday Campaign](/cheerful-buddha-case-study/merry_christmas.jpg) ![Team Collaboration](/cheerful-buddha-case-study/cheerful-friends-1.mp4)
 
 These campaigns demonstrate our ability to:
 - Align product messaging with seasonal moments
@@ -82,7 +82,7 @@ These campaigns demonstrate our ability to:
 - Drive engagement through timely, relevant content
 - Convert seasonal interest into sales
 
-![Lion's Mane Product Launch](/Cheerful%20Buddha%20case%20study/lionsmane_which_11_29-02.png) ![Production Process](/Cheerful%20Buddha%20case%20study/C0908%20%281%29.mp4)
+![Lion's Mane Product Launch](/cheerful-buddha-case-study/lionsmane_which_11_29-02.png) ![Production Process](/cheerful-buddha-case-study/C0908-1.mp4)
 
 ## Results & Impact
 

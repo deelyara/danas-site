@@ -14,7 +14,7 @@ export interface EditorialProject {
 export const editorialProjects: EditorialProject[] = [
   {
     id: "1",
-    slug: "cheerfull-budda",
+    slug: "cheerful-buddha",
     title: "Social Media & Marketing Campaign",
     company: "CREATIVE",
     year: "2024",

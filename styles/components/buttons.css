@@ -1,0 +1,114 @@
+/* Button and Link Styles */
+
+/* CTA Button Styles */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border: 1px solid var(--color-primary);
+  border-radius: 28px;
+  background: transparent;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all var(--transition-base);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.cta-button:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.cta-button:active {
+  background: #E8C859;
+  border-color: #E8C859;
+  transform: translateY(-1px);
+}
+
+/* Text link style */
+.text-link {
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-primary);
+  padding-bottom: 2px;
+  transition: all var(--transition-base);
+}
+
+.text-link:hover {
+  border-bottom-width: 2px;
+  border-bottom-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Hero explore button */
+.hero-explore-button {
+  margin-top: 2rem;
+}
+
+/* Breathing animation for explore button */
+.breathe-animation {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Email link styling */
+.email-link {
+  position: relative;
+}
+
+.email-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background-color: var(--color-accent);
+  transition: all var(--transition-base);
+  transform: translateX(-50%);
+}
+
+.email-link:hover::after {
+  width: 100%;
+}
+
+/* Footer email hover */
+.footer-email:hover {
+  color: var(--color-accent);
+}
+
+/* Social links */
+.social-links a {
+  position: relative;
+  transition: all var(--transition-base);
+}
+
+.social-links a:hover {
+  transform: translateY(-1px);
+}
+
+/* TOC Links */
+.toc-link {
+  transition: all var(--transition-fast);
+  padding: 4px 0;
+}
+
+.toc-link:hover,
+.toc-link.active {
+  color: var(--color-accent);
+  font-weight: 600;
+}

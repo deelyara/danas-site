@@ -1,9 +1,9 @@
-import Expertise from '@/components/sections/Expertise';
+import ExpertiseRedesigned from '@/components/sections/ExpertiseRedesigned';
 
 export default function ExpertisePage() {
   return (
     <main>
-      <Expertise />
+      <ExpertiseRedesigned />
     </main>
   );
 } 

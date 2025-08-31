@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { editorialProjects } from '@/lib/projectData';
+import ProjectPageWrapper from '@/components/sections/ProjectPageWrapper';
 import fs from 'fs';
 import path from 'path';
 
@@ -72,7 +73,19 @@ function markdownToHtml(markdown: string, projectTitle: string) {
     // Process grid images/videos (special syntax: ![alt](src) ![alt](src) on same line)
     .replace(/!\[([^\]]*)\]\(([^)]*)\)\s+!\[([^\]]*)\]\(([^)]*)\)/g, (match, alt1, src1, alt2, src2) => {
       const createMediaElement = (alt, src) => {
-        if (src.match(/\.(mp4|webm|ogg|mov)$/i)) {
+        // Map local video paths to Cloudinary URLs
+        const videoMapping: Record<string, string> = {
+          '/Cheerful%20Buddha%20case%20study/C0553%20(1).mp4': 'https://res.cloudinary.com/deh7ugjqb/video/upload/v1756052880/C0553-1_mhkb4x.mp4',
+          '/Cheerful%20Buddha%20case%20study/C0908%20(1).mp4': 'https://res.cloudinary.com/deh7ugjqb/video/upload/v1756052880/C0908-1_iz1buh.mp4',
+          '/Cheerful%20Buddha%20case%20study/cheerful-friends%20(1).mp4': 'https://res.cloudinary.com/deh7ugjqb/video/upload/v1756052871/cheerful-friends-1_veqdce.mp4',
+          '/Cheerful%20Buddha%20case%20study/C0755%20(1).mp4': 'https://res.cloudinary.com/deh7ugjqb/video/upload/v1756052861/C0755-1_xfemgd.mp4'
+        };
+        
+        // Check if this is a video that should be mapped to Cloudinary
+        const cloudinaryUrl = videoMapping[src];
+        const finalSrc = cloudinaryUrl || src;
+        
+        if (src.match(/\.(mp4|webm|ogg|mov)$/i) || cloudinaryUrl) {
           // Create a simple gradient poster as fallback
           const posterDataUrl = 'data:image/svg+xml;base64,' + btoa(`
             <svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
@@ -87,17 +100,31 @@ function markdownToHtml(markdown: string, projectTitle: string) {
               <polygon points="385,210 385,240 415,225" fill="#1A1A1A"/>
             </svg>
           `);
-          return `<video controls controlslist="nodownload" preload="metadata" poster="${posterDataUrl}" class="w-full rounded-lg shadow-sm"><source src="${src}" type="video/mp4"><p>Your browser doesn't support video. <a href="${src}">Download the video</a>.</p></video>`;
+          return `<video controls controlslist="nodownload" preload="metadata" poster="${posterDataUrl}" class="w-full rounded-lg shadow-sm"><source src="${finalSrc}" type="video/mp4"><p>Your browser doesn't support video. <a href="${finalSrc}">Download the video</a>.</p></video>`;
         } else {
-          return `<a href="${src}" target="_blank" rel="noopener noreferrer" class="block cursor-zoom-in hover:opacity-90 transition-opacity duration-200"><img src="${src}" alt="${alt}" class="w-full rounded-lg shadow-sm" /></a>`;
+          // Fix image paths - replace %20 with actual spaces and ensure proper path
+          const fixedSrc = finalSrc.replace(/%20/g, ' ').replace(/\s\(1\)/g, ' (1)');
+          return `<a href="${fixedSrc}" target="_blank" rel="noopener noreferrer" class="block cursor-zoom-in hover:opacity-90 transition-opacity duration-200"><img src="${fixedSrc}" alt="${alt}" class="w-full rounded-lg shadow-sm" /></a>`;
         }
       };
       
       return `<div class="content-block my-16"><div class="grid grid-cols-1 md:grid-cols-2 gap-6">${createMediaElement(alt1, src1)}${createMediaElement(alt2, src2)}</div></div>`;
     })
     .replace(/!\[([^\]]*)\]\(([^)]*)\)/g, (match, alt, src) => {
+      // Map local video paths to Cloudinary URLs
+      const videoMapping: Record<string, string> = {
+        '/Cheerful%20Buddha%20case%20study/C0553%20(1).mp4': 'https://res.cloudinary.com/deh7ugjqb/video/upload/v1756052880/C0553-1_mhkb4x.mp4',
+        '/Cheerful%20Buddha%20case%20study/C0908%20(1).mp4': 'https://res.cloudinary.com/deh7ugjqb/video/upload/v1756052880/C0908-1_iz1buh.mp4',
+        '/Cheerful%20Buddha%20case%20study/cheerful-friends%20(1).mp4': 'https://res.cloudinary.com/deh7ugjqb/video/upload/v1756052871/cheerful-friends-1_veqdce.mp4',
+        '/Cheerful%20Buddha%20case%20study/C0755%20(1).mp4': 'https://res.cloudinary.com/deh7ugjqb/video/upload/v1756052861/C0755-1_xfemgd.mp4'
+      };
+      
+      // Check if this is a video that should be mapped to Cloudinary
+      const cloudinaryUrl = videoMapping[src];
+      const finalSrc = cloudinaryUrl || src;
+      
       // Check if it's a video file
-      if (src.match(/\.(mp4|webm|ogg|mov)$/i)) {
+      if (src.match(/\.(mp4|webm|ogg|mov)$/i) || cloudinaryUrl) {
         // Create a simple gradient poster as fallback
         const posterDataUrl = 'data:image/svg+xml;base64,' + btoa(`
           <svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
@@ -112,10 +139,11 @@ function markdownToHtml(markdown: string, projectTitle: string) {
             <polygon points="385,210 385,240 415,225" fill="#1A1A1A"/>
           </svg>
         `);
-        return `<div class="content-block my-16"><video controls controlslist="nodownload" preload="metadata" class="w-full mx-auto rounded-lg shadow-sm"><source src="${src}" type="video/mp4"><p>Your browser doesn't support video. <a href="${src}">Download the video</a>.</p></video></div>`;
+        return `<div class="content-block my-16"><video controls controlslist="nodownload" preload="metadata" class="w-full mx-auto rounded-lg shadow-sm"><source src="${finalSrc}" type="video/mp4"><p>Your browser doesn't support video. <a href="${finalSrc}">Download the video</a>.</p></video></div>`;
       } else {
-        // Regular image
-        return `<div class="content-block my-16"><a href="${src}" target="_blank" rel="noopener noreferrer" class="block cursor-zoom-in hover:opacity-90 transition-opacity duration-200"><img src="${src}" alt="${alt}" class="w-full mx-auto rounded-lg shadow-sm" /></a></div>`;
+        // Regular image - fix paths with spaces
+        const fixedSrc = finalSrc.replace(/%20/g, ' ').replace(/\s\(1\)/g, ' (1)');
+        return `<div class="content-block my-16"><a href="${fixedSrc}" target="_blank" rel="noopener noreferrer" class="block cursor-zoom-in hover:opacity-90 transition-opacity duration-200"><img src="${fixedSrc}" alt="${alt}" class="w-full mx-auto rounded-lg shadow-sm" /></a></div>`;
       }
     })
     .replace(/^\*([^*]+)\*$/gm, '<p class="font-sans text-sm text-secondary text-center italic mb-6">$1</p>')
@@ -150,199 +178,9 @@ interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = await params;
-  const project = editorialProjects.find(p => p.slug === slug);
-
-  if (!project) {
-    notFound();
-  }
-
-  // Try to get markdown content
-  const markdownContent = await getProjectContent(slug);
-  const tableOfContents = markdownContent ? extractTableOfContents(markdownContent) : [];
-
-  return (
-    <main className="min-h-screen bg-background">
-      {/* Spacer to push content below fixed navigation */}
-      <div className="h-32 md:h-40"></div>
-      
-      {/* Main container with wider, more readable width */}
-      <div className="mx-auto max-w-6xl px-6 md:px-12 lg:px-20 pb-32">
-        {/* Project Header - Generous spacing and typography */}
-        <header className="mb-24 text-center">
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-primary leading-tight mb-8">
-            {project.title}
-          </h1>
-          <div className="flex justify-center items-center gap-6 text-sm text-primary/60 uppercase tracking-wide">
-            <span>{project.company}</span>
-            <span className="w-1 h-1 bg-primary/30 rounded-full"></span>
-            <span>{project.year}</span>
-          </div>
-        </header>
-
-        {/* Content with wider, more readable layout */}
-        <div className="max-w-6xl mx-auto">
-          {markdownContent ? (
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-16">
-              {/* Table of Contents - Simple sidebar */}
-              {tableOfContents.length > 0 && (
-                <aside className="lg:col-span-1">
-                  <div className="sticky top-48">
-                    <p className="font-sans text-sm text-primary/70 mb-4 uppercase tracking-wide">Contents</p>
-                    <nav className="space-y-4">
-                      {tableOfContents.map((item, index) => (
-                        <a
-                          key={index}
-                          href={`#${item.id}`}
-                          className="toc-link block font-sans text-sm text-primary/50 hover:text-accent hover:font-semibold transition-all duration-200"
-                        >
-                          {item.title}
-                        </a>
-                      ))}
-                    </nav>
-                  </div>
-                </aside>
-              )}
-              
-              {/* Main content */}
-              <article 
-                className={`prose prose-lg max-w-none editorial-content ${
-                  tableOfContents.length > 0 ? 'lg:col-span-3' : 'lg:col-span-4'
-                }`}
-                dangerouslySetInnerHTML={{ __html: markdownToHtml(markdownContent, project.title) }}
-              />
-              
-              {/* Add scroll tracking for active states */}
-              {tableOfContents.length > 0 && (
-                <script
-                  dangerouslySetInnerHTML={{
-                    __html: `
-                      (function() {
-                        // Quick initialization with fallback
-                        if (document.readyState === 'complete') {
-                          initScrollTracking();
-                        } else {
-                          window.addEventListener('load', initScrollTracking);
-                        }
-                        
-                        function initScrollTracking() {
-                          let manualClick = false;
-                          let manualClickTimeout;
-                          
-                          const observerOptions = {
-                            rootMargin: '-20% 0px -60% 0px',
-                            threshold: 0.1
-                          };
-                          
-                          const observer = new IntersectionObserver((entries) => {
-                            // Don't update if user just clicked manually
-                            if (manualClick) return;
-                            
-                            entries.forEach(entry => {
-                              if (entry.isIntersecting) {
-                                const id = entry.target.getAttribute('id');
-                                
-                                // Remove active class from all TOC links
-                                document.querySelectorAll('.toc-link').forEach(link => {
-                                  link.classList.remove('active');
-                                });
-                                
-                                // Add active class to current link
-                                const tocLink = document.querySelector('.toc-link[href="#' + id + '"]');
-                                if (tocLink) {
-                                  tocLink.classList.add('active');
-                                }
-                              }
-                            });
-                          }, observerOptions);
-                          
-                          // Find and observe all headings with IDs
-                          const headings = document.querySelectorAll('h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]');
-                          headings.forEach(heading => {
-                            observer.observe(heading);
-                          });
-                          
-                          // Handle manual clicks with immediate feedback
-                          document.querySelectorAll('.toc-link').forEach(link => {
-                            link.addEventListener('click', function(e) {
-                              // Prevent observer from interfering
-                              manualClick = true;
-                              clearTimeout(manualClickTimeout);
-                              
-                              // Remove active from all immediately
-                              document.querySelectorAll('.toc-link').forEach(l => l.classList.remove('active'));
-                              // Add active to clicked immediately
-                              this.classList.add('active');
-                              
-                              // Re-enable observer after scroll completes
-                              manualClickTimeout = setTimeout(() => {
-                                manualClick = false;
-                              }, 1000);
-                            });
-                          });
-                        }
-                      })();
-                    `
-                  }}
-                />
-              )}
-            </div>
-          ) : (
-            // Fallback to basic project info with proper spacing
-            <article className="lg:col-span-4">
-              <div className="mb-16">
-                <p className="text-base text-primary/70 leading-relaxed mb-8">
-                  {project.description}
-                </p>
-                {project.metrics && (
-                  <div className="bg-primary/5 rounded-lg p-8 mt-12">
-                    <h3 className="font-serif text-xl text-primary mb-6">Results</h3>
-                    <p className="text-base text-primary/70 leading-relaxed">{project.metrics}</p>
-                  </div>
-                )}
-              </div>
-
-              {/* Skills with proper spacing */}
-              {project.tags && project.tags.length > 0 && (
-                <div className="mt-16">
-                  <h3 className="font-serif text-xl text-primary mb-8">Skills & Technologies</h3>
-                  <div className="flex gap-3 flex-wrap">
-                    {project.tags.map((tag, index) => (
-                      <span 
-                        key={index}
-                        className="px-4 py-2 bg-primary/10 text-primary/70 rounded-full text-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </article>
-          )}
-
-          {/* Navigation with proper spacing */}
-          <nav className="flex justify-center mt-20 pt-12 border-t border-primary/10">
-            <Link 
-              href="/work"
-              className="inline-flex items-center gap-2 text-base text-primary hover:text-accent transition-colors duration-300"
-            >
-              <span>View More Projects</span>
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </nav>
-        </div>
-      </div>
-    </main>
-  );
+export default async function ProjectPage() {
+  notFound();
 }
 
 // Generate static params for all projects
-export function generateStaticParams() {
-  return editorialProjects.map((project) => ({
-    slug: project.slug,
-  }));
-}
+export function generateStaticParams() { return []; }

@@ -8,14 +8,31 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Add custom spacing values WITHOUT overriding defaults
+      spacing: {
+        'xs': '0.5rem',    // 8px
+        'sm': '1rem',      // 16px
+        'md': '1.5rem',    // 24px
+        'lg': '2rem',      // 32px
+        'xl': '3rem',      // 48px
+        '2xl': '4rem',     // 64px
+        '3xl': '6rem',     // 96px
+        '4xl': '8rem',     // 128px
+      },
       colors: {
-        // New warm & professional color scheme
-        background: '#FEFDFB',
-        surface: '#FDFCF9',
+        // Warm & editorial color scheme - aligned with CSS variables
+        background: '#FAF8F4',
+        surface: '#F7F5F1',
         primary: '#1A1A1A',
-        secondary: '#6B6B6B',
+        secondary: '#6B6B68',
         accent: '#ECD06F',
         muted: '#9A9A9A',
+        border: {
+          DEFAULT: 'rgba(26, 26, 26, 0.05)',
+          light: 'rgba(26, 26, 26, 0.03)',
+          medium: 'rgba(26, 26, 26, 0.06)',
+          heavy: 'rgba(26, 26, 26, 0.08)',
+        }
       },
       fontFamily: {
         sans: ['var(--font-inter)'],

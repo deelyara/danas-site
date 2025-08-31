@@ -33,86 +33,88 @@ export default function Navigation() {
     return false;
   };
 
+  const navClasses = `sticky top-0 left-0 right-0 z-[1000] py-2 border-b transition-all duration-300 ${
+    isScrolled
+      ? 'bg-background/95 backdrop-blur-md border-primary/10 shadow-[0_1px_12px_rgba(0,0,0,0.04)]'
+      : 'bg-background/80 backdrop-blur-sm border-primary/5'
+  }`;
+
   return (
-    <nav 
-      className="sticky top-0 left-0 right-0 z-[1000] bg-background/100 border-b border-primary/5"
-      style={{ backgroundColor: '#FAF8F4' }}
-    >
-      <div className="container mx-auto px-8" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
-        {/* Desktop Navigation - Right Aligned */}
-        <div className="hidden md:flex justify-end items-center">
-          <ul className="flex items-center gap-12 lg:gap-14">
-            <li>
+    <nav className={navClasses}>
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        {/* Desktop Navigation - Logo left, Menu center */}
+        <div className="hidden md:grid grid-cols-3 items-center">
+          {/* Logo - Left */}
+          <div>
+            <Link 
+              href="/" 
+              className="font-serif text-xl text-primary hover:text-accent transition-colors duration-300 inline-block"
+            >
+              Dana
+            </Link>
+          </div>
+          
+          {/* Menu Items - Center */}
+          <ul className="flex items-center justify-center gap-10 m-0 p-0 list-none">
+            <li className="mb-0">
               <Link 
                 href="/" 
                 onClick={handleNavClick}
-                className={`text-[13px] transition-all duration-300 uppercase tracking-[0.08em] ${
-                  isActive('/') ? 'font-semibold' : 'font-light text-secondary hover:text-accent'
+                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.08em] font-medium ${
+                  isActive('/') ? 'text-accent' : 'text-secondary hover:text-accent'
                 }`}
-                style={{ 
-                  color: isActive('/') ? '#D4AF37' : undefined 
-                }}
               >
                 Home
               </Link>
             </li>
-            <li>
+            <li className="mb-0">
               <Link 
                 href="/about" 
                 onClick={handleNavClick}
-                className={`text-[13px] transition-all duration-300 uppercase tracking-[0.08em] ${
-                  isActive('/about') ? 'font-semibold' : 'font-light text-secondary hover:text-accent'
+                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.08em] font-medium ${
+                  isActive('/about') ? 'text-accent' : 'text-secondary hover:text-accent'
                 }`}
-                style={{ 
-                  color: isActive('/about') ? '#D4AF37' : undefined 
-                }}
               >
                 About
               </Link>
             </li>
-            <li>
+            <li className="mb-0">
               <Link 
                 href="/work" 
                 onClick={handleNavClick}
-                className={`text-[13px] transition-all duration-300 uppercase tracking-[0.08em] ${
-                  isActive('/work') ? 'font-semibold' : 'font-light text-secondary hover:text-accent'
+                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.08em] font-medium ${
+                  isActive('/work') ? 'text-accent' : 'text-secondary hover:text-accent'
                 }`}
-                style={{ 
-                  color: isActive('/work') ? '#D4AF37' : undefined 
-                }}
               >
                 Work
               </Link>
             </li>
-            <li>
+            <li className="mb-0">
               <Link 
                 href="/expertise" 
                 onClick={handleNavClick}
-                className={`text-[13px] transition-all duration-300 uppercase tracking-[0.08em] ${
-                  isActive('/expertise') ? 'font-semibold' : 'font-light text-secondary hover:text-accent'
+                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.08em] font-medium ${
+                  isActive('/expertise') ? 'text-accent' : 'text-secondary hover:text-accent'
                 }`}
-                style={{ 
-                  color: isActive('/expertise') ? '#D4AF37' : undefined 
-                }}
               >
                 Expertise
               </Link>
             </li>
-            <li>
+            <li className="mb-0">
               <Link 
                 href="/contact" 
                 onClick={handleNavClick}
-                className={`text-[13px] transition-all duration-300 uppercase tracking-[0.08em] ${
-                  isActive('/contact') ? 'font-semibold' : 'font-light text-secondary hover:text-accent'
+                className={`text-[14px] transition-all duration-300 uppercase tracking-[0.08em] font-medium ${
+                  isActive('/contact') ? 'text-accent' : 'text-secondary hover:text-accent'
                 }`}
-                style={{ 
-                  color: isActive('/contact') ? '#D4AF37' : undefined 
-                }}
               >
                 Contact
               </Link>
             </li>
           </ul>
+          
+          {/* Empty third column for balance */}
+          <div></div>
         </div>
 
         {/* Mobile Navigation - Hamburger Menu */}
@@ -139,7 +141,7 @@ export default function Navigation() {
           
           {/* Mobile Menu Dropdown */}
           <div className={`absolute top-full left-0 right-0 bg-background border-b border-primary/5 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-            <ul className="flex flex-col py-6 px-6 space-y-4">
+            <ul className="flex flex-col py-6 px-6 space-y-3">
               <li>
                 <Link 
                   href="/" 

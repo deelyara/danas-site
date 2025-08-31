@@ -26,7 +26,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="full-screen relative overflow-hidden bg-background">
+    <section id="hero" className="relative overflow-hidden bg-background" style={{ minHeight: '85vh' }}>
       {/* Animated Grain Texture Overlay */}
       <div className="grain-texture absolute inset-0 pointer-events-none opacity-[0.08]" />
       
@@ -38,8 +38,8 @@ export default function Hero() {
         }}
       />
 
-      <div className="container mx-auto container-padding relative z-10 flex items-center justify-center min-h-screen">
-        <div className="grid lg:grid-cols-2 gap-16 items-center w-full max-w-7xl mx-auto">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 flex items-center justify-center" style={{ minHeight: '85vh', paddingTop: '80px', paddingBottom: '80px' }}>
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full max-w-7xl mx-auto">
           
           {/* Left Column - Hero Text */}
           <div className="lg:pr-8">
@@ -48,7 +48,7 @@ export default function Hero() {
                   style={{
                     transform: isMounted ? `translateY(${scrollY * 0.02}px)` : 'translateY(0px)',
                   }}>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.9] mb-6 font-normal" style={{ color: '#1A1A1A' }}>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.9] mb-8 font-normal" style={{ color: '#1A1A1A' }}>
                   Hello, I'm{' '}
                   <span className="font-serif italic inline-block" 
                         style={{
@@ -58,7 +58,7 @@ export default function Hero() {
                     Dana
                   </span>.
                 </h1>
-                <p className="text-lg md:text-xl lg:text-2xl font-light leading-relaxed mb-8 tagline-delayed" style={{ color: '#6B6B68' }}>
+                <p className="text-lg md:text-xl lg:text-2xl font-light leading-relaxed mb-12 tagline-delayed" style={{ color: '#6B6B68' }}>
                   Marketing strategist with expertise in digital campaigns, automation, and creative production. I help brands tell their story across every channel.
                 </p>
               </div>
@@ -67,7 +67,7 @@ export default function Hero() {
               <div className={`hero-explore-button transition-all duration-1000 delay-300 ${isMounted && isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                 <Link 
                   href="/work"
-                  className="cta-button breathe-animation inline-flex items-center gap-4"
+                  className="cta-button breathe-animation inline-flex items-center gap-3"
                 >
                   <span>Explore Work</span>
                   <div className="w-6 h-px bg-current transition-all duration-300" />
@@ -77,7 +77,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column - Image */}
-          <div className="lg:pl-8">
+          <div className="lg:pl-8 mt-12 lg:mt-0">
             <div className={`transition-all duration-1000 delay-200 ${isMounted && isLoaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
               <div className="relative">
                 <Image

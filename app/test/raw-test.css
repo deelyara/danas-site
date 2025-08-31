@@ -1,0 +1,18 @@
+/* Test CSS to verify Tailwind utilities are generated */
+
+/* This file tests if Tailwind utilities are working */
+.test-gap-4 {
+  gap: 1rem;
+}
+
+.test-gap-8 {
+  gap: 2rem;
+}
+
+.test-p-4 {
+  padding: 1rem;
+}
+
+.test-p-8 {
+  padding: 2rem;
+}

@@ -50,7 +50,7 @@ All of this data—scores, emails, messages—was stored neatly in Google Sheets
 
 We orchestrated the entire flow using Zapier, triggered when the Apify actor finished scraping. Here's the automation chain:
 
-![Zapier Workflow Beginning](/Automating%20wellness/beginning.png)
+![Zapier Workflow Beginning](/automating-wellness/beginning.png)
 
 *Initial workflow setup showing the trigger and first automation steps*
 
@@ -67,7 +67,7 @@ We orchestrated the entire flow using Zapier, triggered when the Apify actor fin
 - Slack alert for high-scoring creators
 - Gmail integration to auto-send or create drafts
 
-![Zapier Workflow Continuation](/Automating%20wellness/continuation.png)
+![Zapier Workflow Continuation](/automating-wellness/continuation.png)
 
 *Extended workflow showing the complete automation chain with filtering and personalization steps*
 
@@ -80,7 +80,7 @@ We orchestrated the entire flow using Zapier, triggered when the Apify actor fin
 - 35 personalized outreach emails drafted
 - 12 positive replies and 5 ongoing collaborations
 
-![Results Dashboard](/Automating%20wellness/Screen%20Shot%202025-08-13%20at%2022.22.17.png)
+![Results Dashboard](/automating-wellness/screen-shot-2025-08-13-at-22.22.17.png)
 
 *Dashboard view showing the automation results and performance metrics*
 
