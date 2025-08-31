@@ -26,7 +26,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="full-screen relative overflow-hidden bg-background">
+    <section id="hero" className="relative overflow-hidden bg-background" style={{ minHeight: '85vh' }}>
       {/* Animated Grain Texture Overlay */}
       <div className="grain-texture absolute inset-0 pointer-events-none opacity-[0.08]" />
       
@@ -38,7 +38,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 flex items-center justify-center min-h-screen">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 flex items-center justify-center" style={{ minHeight: '85vh', paddingTop: '80px', paddingBottom: '80px' }}>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full max-w-7xl mx-auto">
           
           {/* Left Column - Hero Text */}

@@ -1,0 +1,167 @@
+/* Tailwind v4 Utility Fixes */
+/* Ensures Tailwind utilities work properly */
+
+/* Gap utilities - ensure they have proper specificity */
+.gap-0 { gap: 0px !important; }
+.gap-px { gap: 1px !important; }
+.gap-0\.5 { gap: 0.125rem !important; }
+.gap-1 { gap: 0.25rem !important; }
+.gap-1\.5 { gap: 0.375rem !important; }
+.gap-2 { gap: 0.5rem !important; }
+.gap-2\.5 { gap: 0.625rem !important; }
+.gap-3 { gap: 0.75rem !important; }
+.gap-3\.5 { gap: 0.875rem !important; }
+.gap-4 { gap: 1rem !important; }
+.gap-5 { gap: 1.25rem !important; }
+.gap-6 { gap: 1.5rem !important; }
+.gap-7 { gap: 1.75rem !important; }
+.gap-8 { gap: 2rem !important; }
+.gap-9 { gap: 2.25rem !important; }
+.gap-10 { gap: 2.5rem !important; }
+.gap-11 { gap: 2.75rem !important; }
+.gap-12 { gap: 3rem !important; }
+.gap-14 { gap: 3.5rem !important; }
+.gap-16 { gap: 4rem !important; }
+.gap-20 { gap: 5rem !important; }
+.gap-24 { gap: 6rem !important; }
+.gap-28 { gap: 7rem !important; }
+.gap-32 { gap: 8rem !important; }
+.gap-36 { gap: 9rem !important; }
+.gap-40 { gap: 10rem !important; }
+.gap-44 { gap: 11rem !important; }
+.gap-48 { gap: 12rem !important; }
+.gap-52 { gap: 13rem !important; }
+.gap-56 { gap: 14rem !important; }
+.gap-60 { gap: 15rem !important; }
+.gap-64 { gap: 16rem !important; }
+.gap-72 { gap: 18rem !important; }
+.gap-80 { gap: 20rem !important; }
+.gap-96 { gap: 24rem !important; }
+
+/* Gap X (column gap) */
+.gap-x-0 { column-gap: 0px !important; }
+.gap-x-px { column-gap: 1px !important; }
+.gap-x-0\.5 { column-gap: 0.125rem !important; }
+.gap-x-1 { column-gap: 0.25rem !important; }
+.gap-x-1\.5 { column-gap: 0.375rem !important; }
+.gap-x-2 { column-gap: 0.5rem !important; }
+.gap-x-2\.5 { column-gap: 0.625rem !important; }
+.gap-x-3 { column-gap: 0.75rem !important; }
+.gap-x-3\.5 { column-gap: 0.875rem !important; }
+.gap-x-4 { column-gap: 1rem !important; }
+.gap-x-5 { column-gap: 1.25rem !important; }
+.gap-x-6 { column-gap: 1.5rem !important; }
+.gap-x-7 { column-gap: 1.75rem !important; }
+.gap-x-8 { column-gap: 2rem !important; }
+.gap-x-9 { column-gap: 2.25rem !important; }
+.gap-x-10 { column-gap: 2.5rem !important; }
+.gap-x-11 { column-gap: 2.75rem !important; }
+.gap-x-12 { column-gap: 3rem !important; }
+
+/* Gap Y (row gap) */
+.gap-y-0 { row-gap: 0px !important; }
+.gap-y-px { row-gap: 1px !important; }
+.gap-y-0\.5 { row-gap: 0.125rem !important; }
+.gap-y-1 { row-gap: 0.25rem !important; }
+.gap-y-1\.5 { row-gap: 0.375rem !important; }
+.gap-y-2 { row-gap: 0.5rem !important; }
+.gap-y-2\.5 { row-gap: 0.625rem !important; }
+.gap-y-3 { row-gap: 0.75rem !important; }
+.gap-y-3\.5 { row-gap: 0.875rem !important; }
+.gap-y-4 { row-gap: 1rem !important; }
+.gap-y-5 { row-gap: 1.25rem !important; }
+.gap-y-6 { row-gap: 1.5rem !important; }
+.gap-y-7 { row-gap: 1.75rem !important; }
+.gap-y-8 { row-gap: 2rem !important; }
+.gap-y-9 { row-gap: 2.25rem !important; }
+.gap-y-10 { row-gap: 2.5rem !important; }
+.gap-y-11 { row-gap: 2.75rem !important; }
+.gap-y-12 { row-gap: 3rem !important; }
+
+/* Space utilities */
+.space-y-0 > :not([hidden]) ~ :not([hidden]) { margin-top: 0px !important; }
+.space-y-px > :not([hidden]) ~ :not([hidden]) { margin-top: 1px !important; }
+.space-y-0\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.125rem !important; }
+.space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem !important; }
+.space-y-1\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.375rem !important; }
+.space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem !important; }
+.space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.625rem !important; }
+.space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem !important; }
+.space-y-3\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.875rem !important; }
+.space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem !important; }
+.space-y-5 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.25rem !important; }
+.space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.5rem !important; }
+.space-y-7 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.75rem !important; }
+.space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 2rem !important; }
+.space-y-9 > :not([hidden]) ~ :not([hidden]) { margin-top: 2.25rem !important; }
+.space-y-10 > :not([hidden]) ~ :not([hidden]) { margin-top: 2.5rem !important; }
+.space-y-11 > :not([hidden]) ~ :not([hidden]) { margin-top: 2.75rem !important; }
+.space-y-12 > :not([hidden]) ~ :not([hidden]) { margin-top: 3rem !important; }
+.space-y-14 > :not([hidden]) ~ :not([hidden]) { margin-top: 3.5rem !important; }
+.space-y-16 > :not([hidden]) ~ :not([hidden]) { margin-top: 4rem !important; }
+.space-y-20 > :not([hidden]) ~ :not([hidden]) { margin-top: 5rem !important; }
+.space-y-24 > :not([hidden]) ~ :not([hidden]) { margin-top: 6rem !important; }
+
+.space-x-0 > :not([hidden]) ~ :not([hidden]) { margin-left: 0px !important; }
+.space-x-px > :not([hidden]) ~ :not([hidden]) { margin-left: 1px !important; }
+.space-x-0\.5 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.125rem !important; }
+.space-x-1 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.25rem !important; }
+.space-x-1\.5 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.375rem !important; }
+.space-x-2 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.5rem !important; }
+.space-x-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.625rem !important; }
+.space-x-3 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.75rem !important; }
+.space-x-3\.5 > :not([hidden]) ~ :not([hidden]) { margin-left: 0.875rem !important; }
+.space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 1rem !important; }
+.space-x-5 > :not([hidden]) ~ :not([hidden]) { margin-left: 1.25rem !important; }
+.space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-left: 1.5rem !important; }
+.space-x-7 > :not([hidden]) ~ :not([hidden]) { margin-left: 1.75rem !important; }
+.space-x-8 > :not([hidden]) ~ :not([hidden]) { margin-left: 2rem !important; }
+.space-x-9 > :not([hidden]) ~ :not([hidden]) { margin-left: 2.25rem !important; }
+.space-x-10 > :not([hidden]) ~ :not([hidden]) { margin-left: 2.5rem !important; }
+.space-x-11 > :not([hidden]) ~ :not([hidden]) { margin-left: 2.75rem !important; }
+.space-x-12 > :not([hidden]) ~ :not([hidden]) { margin-left: 3rem !important; }
+
+/* Responsive gap utilities */
+@media (min-width: 768px) {
+  .md\:gap-0 { gap: 0px !important; }
+  .md\:gap-px { gap: 1px !important; }
+  .md\:gap-0\.5 { gap: 0.125rem !important; }
+  .md\:gap-1 { gap: 0.25rem !important; }
+  .md\:gap-1\.5 { gap: 0.375rem !important; }
+  .md\:gap-2 { gap: 0.5rem !important; }
+  .md\:gap-2\.5 { gap: 0.625rem !important; }
+  .md\:gap-3 { gap: 0.75rem !important; }
+  .md\:gap-3\.5 { gap: 0.875rem !important; }
+  .md\:gap-4 { gap: 1rem !important; }
+  .md\:gap-5 { gap: 1.25rem !important; }
+  .md\:gap-6 { gap: 1.5rem !important; }
+  .md\:gap-7 { gap: 1.75rem !important; }
+  .md\:gap-8 { gap: 2rem !important; }
+  .md\:gap-9 { gap: 2.25rem !important; }
+  .md\:gap-10 { gap: 2.5rem !important; }
+  .md\:gap-11 { gap: 2.75rem !important; }
+  .md\:gap-12 { gap: 3rem !important; }
+  .md\:gap-14 { gap: 3.5rem !important; }
+  .md\:gap-16 { gap: 4rem !important; }
+  
+  .md\:space-y-0 > :not([hidden]) ~ :not([hidden]) { margin-top: 0px !important; }
+  .md\:space-y-px > :not([hidden]) ~ :not([hidden]) { margin-top: 1px !important; }
+  .md\:space-y-0\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.125rem !important; }
+  .md\:space-y-1 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.25rem !important; }
+  .md\:space-y-1\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.375rem !important; }
+  .md\:space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem !important; }
+  .md\:space-y-2\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.625rem !important; }
+  .md\:space-y-3 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.75rem !important; }
+  .md\:space-y-3\.5 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.875rem !important; }
+  .md\:space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem !important; }
+  .md\:space-y-5 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.25rem !important; }
+  .md\:space-y-6 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.5rem !important; }
+  .md\:space-y-7 > :not([hidden]) ~ :not([hidden]) { margin-top: 1.75rem !important; }
+  .md\:space-y-8 > :not([hidden]) ~ :not([hidden]) { margin-top: 2rem !important; }
+  .md\:space-y-9 > :not([hidden]) ~ :not([hidden]) { margin-top: 2.25rem !important; }
+  .md\:space-y-10 > :not([hidden]) ~ :not([hidden]) { margin-top: 2.5rem !important; }
+  .md\:space-y-11 > :not([hidden]) ~ :not([hidden]) { margin-top: 2.75rem !important; }
+  .md\:space-y-12 > :not([hidden]) ~ :not([hidden]) { margin-top: 3rem !important; }
+  .md\:space-y-14 > :not([hidden]) ~ :not([hidden]) { margin-top: 3.5rem !important; }
+  .md\:space-y-16 > :not([hidden]) ~ :not([hidden]) { margin-top: 4rem !important; }
+}

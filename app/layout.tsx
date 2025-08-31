@@ -77,43 +77,41 @@ export default function RootLayout({
           <main className="relative z-10">
             {children}
           </main>
-          <footer className="relative z-10 bg-background mt-24 md:mt-32">
-            {/* Container with proper padding */}
-            <div className="container mx-auto px-6 md:px-8 pt-16 md:pt-20 pb-16 md:pb-20">
+          <footer className="relative z-10 bg-surface mt-24 md:mt-32 border-t border-border-medium">
+            <div className="px-6 md:px-8 pt-16 pb-8">
               {/* Creative divider - dots pattern */}
-              <div className="flex justify-center gap-4 mb-12 md:mb-20">
+              <div className="flex justify-center gap-4 mb-12">
                 <div className="w-1 h-1 bg-accent rounded-full"></div>
                 <div className="w-1 h-1 bg-primary rounded-full opacity-30"></div>
                 <div className="w-1 h-1 bg-accent rounded-full"></div>
               </div>
               
-              {/* Content wrapper */}
-              <div className="max-w-3xl mx-auto text-center">
+              {/* Content - all centered */}
+              <div className="text-center w-full">
                 {/* Contact info */}
-                <div className="mb-8 md:mb-12">
-                  <p className="text-[13px] tracking-[0.2em] uppercase text-secondary mb-4 md:mb-6">
-                    Dana Duisekenova
-                  </p>
+                <div className="mb-8">
                   <a 
                     href="mailto:dana.odair1@gmail.com" 
-                    className="text-xl md:text-2xl text-primary no-underline font-light tracking-tight transition-colors duration-300 hover:text-accent inline-block"
+                    className="text-xl md:text-2xl text-primary no-underline font-light tracking-tight transition-colors duration-300 hover:text-accent"
                   >
                     dana.odair1@gmail.com
                   </a>
                 </div>
                 
                 {/* Navigation links */}
-                <nav className="flex justify-center gap-6 md:gap-10 mb-8 md:mb-12 flex-wrap">
+                <div className="flex justify-center gap-6 mb-6 flex-wrap">
                   <a href="/work" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">Work</a>
                   <a href="/about" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">About</a>
                   <a href="/expertise" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">Expertise</a>
                   <a href="/contact" className="text-[13px] text-secondary no-underline hover:text-accent transition-colors">Contact</a>
-                </nav>
+                </div>
                 
-                {/* Copyright */}
-                <p className="text-[11px] text-secondary opacity-50 tracking-wider">
-                  © 2025
-                </p>
+                {/* Copyright - centered */}
+                <div className="text-center w-full">
+                  <p className="text-[11px] text-secondary opacity-50 tracking-wider uppercase m-0 mx-auto max-w-none">
+                    Dana Duisekenova © 2025
+                  </p>
+                </div>
               </div>
             </div>
           </footer>

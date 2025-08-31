@@ -34,7 +34,7 @@ export default function WorkTeaser() {
     });
 
   return (
-    <section id="work-teaser" className="py-24 md:py-32 bg-background">
+    <section id="work-teaser" className="py-24 md:py-32 work-background relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
         {/* Section Header */}
         <div 

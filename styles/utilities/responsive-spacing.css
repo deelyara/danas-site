@@ -92,12 +92,7 @@
   /* Removed - using Tailwind space-y utilities instead */
 }
 
-/* Navigation responsive spacing */
-@media (max-width: 768px) {
-  nav .container {
-    padding: var(--space-sm) var(--space-md); /* 16px 24px */
-  }
-}
+/* Navigation responsive spacing - removed to allow inline control */
 
 /* Footer responsive spacing */
 @media (max-width: 640px) {

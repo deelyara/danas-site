@@ -1,15 +1,17 @@
 /* Global CSS - Tailwind v4 Configuration */
 
-/* Tailwind v4 MUST be imported first for proper processing */
+/* Tailwind v4 import - This includes base, components, and utilities */
 @import "tailwindcss";
 
-/* Custom CSS comes after Tailwind base but we'll use layers to control specificity */
+/* Custom CSS in layers to ensure proper specificity */
+/* Base layer - CSS variables and resets */
 @layer base {
   @import "../styles/base/variables.css";
   @import "../styles/base/reset.css";
   @import "../styles/base/typography.css";
 }
 
+/* Components layer - Custom component styles */
 @layer components {
   @import "../styles/layouts/sections.css";
   @import "../styles/layouts/grid.css";
@@ -21,10 +23,16 @@
   @import "../styles/components/navigation.css";
 }
 
+/* Utilities layer - Helper classes and animations */
 @layer utilities {
   @import "../styles/utilities/animations.css";
   @import "../styles/utilities/responsive-spacing.css";
+  @import "../styles/utilities/tailwind-fixes.css";
+  @import "../styles/utilities/background-patterns.css";
 }
+
+/* IMPORTANT: Custom utility overrides should go here, outside layers */
+/* This ensures Tailwind utilities have proper specificity */
 
 /* 
  * Deprecated/Merged files:

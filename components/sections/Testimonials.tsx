@@ -11,21 +11,21 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     quote:
-      'Dana brought clarity to our go-to-market and turned a scattered plan into a cohesive, high-performing program.',
-    name: 'Alex Thompson',
-    role: 'Head of Growth, SaaS Startup',
+      "Dana is a creative energy powerhouse, bringing great vibes and exceptional work ethic to the table. I can't think of a time she has missed a deadline over 2+ years of working together. She is proactive with new ideas, is not afraid to experiment and has a super positive attitude to learning.",
+    name: 'Daniel Zsolt R.',
+    role: 'Founder of Klear',
   },
   {
     quote:
-      'Exceptionally strategic and fast. Our campaign performance improved within weeks with cleaner journeys and better messaging.',
-    name: 'Priya Desai',
-    role: 'Marketing Director, DTC Brand',
+      "Dana is an exceptional talent to work with. For as long as I worked with her, she was a breath of fresh air, always had a unique perspective and was very hands-on. We've managed multiple campaigns together, working on webinars, podcasts, graphics, social media carousels, copy, everything under the sun that keeps an agency running.",
+    name: 'Drishti S.',
+    role: 'B2B SaaS Marketer',
   },
   {
     quote:
-      'Dana translates business goals into practical marketing systems. Smart, thoughtful, and great to collaborate with.',
-    name: 'Michael Rivera',
-    role: 'Founder, Creative Studio',
+      "From day one, Danagul impressed me with her creativity, strategic mindset, and ability to execute campaigns that delivered results. She managed cold outreach, email marketing, and digital campaigns across multiple channels, understanding how to attract the right audience and build consistent processes.",
+    name: 'Karina M.',
+    role: 'Business and Operations Manager',
   },
 ];
 
@@ -34,7 +34,7 @@ export default function Testimonials() {
   const { setElementRef, isVisible } = useMultipleScrollAnimation(testimonials.length);
 
   return (
-    <section id="testimonials" className="section-centered bg-background">
+    <section id="testimonials" className="section-centered testimonials-background relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 w-full">
         {/* Section Header */}
         <div
@@ -42,7 +42,7 @@ export default function Testimonials() {
           className={`text-center mb-12 md:mb-16 animate-on-scroll ${headerVisible ? 'animate-in' : ''}`}
         >
           <h2 className="font-serif text-4xl md:text-5xl text-primary mb-6 font-normal lowercase tracking-tight">
-            what clients say
+            testimonials
           </h2>
           <p className="text-base md:text-lg text-secondary/80 font-light max-w-2xl mx-auto">
             A few words from collaborators and teams I have partnered with.
@@ -58,7 +58,7 @@ export default function Testimonials() {
               className={`animate-on-scroll ${isVisible(i) ? 'animate-in' : ''}`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <article className="h-full bg-white border border-gray-200 rounded-2xl p-8 transition-shadow duration-300 hover:shadow-lg">
+              <article className="h-full bg-white border border-primary/10 rounded-xl p-8 transition-all duration-300 hover:shadow-lg hover:border-primary/20">
                 <blockquote className="text-primary text-lg md:text-xl leading-relaxed font-light">
                   {t.quote}
                 </blockquote>
