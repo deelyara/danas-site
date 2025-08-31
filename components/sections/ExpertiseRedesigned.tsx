@@ -122,7 +122,7 @@ export default function ExpertiseRedesigned() {
       {/* Alternating background sections */}
       
       {/* Header Section - Clean background */}
-      <div className="bg-background">
+      <div className="bg-gradient-to-b from-background to-[#FAF9F7]">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-24">
           {/* Page Header */}
           <div className="text-center">
@@ -138,7 +138,7 @@ export default function ExpertiseRedesigned() {
       </div>
       
       {/* Expertise Areas Section - Subtle background */}
-      <div className="bg-surface/30 backdrop-blur-sm border-y border-primary/5">
+      <div className="bg-gradient-to-b from-[#FAF9F7] via-[#F9F7F3] to-[#F7F5F1]">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
           {expertiseAreas.map((area, index) => (
@@ -197,7 +197,7 @@ export default function ExpertiseRedesigned() {
       </div>
 
       {/* Tools Section - Different background */}
-      <div className="bg-background">
+      <div className="bg-gradient-to-b from-[#F7F5F1] via-[#F8F6F2] to-background">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
           <div className="relative overflow-hidden">
           
@@ -219,13 +219,15 @@ export default function ExpertiseRedesigned() {
                         hover:border-primary/20 hover:bg-white hover:shadow-md 
                         transition-all duration-300 cursor-pointer"
                     >
-                      {/* Logo - small and elegant */}
-                      <div className="relative w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity">
+                      {/* Logo - small and elegant with proper aspect ratio */}
+                      <div className="relative h-5 opacity-70 group-hover:opacity-100 transition-opacity" 
+                           style={{ 
+                             width: ['Ahrefs', 'Meta', 'ActiveCampaign', 'Klaviyo'].includes(tool) ? '32px' : '20px' 
+                           }}>
                         <Image
                           src={`/icons/${logoData.file}`}
                           alt={logoData.name}
-                          width={20}
-                          height={20}
+                          fill
                           className="object-contain"
                         />
                       </div>
@@ -263,7 +265,7 @@ export default function ExpertiseRedesigned() {
       </div>
 
       {/* Call to Action - Like Homepage Style */}
-      <div className="bg-surface/50 border-t border-primary/5">
+      <div className="bg-gradient-to-b from-background via-[#FAF9F7] to-[#F9F8F4]">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
           <div className="text-center">
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-primary mb-8 md:mb-12 font-normal lowercase tracking-tight">

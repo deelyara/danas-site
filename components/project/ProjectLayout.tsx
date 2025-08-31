@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import ProjectNavigation from '@/components/ui/ProjectNavigation';
+import { allProjects } from '@/lib/projectsConfig';
 
 interface TOCItem {
   id: string;
@@ -11,6 +13,7 @@ interface TOCItem {
 interface ProjectLayoutProps {
   children: React.ReactNode;
   tableOfContents: TOCItem[];
+  currentSlug?: string;
   nextProject?: {
     slug: string;
     title: string;
@@ -24,6 +27,7 @@ interface ProjectLayoutProps {
 export default function ProjectLayout({ 
   children, 
   tableOfContents,
+  currentSlug,
   nextProject,
   prevProject
 }: ProjectLayoutProps) {
@@ -105,37 +109,12 @@ export default function ProjectLayout({
         </div>
 
         {/* Project Navigation */}
-        <nav className="project-nav">
-          <div className="project-nav-container">
-            {prevProject ? (
-              <Link 
-                href={`/work/${prevProject.slug}`}
-                className="project-nav-link prev"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-                <span>{prevProject.title}</span>
-              </Link>
-            ) : <div />}
-            
-            <Link href="/work" className="project-nav-all">
-              All Projects
-            </Link>
-            
-            {nextProject ? (
-              <Link 
-                href={`/work/${nextProject.slug}`}
-                className="project-nav-link"
-              >
-                <span>{nextProject.title}</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            ) : <div />}
-          </div>
-        </nav>
+        {currentSlug && (
+          <ProjectNavigation 
+            currentSlug={currentSlug} 
+            projects={allProjects} 
+          />
+        )}
       </div>
     </main>
   );

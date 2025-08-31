@@ -1,0 +1,300 @@
+/* Project Navigation Section */
+.project-navigation-section {
+  margin-top: var(--space-4xl);
+  padding: var(--space-3xl) 0;
+  background: linear-gradient(180deg, 
+    var(--color-background) 0%, 
+    rgba(247, 245, 241, 0.4) 50%, 
+    var(--color-background) 100%
+  );
+  position: relative;
+}
+
+.project-navigation-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(26, 26, 26, 0.1) 50%, 
+    transparent 100%
+  );
+}
+
+.project-navigation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .project-navigation-container {
+    padding: 0 var(--space-xl);
+  }
+}
+
+/* Header */
+.project-navigation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-2xl);
+}
+
+.project-navigation-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  color: var(--color-primary);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.project-navigation-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--text-sm);
+  color: var(--color-secondary);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.project-navigation-view-all::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width var(--transition-base);
+}
+
+.project-navigation-view-all:hover {
+  color: var(--color-primary);
+}
+
+.project-navigation-view-all:hover::after {
+  width: calc(100% - 24px);
+}
+
+.project-navigation-view-all:hover svg {
+  transform: translateX(4px);
+}
+
+.project-navigation-view-all svg {
+  transition: transform var(--transition-base);
+}
+
+/* Grid Layout */
+.project-navigation-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .project-navigation-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+/* Project Cards */
+.project-navigation-card {
+  display: block;
+  text-decoration: none;
+  background: var(--color-background);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+  animation: fadeInUp 0.6s ease-out backwards;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-navigation-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(236, 208, 111, 0.2);
+}
+
+/* Card Image */
+.project-navigation-card-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.project-navigation-card-image img {
+  transition: transform var(--transition-slow);
+}
+
+.project-navigation-card:hover .project-navigation-card-image img {
+  transform: scale(1.05);
+}
+
+/* Card Overlay */
+.project-navigation-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    transparent 50%, 
+    rgba(26, 26, 26, 0.4) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-md);
+}
+
+.project-navigation-card:hover .project-navigation-card-overlay {
+  opacity: 1;
+}
+
+.project-navigation-card-number {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  color: white;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--transition-base);
+}
+
+.project-navigation-card:hover .project-navigation-card-number {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Content */
+.project-navigation-card-content {
+  padding: var(--space-lg);
+  position: relative;
+}
+
+.project-navigation-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.project-navigation-card-company {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.project-navigation-card-year {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  position: relative;
+  padding-left: var(--space-sm);
+}
+
+.project-navigation-card-year::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  background: var(--color-muted);
+  border-radius: 50%;
+}
+
+.project-navigation-card-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  color: var(--color-primary);
+  font-weight: 400;
+  margin-bottom: var(--space-xs);
+  line-height: var(--leading-tight);
+  transition: color var(--transition-base);
+}
+
+.project-navigation-card:hover .project-navigation-card-title {
+  color: var(--color-accent);
+}
+
+.project-navigation-card-description {
+  font-size: var(--text-sm);
+  color: var(--color-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: 0;
+}
+
+/* Arrow Icon */
+.project-navigation-card-arrow {
+  position: absolute;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.8) translateX(-10px);
+  transition: all var(--transition-base);
+}
+
+.project-navigation-card:hover .project-navigation-card-arrow {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+
+.project-navigation-card-arrow svg {
+  color: white;
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .project-navigation-section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .project-navigation-card-content {
+    padding: var(--space-md);
+  }
+  
+  .project-navigation-card-arrow {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}

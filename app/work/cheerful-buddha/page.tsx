@@ -21,6 +21,7 @@ export default function CheerfulBuddhaPage() {
   return (
     <ProjectLayout 
       tableOfContents={tableOfContents}
+      currentSlug="cheerful-buddha"
       nextProject={nextProject}
       prevProject={prevProject}
     >

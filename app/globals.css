@@ -21,6 +21,7 @@
   @import "../styles/components/cards.css";
   @import "../styles/components/tables.css";
   @import "../styles/components/navigation.css";
+  @import "../styles/components/project-navigation.css";
 }
 
 /* Utilities layer - Helper classes and animations */
