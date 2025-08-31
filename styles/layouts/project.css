@@ -72,7 +72,7 @@
 /* Table of Contents - Minimalist Design */
 .project-toc {
   position: sticky;
-  top: 12rem;
+  top: var(--space-4xl); /* 128px instead of 12rem */
   height: fit-content;
 }
 
@@ -95,8 +95,8 @@
 .project-toc-link {
   font-size: var(--text-sm);
   color: var(--color-muted);
-  padding: 2px 0;
-  margin: 2px 0;
+  padding: var(--space-xs) 0; /* 8px instead of 2px */
+  margin: 0;
   transition: all 0.2s ease;
   text-decoration: none;
   position: relative;
@@ -117,7 +117,7 @@
 
 .project-toc-link:hover {
   color: var(--color-primary);
-  transform: translateX(2px);
+  transform: translateX(var(--space-xs)); /* 8px instead of 2px */
 }
 
 .project-toc-link:hover::before {
@@ -131,7 +131,7 @@
 }
 
 .project-toc-link.active::before {
-  width: 12px;
+  width: var(--space-sm); /* 16px instead of 12px */
   height: 2px;
   background: var(--color-accent);
   border-radius: 1px;
@@ -140,7 +140,7 @@
 /* Project Sections */
 .project-section {
   margin: 0;
-  scroll-margin-top: 8rem;
+  scroll-margin-top: var(--space-4xl); /* 128px */
   padding: var(--space-2xl) 0 var(--space-xl) 0;
   position: relative;
 }
@@ -162,7 +162,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 56px;
+  width: var(--space-2xl); /* 64px instead of 56px */
   height: 2px;
   background: rgba(26, 26, 26, 0.1);
   border-radius: 1px;
@@ -313,11 +313,11 @@
 
 .project-nav-link:hover {
   color: var(--color-accent);
-  transform: translateX(4px);
+  transform: translateX(var(--space-xs)); /* 8px instead of 4px */
 }
 
 .project-nav-link.prev:hover {
-  transform: translateX(-4px);
+  transform: translateX(calc(var(--space-xs) * -1)); /* -8px instead of -4px */
 }
 
 .project-nav-all {
@@ -412,7 +412,7 @@
   position: relative;
   font-family: var(--font-sans);
   padding-left: var(--space-md);
-  margin-bottom: 6px;
+  margin-bottom: var(--space-xs); /* 8px instead of 6px */
   font-size: var(--text-base);
   line-height: var(--leading-relaxed);
   color: var(--color-secondary);

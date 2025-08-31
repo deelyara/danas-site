@@ -38,10 +38,10 @@ export default function Navigation() {
       className="sticky top-0 left-0 right-0 z-[1000] bg-background/100 border-b border-primary/5"
       style={{ backgroundColor: '#FAF8F4' }}
     >
-      <div className="container mx-auto px-8" style={{ paddingTop: '16px', paddingBottom: '16px' }}>
+      <div className="container mx-auto px-8 py-3">
         {/* Desktop Navigation - Right Aligned */}
         <div className="hidden md:flex justify-end items-center">
-          <ul className="flex items-center gap-12 lg:gap-14">
+          <ul className="flex items-center gap-8 lg:gap-12">
             <li>
               <Link 
                 href="/" 
@@ -139,7 +139,7 @@ export default function Navigation() {
           
           {/* Mobile Menu Dropdown */}
           <div className={`absolute top-full left-0 right-0 bg-background border-b border-primary/5 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-            <ul className="flex flex-col py-6 px-6 space-y-4">
+            <ul className="flex flex-col py-6 px-6 space-y-3">
               <li>
                 <Link 
                   href="/" 

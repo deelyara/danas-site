@@ -1,29 +1,30 @@
-/* Global CSS - Optimized Modular Architecture */
+/* Global CSS - Tailwind v4 Configuration */
 
-/* 1. Base Styles - Foundation (BEFORE Tailwind) */
-@import "../styles/base/variables.css";
-@import "../styles/base/reset.css";
-
-/* 2. Tailwind Base */
+/* Tailwind v4 MUST be imported first for proper processing */
 @import "tailwindcss";
 
-/* 3. Typography (AFTER Tailwind base) - Single source of truth */
-@import "../styles/base/typography.css";
+/* Custom CSS comes after Tailwind base but we'll use layers to control specificity */
+@layer base {
+  @import "../styles/base/variables.css";
+  @import "../styles/base/reset.css";
+  @import "../styles/base/typography.css";
+}
 
-/* 4. Layout Systems */
-@import "../styles/layouts/sections.css";
-@import "../styles/layouts/grid.css";
-@import "../styles/layouts/project.css";
-@import "../styles/layouts/editorial.css";
+@layer components {
+  @import "../styles/layouts/sections.css";
+  @import "../styles/layouts/grid.css";
+  @import "../styles/layouts/project.css";
+  @import "../styles/layouts/editorial.css";
+  @import "../styles/components/buttons.css";
+  @import "../styles/components/cards.css";
+  @import "../styles/components/tables.css";
+  @import "../styles/components/navigation.css";
+}
 
-/* 5. Components */
-@import "../styles/components/buttons.css";
-@import "../styles/components/cards.css"; /* Includes work-cards styles */
-@import "../styles/components/tables.css";
-@import "../styles/components/navigation.css";
-
-/* 6. Utilities */
-@import "../styles/utilities/animations.css"; /* Includes helper utilities */
+@layer utilities {
+  @import "../styles/utilities/animations.css";
+  @import "../styles/utilities/responsive-spacing.css";
+}
 
 /* 
  * Deprecated/Merged files:

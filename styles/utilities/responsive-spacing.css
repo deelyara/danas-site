@@ -1,0 +1,196 @@
+/* Responsive Spacing Utilities */
+/* Only override specific layout sections, not utility classes */
+
+/* Mobile-first responsive spacing adjustments for SECTIONS only */
+@media (max-width: 640px) {
+  /* Reduce section padding on small screens */
+  section {
+    padding-top: var(--space-xl);    /* 48px */
+    padding-bottom: var(--space-xl);  /* 48px */
+  }
+
+  .section-centered {
+    padding-top: var(--space-2xl);    /* 64px */
+    padding-bottom: var(--space-2xl);  /* 64px */
+  }
+
+  .full-screen {
+    padding-top: var(--space-lg);     /* 32px */
+    padding-bottom: var(--space-lg);  /* 32px */
+  }
+
+  /* Container padding adjustments */
+  .container {
+    padding-left: var(--space-md);    /* 24px */
+    padding-right: var(--space-md);   /* 24px */
+  }
+
+  /* Typography spacing */
+  h1, .text-7xl, .text-8xl, .text-9xl {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-bottom: var(--space-md);   /* 24px */
+  }
+
+  h2, .text-5xl, .text-6xl {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: var(--space-md);   /* 24px */
+  }
+
+  h3, .text-3xl, .text-4xl {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: var(--space-sm);   /* 16px */
+  }
+
+  /* Don't override Tailwind utility classes - only specific component classes */
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  section {
+    padding-top: var(--space-2xl);    /* 64px */
+    padding-bottom: var(--space-2xl);  /* 64px */
+  }
+
+  .section-centered {
+    padding-top: var(--space-3xl);    /* 96px */
+    padding-bottom: var(--space-3xl);  /* 96px */
+  }
+
+  .container {
+    padding-left: var(--space-lg);    /* 32px */
+    padding-right: var(--space-lg);   /* 32px */
+  }
+
+  /* Don't override Tailwind utilities on tablet either */
+}
+
+/* Desktop and up - use full spacing scale */
+@media (min-width: 1025px) {
+  .container {
+    padding-left: var(--space-xl);    /* 48px */
+    padding-right: var(--space-xl);   /* 48px */
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-left: var(--space-2xl);   /* 64px */
+    padding-right: var(--space-2xl);  /* 64px */
+  }
+}
+
+/* Special responsive adjustments for specific components */
+
+/* Work teaser cards */
+@media (max-width: 768px) {
+  .project-card {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  /* Removed - using Tailwind space-y utilities instead */
+}
+
+/* Navigation responsive spacing */
+@media (max-width: 768px) {
+  nav .container {
+    padding: var(--space-sm) var(--space-md); /* 16px 24px */
+  }
+}
+
+/* Footer responsive spacing */
+@media (max-width: 640px) {
+  footer {
+    margin-top: var(--space-2xl) !important; /* 64px instead of 128px */
+  }
+  
+  footer .pb-20 {
+    padding-bottom: var(--space-xl); /* 48px instead of 80px */
+  }
+  
+  footer .mb-20 {
+    margin-bottom: var(--space-lg); /* 32px instead of 80px */
+  }
+}
+
+/* Project page responsive */
+@media (max-width: 768px) {
+  .project-hero {
+    padding-top: var(--space-xl);     /* 48px */
+    margin-bottom: var(--space-2xl);  /* 64px */
+  }
+  
+  .project-section {
+    padding: var(--space-xl) 0 var(--space-lg) 0; /* 48px 0 32px */
+  }
+  
+  .project-media {
+    margin: var(--space-xl) 0; /* 48px */
+  }
+  
+  .project-metrics {
+    padding: var(--space-lg); /* 32px */
+  }
+}
+
+/* Expertise page responsive */
+@media (max-width: 768px) {
+  .expertise-container {
+    padding: var(--space-2xl) var(--space-md); /* 64px 24px */
+  }
+  
+  .expertise-tools-section {
+    padding: var(--space-lg) var(--space-md); /* 32px 24px */
+  }
+}
+
+/* Global responsive utility classes */
+.spacing-responsive {
+  padding: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .spacing-responsive {
+    padding: var(--space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .spacing-responsive {
+    padding: var(--space-xl);
+  }
+}
+
+/* Ensure consistent line-height across breakpoints */
+@media (max-width: 768px) {
+  .leading-relaxed {
+    line-height: 1.6;
+  }
+  
+  .leading-loose {
+    line-height: 1.8;
+  }
+}
+
+/* Consistent button spacing */
+@media (max-width: 640px) {
+  .cta-button {
+    padding: 12px 28px; /* Slightly smaller on mobile */
+    font-size: 15px;
+  }
+}
+
+/* Ensure images don't create unexpected spacing */
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent margin collapse issues */
+.no-margin-collapse::before,
+.no-margin-collapse::after {
+  content: '';
+  display: table;
+}

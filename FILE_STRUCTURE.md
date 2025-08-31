@@ -69,9 +69,10 @@ app/
 - Uses section-based architecture: Hero → WorkTeaser → ContactTeaser
 
 #### `app/globals.css`
-- Modular CSS import system
+- Optimized modular CSS import system
 - Loads Tailwind base, custom CSS modules in order
 - Foundation → Layouts → Components → Utilities
+- Deprecated files merged for better performance
 
 ## Components Architecture
 
@@ -210,7 +211,7 @@ public/
 
 ### Core Config
 - **`next.config.ts`** - Next.js configuration with hydration optimizations
-- **`tailwind.config.ts`** - TailwindCSS theme customization and color system
+- **`tailwind.config.ts`** - TailwindCSS theme customization aligned with CSS variables
 - **`tsconfig.json`** - TypeScript configuration with path aliases
 - **`package.json`** - Dependencies and scripts
 
@@ -220,14 +221,41 @@ public/
 
 ## Styling Architecture
 
-The project uses a sophisticated multi-layer styling system:
+The project uses an optimized multi-layer styling system:
 
-1. **TailwindCSS** - Utility-first framework with custom theme
-2. **CSS Modules** - Organized in `/styles/` directory
-3. **CSS Custom Properties** - Design tokens and variables
-4. **Component Styles** - Scoped styling for specific components
+### CSS Structure (`styles/`)
+```
+styles/
+├── base/
+│   ├── variables.css      # CSS custom properties aligned with Tailwind
+│   ├── reset.css          # Minimal reset styles
+│   └── typography.css     # Single source of truth for all typography
+├── layouts/
+│   ├── sections.css       # Universal container system
+│   ├── grid.css           # Grid layout systems
+│   ├── project.css        # Project page layouts (includes project-page styles)
+│   └── editorial.css      # Editorial content layouts
+├── components/
+│   ├── buttons.css        # Button and link styles
+│   ├── cards.css          # All card components (includes work-cards)
+│   ├── tables.css         # Table styles
+│   └── navigation.css     # Navigation specific styles
+└── utilities/
+    └── animations.css     # Animations and transitions (includes helpers)
+```
 
-See `STYLES.md` for detailed styling documentation.
+### Deprecated/Merged Files:
+- `project-page.css` → merged into `project.css`
+- `work-cards.css` → merged into `cards.css`
+- `helpers.css` → merged into `animations.css`
+- `spacing.module.css` → use Tailwind utilities instead
+
+### Key Optimizations:
+1. **TailwindCSS** - Utility-first framework with custom theme aligned to CSS variables
+2. **CSS Custom Properties** - Design tokens in variables.css match Tailwind config
+3. **Single Typography Source** - All text styles defined in typography.css
+4. **No !important** - Clean cascade without specificity hacks
+5. **GPU-Optimized Animations** - Performance-focused grain and scroll effects
 
 ## Routing & Navigation
 
@@ -280,14 +308,6 @@ See `STYLES.md` for detailed styling documentation.
 - Easy content updates via markdown files
 
 ## Maintenance Notes
-
-### Adding New Projects
-1. Create markdown file in `content/projects/`
-2. Add project metadata to `lib/projectData.ts`
-3. Create individual project data file in `lib/projects/`
-4. Add assets to appropriate `public/` subdirectory
-5. Consider creating static route in `app/work/[project-name]/page.tsx` for SEO
-6. Project automatically appears in listings
 
 ### Styling Updates
 - Global styles: Edit files in `styles/` directory

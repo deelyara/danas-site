@@ -15,12 +15,12 @@ export default function About() {
 
   return (
     <section id="about" className="section-centered bg-background">
-      <div className="container mx-auto container-padding w-full max-w-3xl">
+      <div className="container mx-auto px-6 md:px-12 w-full max-w-3xl">
         <div className="text-center">
           {/* Page Title */}
           <div 
             ref={headerRef}
-            className={`mb-16 animate-on-scroll ${
+            className={`mb-12 md:mb-16 animate-on-scroll ${
               isMounted && headerVisible ? 'animate-in' : ''
             }`}
           >
@@ -38,7 +38,7 @@ export default function About() {
               }`}
               style={{ transitionDelay: '200ms' }}
             >
-              <p className="body-text text-xl md:text-2xl mb-8 leading-relaxed">
+              <p className="body-text text-xl md:text-2xl mb-6 md:mb-8 leading-relaxed">
                 Hi, I'm <span className="font-semibold">Dana Duisekenova</span> — a marketing strategist with <span className="font-semibold">8+ years</span> of leading high-impact campaigns and managing complex marketing operations.
               </p>
               
@@ -46,7 +46,7 @@ export default function About() {
                 I specialize in building <span className="font-semibold">data-driven, creative strategies</span> that deliver measurable growth. Throughout my career, I've taken ownership of multi-channel campaigns from concept to launch — overseeing <span className="font-semibold">PPC, ABM, influencer partnerships, marketing automation</span>, and large-scale content production for brands across industries.
               </p>
 
-              <p className="body-text mb-16">
+              <p className="body-text mb-12 md:mb-16">
                 I thrive in roles where I can <span className="font-semibold">set the strategic direction</span>, coordinate cross-functional teams, and ensure every initiative aligns with business goals. My approach combines <span className="font-semibold">analytical precision with creative execution</span>, making sure every project I lead not only meets but exceeds performance targets.
               </p>
 

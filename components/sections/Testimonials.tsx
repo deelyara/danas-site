@@ -35,13 +35,13 @@ export default function Testimonials() {
 
   return (
     <section id="testimonials" className="section-centered bg-background">
-      <div className="container mx-auto container-padding w-full">
+      <div className="container mx-auto px-6 md:px-12 w-full">
         {/* Section Header */}
         <div
           ref={headerRef}
-          className={`text-center mb-16 animate-on-scroll ${headerVisible ? 'animate-in' : ''}`}
+          className={`text-center mb-12 md:mb-16 animate-on-scroll ${headerVisible ? 'animate-in' : ''}`}
         >
-          <h2 className="font-serif text-4xl md:text-5xl text-primary mb-4 font-normal lowercase tracking-tight">
+          <h2 className="font-serif text-4xl md:text-5xl text-primary mb-6 font-normal lowercase tracking-tight">
             what clients say
           </h2>
           <p className="text-base md:text-lg text-secondary/80 font-light max-w-2xl mx-auto">
@@ -50,7 +50,7 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4 md:px-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 max-w-6xl mx-auto">
           {testimonials.map((t, i) => (
             <div
               key={i}
@@ -58,7 +58,7 @@ export default function Testimonials() {
               className={`animate-on-scroll ${isVisible(i) ? 'animate-in' : ''}`}
               style={{ transitionDelay: `${i * 100}ms` }}
             >
-              <article className="h-full bg-white border border-[color:var(--color-border-heavy)] rounded-2xl p-6 md:p-8 transition-shadow duration-300 hover:shadow-[var(--shadow-lg)]">
+              <article className="h-full bg-white border border-gray-200 rounded-2xl p-8 transition-shadow duration-300 hover:shadow-lg">
                 <blockquote className="text-primary text-lg md:text-xl leading-relaxed font-light">
                   {t.quote}
                 </blockquote>

@@ -34,27 +34,27 @@ export default function WorkTeaser() {
     });
 
   return (
-    <section id="work-teaser" className="section-centered bg-background">
-      <div className="selected-work flex flex-col items-center px-5">
+    <section id="work-teaser" className="py-24 md:py-32 bg-background">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-6xl">
         {/* Section Header */}
         <div 
           ref={headerRef}
-          className={`text-center mb-20 animate-on-scroll ${headerVisible ? 'animate-in' : ''}`}
+          className={`text-center mb-12 md:mb-16 animate-on-scroll ${headerVisible ? 'animate-in' : ''}`}
         >
-          <h2 className="font-serif selected-work-title text-primary mb-4 font-normal lowercase tracking-tight">
+          <h2 className="font-serif selected-work-title text-primary font-normal lowercase tracking-tight">
             selected work
           </h2>
         </div>
 
         {/* Projects Container */}
-        <div className="projects-container w-full max-w-[1000px] mx-auto px-4 md:px-0">
+        <div className="projects-container w-full max-w-[1000px] mx-auto">
           {featuredProjects.map((project, index) => (
             <div
               key={project.id}
               ref={setElementRef(index)}
-              className={`project-item group block w-full animate-on-scroll ${
+              className={`group block w-full animate-on-scroll ${
                 isVisible(index) ? 'animate-in' : ''
-              } ${index === featuredProjects.length - 1 ? 'last' : ''}`}
+              } ${index === featuredProjects.length - 1 ? '' : 'mb-12 md:mb-16'}`}
               style={{ 
                 transitionDelay: `${index * 100}ms`
               }}
@@ -64,7 +64,7 @@ export default function WorkTeaser() {
                 <div className="w-full">
                   <Link 
                     href={`/work/${project.slug}`}
-                    className="group flex flex-col md:flex-row md:items-center gap-6 md:gap-20"
+                    className="group flex flex-col md:flex-row md:items-center gap-8 md:gap-12"
                   >
                   {/* Project Card - Top on mobile, Left on desktop */}
                   <div 
@@ -85,10 +85,10 @@ export default function WorkTeaser() {
 
                   {/* Project Info - Bottom on mobile, Right on desktop */}
                   <div className="project-info text-center md:text-left">
-                    <h3 className="text-[24px] md:text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
+                    <h3 className="text-[24px] md:text-[28px] font-serif text-primary mb-3 group-hover:text-accent transition-colors duration-300 leading-tight">
                       {project.title}
                     </h3>
-                    <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68] mb-2">
+                    <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68] mb-3">
                       {project.company}
                     </p>
                     <p className="project-description text-base text-secondary/80 leading-relaxed">
@@ -98,19 +98,22 @@ export default function WorkTeaser() {
                 </Link>
 
                   {/* View All Projects CTA - Standard Button Style */}
-                  <div className="mt-16 md:mt-64 w-full flex justify-center">
+                  <div className="mt-12 md:mt-16 w-full flex justify-center">
                     <Link 
                       href="/work"
-                      className="cta-button"
+                      className="cta-button inline-flex items-center justify-center"
                     >
-                      View All Projects
+                      <span>View All Projects</span>
+                      <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
                     </Link>
                   </div>
                 </div>
               ) : (
                 <Link 
                   href={`/work/${project.slug}`}
-                  className="group flex flex-col md:flex-row md:items-center gap-6 md:gap-20 w-auto mx-auto"
+                  className="group flex flex-col md:flex-row md:items-center gap-8 md:gap-12 w-auto mx-auto"
                 >
                   {/* Project Card - Top on mobile, Left on desktop */}
                   <div 
@@ -131,10 +134,10 @@ export default function WorkTeaser() {
 
                   {/* Project Info - Bottom on mobile, Right on desktop */}
                   <div className="project-info flex-1 text-center md:text-left">
-                    <h3 className="text-[24px] md:text-[28px] font-serif text-primary mb-2 group-hover:text-accent transition-colors duration-300 leading-tight">
+                    <h3 className="text-[24px] md:text-[28px] font-serif text-primary mb-3 group-hover:text-accent transition-colors duration-300 leading-tight">
                       {project.title}
                     </h3>
-                    <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68] mb-2">
+                    <p className="text-sm uppercase tracking-[0.1em] font-medium text-[#6B6B68] mb-3">
                       {project.company}
                     </p>
                     <p className="project-description text-base text-secondary/80 leading-relaxed">

@@ -46,13 +46,13 @@ export default function Projects() {
 
   return (
     <section id="projects" className="section-centered bg-background">
-      <div className="container mx-auto px-6 md:px-12 w-full max-w-6xl">
+      <div className="container mx-auto px-6 md:px-12 lg:px-16 w-full max-w-6xl">
         <div className="text-center">
           {/* Section Header */}
-          <div className="mb-20" style={{ paddingTop: '40px' }}>
+          <div className="mb-16 md:mb-20">
             <h1 
               ref={headerRef}
-              className={`font-serif selected-work-title text-primary mb-6 font-normal tracking-tight lowercase animate-on-scroll ${
+              className={`font-serif selected-work-title text-primary font-normal tracking-tight lowercase animate-on-scroll ${
                 headerVisible ? 'animate-in' : ''
               }`}
             >
@@ -62,7 +62,7 @@ export default function Projects() {
 
           
           {/* Projects Grid - Enhanced Card Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 max-w-5xl mx-auto">
             {projects.map((project, index) => (
               <Link 
                 key={project.id}
@@ -104,14 +104,14 @@ export default function Projects() {
                   </div>
 
                   {/* Project Content */}
-                  <div className="p-6">
+                  <div className="p-6 md:p-8">
                     {/* Company */}
-                    <p className="company-name mb-2 text-xs">
+                    <p className="company-name mb-3 text-xs">
                       {project.company}
                     </p>
                     
                     {/* Title */}
-                    <h3 className="font-serif text-xl md:text-2xl text-primary mb-3 leading-tight group-hover:text-accent transition-colors duration-300">
+                    <h3 className="font-serif text-xl md:text-2xl text-primary mb-4 leading-tight group-hover:text-accent transition-colors duration-300">
                       {project.title}
                     </h3>
                     
@@ -122,7 +122,7 @@ export default function Projects() {
                     
                     {/* Tags */}
                     {project.tags && project.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap gap-2 mb-6">
                         {project.tags.slice(0, 3).map((tag, tagIndex) => (
                           <span 
                             key={tagIndex}

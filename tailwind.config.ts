@@ -8,6 +8,17 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Add custom spacing values WITHOUT overriding defaults
+      spacing: {
+        'xs': '0.5rem',    // 8px
+        'sm': '1rem',      // 16px
+        'md': '1.5rem',    // 24px
+        'lg': '2rem',      // 32px
+        'xl': '3rem',      // 48px
+        '2xl': '4rem',     // 64px
+        '3xl': '6rem',     // 96px
+        '4xl': '8rem',     // 128px
+      },
       colors: {
         // Warm & editorial color scheme - aligned with CSS variables
         background: '#FAF8F4',
@@ -22,17 +33,6 @@ const config: Config = {
           medium: 'rgba(26, 26, 26, 0.06)',
           heavy: 'rgba(26, 26, 26, 0.08)',
         }
-      },
-      spacing: {
-        // Aligned with CSS variables (8px base unit)
-        'xs': '0.5rem',   // 8px
-        'sm': '1rem',     // 16px
-        'md': '1.5rem',   // 24px
-        'lg': '2rem',     // 32px
-        'xl': '3rem',     // 48px
-        '2xl': '4rem',    // 64px
-        '3xl': '6rem',    // 96px
-        '4xl': '8rem',    // 128px
       },
       fontFamily: {
         sans: ['var(--font-inter)'],

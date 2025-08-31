@@ -4,52 +4,52 @@
 .expertise-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: var(--space-4xl) var(--space-lg); /* 128px 32px */
 }
 
 .expertise-intro {
-  font-size: 18px;
+  font-size: var(--text-lg); /* 18px */
   line-height: 1.6;
   color: var(--color-secondary);
   max-width: 42rem;
-  margin-bottom: 4rem;
+  margin-bottom: var(--space-2xl); /* 64px */
 }
 
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 6rem;
+  gap: var(--space-lg); /* 32px */
+  margin-bottom: var(--space-3xl); /* 96px */
 }
 
 /* Expertise Tools Section */
 .expertise-tools-section {
-  padding: 5rem 3rem;
+  padding: var(--space-2xl) var(--space-xl); /* 64px 48px */
   border-radius: var(--radius-lg);
   background-color: var(--color-background);
   border: 1px solid var(--color-border-medium);
-  margin-bottom: 5rem;
+  margin-bottom: var(--space-2xl); /* 64px */
 }
 
 .expertise-tools-title {
-  font-size: 32px;
+  font-size: var(--text-3xl); /* 32px */
   font-family: var(--font-serif);
   color: var(--color-primary);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-xl); /* 48px */
 }
 
 .expertise-tools-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
+  gap: var(--space-xl); /* 48px */
 }
 
 .expertise-tools-category {
-  font-size: 12px;
+  font-size: var(--text-xs); /* 12px */
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-sm); /* 16px */
   font-weight: 600;
   color: var(--color-accent);
 }
@@ -57,11 +57,11 @@
 .expertise-tools-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-xs); /* 8px */
 }
 
 .expertise-tool-item {
-  font-size: 14px;
+  font-size: var(--text-sm); /* 14px */
   color: var(--color-secondary);
   transition: color var(--transition-fast);
   cursor: pointer;
@@ -75,13 +75,13 @@
 @media (max-width: 1024px) {
   .expertise-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: var(--space-lg); /* 32px */
   }
 }
 
 @media (max-width: 768px) {
   .expertise-tools-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: var(--space-lg); /* 32px */
   }
 }

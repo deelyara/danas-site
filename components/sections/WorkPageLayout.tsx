@@ -53,9 +53,9 @@ export default function WorkPageLayout({
           </div>
 
           {/* All Projects List with proper spacing */}
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto space-y-8 md:space-y-12">
             {sortedProjects.map((project, index) => (
-              <div key={project.id} className={`work-entry-wrapper ${index === sortedProjects.length - 1 ? 'last' : ''}`}>
+              <div key={project.id}>
                 <ProjectEntry
                   project={{
                     ...project,
