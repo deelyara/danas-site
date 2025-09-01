@@ -21,6 +21,7 @@ export default function WellnessAutomationPage() {
   return (
     <ProjectLayout 
       tableOfContents={tableOfContents}
+      currentSlug="wellness-automation"
       nextProject={nextProject}
       prevProject={prevProject}
     >

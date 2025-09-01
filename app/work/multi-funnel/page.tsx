@@ -24,6 +24,7 @@ export default function MultiFunnelPage() {
   return (
     <ProjectLayout 
       tableOfContents={tableOfContents}
+      currentSlug="multi-funnel"
       nextProject={nextProject}
       prevProject={prevProject}
     >

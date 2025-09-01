@@ -28,3 +28,61 @@ nav {
               background-color var(--transition-base),
               backdrop-filter var(--transition-base);
 }
+
+/* Mobile Menu Enhancements */
+.mobile-menu-backdrop {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(26, 26, 26, 0.2);
+}
+
+.mobile-menu-panel {
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  background-color: rgba(250, 248, 244, 0.95);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12),
+              0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Staggered animation support */
+.mobile-menu-item {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Enhanced hamburger button */
+.hamburger-button {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.hamburger-line {
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* Hamburger animation states - no !important per claude.md guidelines */
+.hamburger-line.hamburger-active-top {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.hamburger-line.hamburger-active-middle {
+  opacity: 0;
+}
+
+.hamburger-line.hamburger-active-bottom {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Mobile drawer specific styles to ensure they apply */
+.mobile-drawer {
+  background-color: #FAF8F4 !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+}
+
+.mobile-drawer-overlay {
+  background-color: rgba(26, 26, 26, 0.3) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}

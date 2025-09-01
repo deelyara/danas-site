@@ -27,7 +27,7 @@ time, mark, audio, video {
 /* Smooth scrolling with consistent padding */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 120px; /* Account for fixed navigation */
+  scroll-padding-top: 60px; /* Account for sticky navigation */
   font-family: var(--font-sans);
   -webkit-overflow-scrolling: touch;
 }

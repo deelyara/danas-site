@@ -240,6 +240,13 @@ Use for:
 4. **Ensure proper layering** of custom CSS
 5. **Run dev server restart** after config changes
 
+### Mobile Navigation Issues (Lessons Learned)
+1. **DOM Structure Matters** - Overlays/drawers inside nav elements won't cover full page
+2. **Z-Index Stacking** - Mobile overlays need higher z-index than nav (z-50 < z-55 < z-60)
+3. **Transparency Conflicts** - Child elements with bg-opacity override parent backgrounds
+4. **Height Coverage** - Use `h-screen` or `height: 100vh` for full mobile coverage
+5. **Component Boundaries** - Return fragments `<>...</>` when elements need different DOM positions
+
 ### Build Errors
 1. Run `npm run typecheck` to check TypeScript
 2. Run `npm run lint` to check code style

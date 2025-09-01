@@ -23,6 +23,7 @@ export default function NewsletterPage() {
   return (
     <ProjectLayout 
       tableOfContents={tableOfContents}
+      currentSlug="newsletter"
       nextProject={nextProject}
       prevProject={prevProject}
     >

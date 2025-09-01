@@ -14,7 +14,7 @@ interface ProjectPageWrapperProps {
   tableOfContents: TOCItem[];
 }
 
-export default function ProjectPageWrapper() {
+export default function ProjectPageWrapper({ htmlContent, tableOfContents }: ProjectPageWrapperProps) {
   const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {

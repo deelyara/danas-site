@@ -178,9 +178,66 @@ interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export default async function ProjectPage() {
-  notFound();
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  
+  // Find the project
+  const project = editorialProjects.find(p => p.slug === slug);
+  
+  if (!project) {
+    notFound();
+  }
+
+  // Get markdown content
+  const markdownContent = await getProjectContent(slug);
+  
+  if (!markdownContent) {
+    notFound();
+  }
+
+  // Extract table of contents and convert to HTML
+  const tableOfContents = extractTableOfContents(markdownContent);
+  const htmlContent = markdownToHtml(markdownContent, project.title);
+
+  return (
+    <ProjectPageWrapper
+      tableOfContents={tableOfContents}
+      htmlContent={htmlContent}
+    />
+  );
 }
 
 // Generate static params for all projects
-export function generateStaticParams() { return []; }
+export function generateStaticParams() {
+  return editorialProjects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
+// Generate metadata for each project
+export async function generateMetadata({ params }: ProjectPageProps) {
+  const { slug } = await params;
+  const project = editorialProjects.find(p => p.slug === slug);
+  
+  if (!project) {
+    return {
+      title: '404 - Project Not Found',
+      robots: { index: false, follow: false },
+    };
+  }
+
+  return {
+    title: `${project.title} - ${project.company} | Dana Duisekenova`,
+    description: project.description,
+    robots: {
+      index: false,
+      follow: false,
+      nocache: true,
+      googleBot: {
+        index: false,
+        follow: false,
+        noimageindex: true,
+      },
+    },
+  };
+}
