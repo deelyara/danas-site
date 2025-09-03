@@ -40,6 +40,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  openGraph: {
+    title: 'Dana Duisekenova - Marketing Leader',
+    description: 'Strategic marketing leader with 8+ years of experience building scalable growth engines and transforming businesses through data-driven marketing excellence.',
+    type: 'website',
+  },
 }
 
 export default function RootLayout({
